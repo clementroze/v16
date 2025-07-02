@@ -110,6 +110,129 @@ nav .indicator {
 	padding: 64px 96px;
 }
 
+.button {
+	display: inline-block;
+	padding: 12px 24px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 500;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.button.light {
+	background-color: var(--light);
+	color: var(--dark);
+}
+
+.button.light:hover {
+	background-color: var(--light-50);
+}
+
+.button.light-10 {
+	background-color: var(--light-10);
+	color: var(--light);
+	border: 1px solid var(--light-15);
+}
+
+.button.light-10:hover {
+	background-color: var(--light-15);
+}
+
+.button.dark {
+	background-color: var(--dark);
+	color: var(--light);
+}
+
+.button.dark:hover {
+	background-color: var(--dark-50);
+}
+
+.button.dark-10 {
+	background-color: var(--dark-10);
+	color: var(--dark);
+	border: 1px solid var(--dark-15);
+}
+
+.button.dark-10:hover {
+	background-color: var(--dark-15);
+}
+
+.button-row {
+	display: flex;
+	gap: 16px;
+	margin-top: 32px;
+}
+
+.tabs-container {
+	margin-top: 64px;
+	width: 100%;
+}
+
+.tabs {
+	display: flex;
+	gap: 32px;
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.tab {
+	background: none;
+	border: none;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 12px 0;
+	cursor: pointer;
+	color: var(--light-50);
+	transition: color 0.3s ease;
+}
+
+.tab:hover,
+.tab.active {
+	color: var(--light);
+}
+
+.tab-underline {
+	position: absolute;
+	bottom: 0;
+	height: 2px;
+	background-color: var(--light);
+	transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panels-container {
+	overflow: hidden;
+	width: 100%;
+}
+
+.panels-wrapper {
+	display: flex;
+	width: 200%;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel-slide {
+	width: 50%;
+	min-height: 200px;
+}
+
+.panel {
+	padding: 24px;
+	background-color: var(--light-10);
+	border-radius: 12px;
+	color: var(--light);
+}
+
+.panel h3 {
+	font-size: 24px;
+	margin-bottom: 16px;
+}
+
+.panel p {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
 .hero .inner {
 	display: flex;
 	justify-content: space-between;
