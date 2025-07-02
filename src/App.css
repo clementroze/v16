@@ -48,6 +48,7 @@ nav {
 nav ul {
 	display: flex;
 	gap: 32px;
+	position: relative;
 }
 
 nav ul li {
@@ -61,6 +62,16 @@ nav ul li a {
 
 nav ul li.selected a {
 	color: var(--light);
+}
+
+.indicator {
+	position: absolute;
+	top: 100%;
+	margin-top: 8px;
+	font-size: 16px;
+	color: var(--light);
+	pointer-events: none;
+	z-index: 10;
 }
 
 .hero {
@@ -109,7 +120,5 @@ margin: revert;
 
 
 
-.nav-list {
-	position: relative;
-}
+
 
