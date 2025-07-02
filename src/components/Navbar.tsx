@@ -1,11 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
 import { useRef, useLayoutEffect, useState } from "react";
 
+// Persistent state outside component to maintain position across re-renders
+let persistentIndicatorLeft = 0;
+let hasInitialized = false;
+
 export default function Navbar() {
 	const location = useLocation();
 	const navRef = useRef<HTMLUListElement>(null);
 	const indicatorRef = useRef<HTMLSpanElement>(null);
-	const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; opacity: number }>({ left: 0, opacity: 0 });
+	const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; opacity: number }>(() => ({
+		left: persistentIndicatorLeft,
+		opacity: hasInitialized ? 1 : 0
+	}));
 
 	const navItems = [
 		{ path: "/", label: "Work" },
@@ -25,6 +32,10 @@ export default function Navbar() {
 		const linkRect = activeLink.getBoundingClientRect();
 		
 		const leftPosition = linkRect.left - navRect.left + (linkRect.width / 2) - 8; // 8px is half the indicator width
+
+		// Update persistent state
+		persistentIndicatorLeft = leftPosition;
+		hasInitialized = true;
 
 		setIndicatorStyle({
 			left: leftPosition,
