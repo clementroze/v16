@@ -4,6 +4,7 @@ import { useRef, useLayoutEffect, useState } from "react";
 // Persistent state outside component to maintain position across re-renders
 let persistentIndicatorLeft = 0;
 let hasInitialized = false;
+let allowTransition = true;
 
 export default function Navbar() {
 	const location = useLocation();
@@ -41,7 +42,14 @@ export default function Navbar() {
 
 		// Update persistent state
 		persistentIndicatorLeft = leftPosition;
-		hasInitialized = true;
+
+		// Only allow transitions after the first positioning
+		if (!hasInitialized) {
+			hasInitialized = true;
+			allowTransition = false;
+		} else {
+			allowTransition = true;
+		}
 
 		setIndicatorStyle({
 			left: leftPosition,
@@ -68,8 +76,7 @@ export default function Navbar() {
 					style={{
 						left: `${indicatorStyle.left}px`,
 						opacity: indicatorStyle.opacity,
-						transition:
-							"left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease",
+						transition: allowTransition ? 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease' : 'none'
 					}}
 				>
 					✦
