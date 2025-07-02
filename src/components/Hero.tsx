@@ -1,0 +1,22 @@
+type HeroProps = {
+	page: "home" | "about" | "studio" | "contact";
+	children: React.ReactNode;
+	className?: string;
+};
+
+const colorMap: Record<HeroProps["page"], string> = {
+	home: "var(--dark)",
+	about: "var(--blue)",
+	studio: "var(--green)",
+	contact: "var(--yellow)",
+};
+
+export default function Hero({ page, children, className }: HeroProps) {
+	const backgroundColor = colorMap[page];
+
+	return (
+		<section className={`hero ${className}`} style={{ backgroundColor }}>
+			{children}
+		</section>
+	);
+}
