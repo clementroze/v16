@@ -1,22 +1,22 @@
 import { Link, useLocation } from "react-router-dom";
 import { useRef, useLayoutEffect, useState } from "react";
 
-// Persistent state outside component to maintain position across re-renders
-let persistentIndicatorLeft = 0;
-let hasInitialized = false;
-let allowTransition = true;
-
 export default function Navbar() {
 	const location = useLocation();
 	const navRef = useRef<HTMLUListElement>(null);
 	const indicatorRef = useRef<HTMLSpanElement>(null);
+	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const [indicatorStyle, setIndicatorStyle] = useState<{
 		left: number;
 		opacity: number;
-	}>(() => ({
-		left: persistentIndicatorLeft,
-		opacity: 0,
-	}));
+	}>(() => {
+		// Get persisted position from localStorage
+		const savedLeft = localStorage.getItem('navIndicatorLeft');
+		return {
+			left: savedLeft ? parseFloat(savedLeft) : 0,
+			opacity: savedLeft ? 1 : 0,
+		};
+	});
 
 	const navItems = [
 		{ path: "/", label: "Work" },
@@ -40,28 +40,17 @@ export default function Navbar() {
 		const leftPosition =
 			linkRect.left - navRect.left + linkRect.width / 2 - 8; // 8px is half the indicator width
 
-		// Update persistent state
-		persistentIndicatorLeft = leftPosition;
+		// Save position to localStorage
+		localStorage.setItem('navIndicatorLeft', leftPosition.toString());
 
-		// Only allow transitions after the first positioning
-		if (!hasInitialized) {
-			hasInitialized = true;
-			allowTransition = false;
-			// Set position immediately without transition
-			setIndicatorStyle({
-				left: leftPosition,
-				opacity: 1,
-			});
-			// Enable transitions for future changes
-			setTimeout(() => {
-				allowTransition = true;
-			}, 0);
-		} else {
-			allowTransition = true;
-			setIndicatorStyle({
-				left: leftPosition,
-				opacity: 1,
-			});
+		setIndicatorStyle({
+			left: leftPosition,
+			opacity: 1,
+		});
+
+		// After first calculation, allow transitions for subsequent changes
+		if (isFirstLoad) {
+			setIsFirstLoad(false);
 		}
 	}, [location.pathname]);
 
@@ -84,7 +73,7 @@ export default function Navbar() {
 					style={{
 						left: `${indicatorStyle.left}px`,
 						opacity: indicatorStyle.opacity,
-						transition: allowTransition ? 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease' : 'none'
+						transition: isFirstLoad ? 'none' : 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
 					}}
 				>
 					✦
