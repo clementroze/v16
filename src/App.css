@@ -3,7 +3,8 @@
 
 	--dark: #111111;
 	--light: #ffffff;
-	--gray: #888888;
+	--dark-50: rgba(0 0 0 / 0.5);
+	--light-50: rgba(255 255 255 / 0.5);
 	--blue: #3052F5;
 	--green: #4BE15D;
 	--yellow: #FFD200;
@@ -56,20 +57,40 @@ nav ul li {
 }
 
 nav ul li a {
-	font-style: 16px;
-	color: var(--gray) !important;
+	font-size: 16px;
+	padding: 8px 4px;
+	transition: color 120ms ease-out;
 }
 
-nav ul li.selected a {
+.dark-text nav ul li a {
+	color: var(--dark-50);
+}
+
+.dark-text nav ul li a:hover {
+	color: var(--dark);
+}
+
+.light-text nav ul li a {
+	color: var(--light-50);
+}
+
+.light-text nav ul li a:hover {
 	color: var(--light);
+}
+
+.light-text nav ul li.selected a {
+	color: var(--light);
+}
+
+.dark-text nav ul li.selected a {
+	color: var(--dark);
 }
 
 .indicator {
 	position: absolute;
 	top: 100%;
-	margin-top: 8px;
+	margin-top: 4px;
 	font-size: 16px;
-	color: var(--light);
 	pointer-events: none;
 	z-index: 10;
 }

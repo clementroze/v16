@@ -9,9 +9,12 @@ export default function Navbar() {
 	const location = useLocation();
 	const navRef = useRef<HTMLUListElement>(null);
 	const indicatorRef = useRef<HTMLSpanElement>(null);
-	const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; opacity: number }>(() => ({
+	const [indicatorStyle, setIndicatorStyle] = useState<{
+		left: number;
+		opacity: number;
+	}>(() => ({
 		left: persistentIndicatorLeft,
-		opacity: hasInitialized ? 1 : 0
+		opacity: hasInitialized ? 1 : 0,
 	}));
 
 	const navItems = [
@@ -24,14 +27,17 @@ export default function Navbar() {
 	useLayoutEffect(() => {
 		if (!navRef.current || !indicatorRef.current) return;
 
-		const activeIndex = navItems.findIndex(item => item.path === location.pathname);
+		const activeIndex = navItems.findIndex(
+			(item) => item.path === location.pathname,
+		);
 		if (activeIndex === -1) return;
 
 		const activeLink = navRef.current.children[activeIndex] as HTMLLIElement;
 		const navRect = navRef.current.getBoundingClientRect();
 		const linkRect = activeLink.getBoundingClientRect();
-		
-		const leftPosition = linkRect.left - navRect.left + (linkRect.width / 2) - 8; // 8px is half the indicator width
+
+		const leftPosition =
+			linkRect.left - navRect.left + linkRect.width / 2 - 8; // 8px is half the indicator width
 
 		// Update persistent state
 		persistentIndicatorLeft = leftPosition;
@@ -39,7 +45,7 @@ export default function Navbar() {
 
 		setIndicatorStyle({
 			left: leftPosition,
-			opacity: 1
+			opacity: 1,
 		});
 	}, [location.pathname]);
 
@@ -56,13 +62,14 @@ export default function Navbar() {
 						<Link to={path}>{label}</Link>
 					</li>
 				))}
-				<span 
+				<span
 					ref={indicatorRef}
 					className="indicator"
 					style={{
 						left: `${indicatorStyle.left}px`,
 						opacity: indicatorStyle.opacity,
-						transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
+						transition:
+							"left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease",
 					}}
 				>
 					✦
