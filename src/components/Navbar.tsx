@@ -43,8 +43,8 @@ export default function Navbar() {
 		const leftPosition =
 			linkRect.left - navRect.left + linkRect.width / 2 - 8; // 8px is half the indicator width
 
-		// Calculate rotation based on position: 0deg, -90deg, 180deg, 90deg
-		const rotations = [0, -90, 180, 90];
+		// Calculate rotation based on position: progressive rotation to the right
+		const rotations = [0, 90, 180, 270];
 		const rotation = rotations[activeIndex] || 0;
 
 		// Save position and rotation to localStorage
