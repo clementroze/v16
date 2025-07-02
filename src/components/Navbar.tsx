@@ -83,7 +83,7 @@ export default function Navbar() {
 						left: `${indicatorStyle.left}px`,
 						opacity: indicatorStyle.opacity,
 						transform: `rotate(${indicatorStyle.rotation}deg)`,
-						transition: isFirstLoad ? 'none' : 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+						transition: isFirstLoad ? 'none' : 'left 2s cubic-bezier(0.4, 0, 0.2, 1), opacity 2s ease, transform 2s cubic-bezier(0.4, 0, 0.2, 1)'
 					}}
 				>
 					✦
