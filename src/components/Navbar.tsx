@@ -15,7 +15,7 @@ export default function Navbar() {
 		opacity: number;
 	}>(() => ({
 		left: persistentIndicatorLeft,
-		opacity: hasInitialized ? 1 : 0,
+		opacity: 0,
 	}));
 
 	const navItems = [
@@ -47,14 +47,22 @@ export default function Navbar() {
 		if (!hasInitialized) {
 			hasInitialized = true;
 			allowTransition = false;
+			// Set position immediately without transition
+			setIndicatorStyle({
+				left: leftPosition,
+				opacity: 1,
+			});
+			// Enable transitions for future changes
+			setTimeout(() => {
+				allowTransition = true;
+			}, 0);
 		} else {
 			allowTransition = true;
+			setIndicatorStyle({
+				left: leftPosition,
+				opacity: 1,
+			});
 		}
-
-		setIndicatorStyle({
-			left: leftPosition,
-			opacity: 1,
-		});
 	}, [location.pathname]);
 
 	return (
