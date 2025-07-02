@@ -9,12 +9,15 @@ export default function Navbar() {
 	const [indicatorStyle, setIndicatorStyle] = useState<{
 		left: number;
 		opacity: number;
+		rotation: number;
 	}>(() => {
 		// Get persisted position from localStorage
 		const savedLeft = localStorage.getItem('navIndicatorLeft');
+		const savedRotation = localStorage.getItem('navIndicatorRotation');
 		return {
 			left: savedLeft ? parseFloat(savedLeft) : 0,
 			opacity: savedLeft ? 1 : 0,
+			rotation: savedRotation ? parseFloat(savedRotation) : 0,
 		};
 	});
 
@@ -40,12 +43,18 @@ export default function Navbar() {
 		const leftPosition =
 			linkRect.left - navRect.left + linkRect.width / 2 - 8; // 8px is half the indicator width
 
-		// Save position to localStorage
+		// Calculate rotation based on position: 0deg, -90deg, 180deg, 90deg
+		const rotations = [0, -90, 180, 90];
+		const rotation = rotations[activeIndex] || 0;
+
+		// Save position and rotation to localStorage
 		localStorage.setItem('navIndicatorLeft', leftPosition.toString());
+		localStorage.setItem('navIndicatorRotation', rotation.toString());
 
 		setIndicatorStyle({
 			left: leftPosition,
 			opacity: 1,
+			rotation: rotation,
 		});
 
 		// After first calculation, allow transitions for subsequent changes
@@ -73,7 +82,8 @@ export default function Navbar() {
 					style={{
 						left: `${indicatorStyle.left}px`,
 						opacity: indicatorStyle.opacity,
-						transition: isFirstLoad ? 'none' : 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease'
+						transform: `rotate(${indicatorStyle.rotation}deg)`,
+						transition: isFirstLoad ? 'none' : 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
 					}}
 				>
 					✦
