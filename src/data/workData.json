@@ -1,0 +1,38 @@
+
+{
+  "workSections": [
+    {
+      "id": 1,
+      "heading": "Replit AI Assistant",
+      "subheading": "Product Design & Development",
+      "logo": "/logos/replit-logo.svg",
+      "logoAlt": "Replit logo",
+      "description1": "Led the design and development of Replit's AI-powered coding assistant, helping millions of developers write better code faster.",
+      "description2": "Collaborated with cross-functional teams to create an intuitive interface that seamlessly integrates AI capabilities into the coding workflow.",
+      "backgroundImage": "/images/replit-bg.jpg",
+      "learnMoreLink": "/work/replit-ai"
+    },
+    {
+      "id": 2,
+      "heading": "Microsoft Design System",
+      "subheading": "System Design & Implementation",
+      "logo": "/logos/microsoft-logo.svg",
+      "logoAlt": "Microsoft logo",
+      "description1": "Contributed to Microsoft's design system, creating scalable components used across multiple products and platforms.",
+      "description2": "Focused on accessibility standards and cross-platform consistency, ensuring seamless user experiences across devices.",
+      "backgroundImage": "/images/microsoft-bg.jpg",
+      "learnMoreLink": "/work/microsoft-design"
+    },
+    {
+      "id": 3,
+      "heading": "Cornell DCC Platform",
+      "subheading": "Full-Stack Development",
+      "logo": "/logos/cornell-logo.svg",
+      "logoAlt": "Cornell logo",
+      "description1": "Built and maintained the Digital Communications Center platform, serving thousands of students and faculty.",
+      "description2": "Implemented modern web technologies and responsive design principles to create an engaging digital experience.",
+      "backgroundImage": "/images/cornell-bg.jpg",
+      "learnMoreLink": "/work/cornell-dcc"
+    }
+  ]
+}
