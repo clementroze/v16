@@ -30,7 +30,6 @@ export default function Home() {
 				width: tabRect.width,
 			});
 
-			// After first calculation, allow transitions for subsequent changes
 			if (isFirstLoad) {
 				setIsFirstLoad(false);
 			}
