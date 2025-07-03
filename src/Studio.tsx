@@ -15,6 +15,8 @@ export default function Studio() {
           </h2>
         </div>
       </Hero>
+
+      <section className="light-section studio"></section>
     </Page>
   );
 }

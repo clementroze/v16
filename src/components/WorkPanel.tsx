@@ -13,9 +13,12 @@ export default function WorkPanel() {
           logoAlt={section.logoAlt}
           description1={section.description1}
           description2={section.description2}
+          comingSoon={section.comingSoon}
           backgroundImage={section.backgroundImage}
           link={section.link}
           backdropBlur={section.backdropBlur}
+          accent={section.accent}
+          onAccent={section.onAccent}
         />
       ))}
     </div>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { TextColorContext } from "../utilities/HeroTextColorContext";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 type PageProps = {
@@ -30,6 +31,7 @@ const Page: React.FC<PageProps> = ({ children, heroText = "dark", page = "home" 
 			<TextColorContext.Provider value={heroText}>
 				<Navbar />
 				<main>{children}</main>
+				<Footer/>
 			</TextColorContext.Provider>
 		</div>
 	);

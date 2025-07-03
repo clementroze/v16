@@ -7,9 +7,12 @@ type WorkSectionProps = {
 	logoAlt: string;
 	description1: string;
 	description2: string;
+	comingSoon?: boolean;
 	backgroundImage: string;
 	link: string;
 	backdropBlur?: number;
+	accent?: string;
+	onAccent?: string;
 };
 
 export default function WorkSection({
@@ -19,14 +22,23 @@ export default function WorkSection({
 	logoAlt,
 	description1,
 	description2,
+	comingSoon,
 	backgroundImage,
 	link,
 	backdropBlur,
+	accent,
+	onAccent = "#ffffff",
 }: WorkSectionProps) {
 	return (
 		<section
 			className="work-section"
-			style={{ backgroundImage: `url(${backgroundImage})` }}
+			style={
+				{
+					backgroundImage: `url(${backgroundImage})`,
+					"--accent": `${accent}`,
+					"--onAccent": `${onAccent}`,
+				} as React.CSSProperties
+			}
 		>
 			<div
 				className="backdrop"
@@ -39,7 +51,7 @@ export default function WorkSection({
 							<img src={logo} alt={logoAlt} />
 
 							<h2>
-								{heading}{" "}
+								<span className="heading">{heading}</span>{" "}
 								<span className="subheading">{subheading}</span>
 							</h2>
 						</div>
@@ -49,7 +61,9 @@ export default function WorkSection({
 
 					<div className="right">
 						<p>{description1}</p>
-						<p>{description2}</p>
+						<p style={{ textAlign: comingSoon ? "right" : "left" }}>
+							{description2}
+						</p>
 					</div>
 				</div>
 

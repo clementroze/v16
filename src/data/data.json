@@ -2,51 +2,57 @@
   "workSections": [
     {
       "id": 1,
-      "heading": "Replit AI Assistant",
-      "subheading": "Product Design & Development",
-      "logo": "/logos/replit-logo.svg",
-      "logoAlt": "Replit logo",
-      "description1": "Led the design and development of Replit's AI-powered coding assistant, helping millions of developers write better code faster.",
-      "description2": "Collaborated with cross-functional teams to create an intuitive interface that seamlessly integrates AI capabilities into the coding workflow.",
+      "heading": "frog",
+      "subheading": "Ongoing Visual Design internship",
+      "logo": "/public/frog/icon.png",
+      "logoAlt": "frog logo",
+      "description1": "",
+      "description2": "Coming soon.",
+      "comingSoon": true,
       "backgroundImage": "/public/frog/background-image.png",
-      "link": "/work/replit-ai",
-      "backdropBlur": 8
+      "link": "",
+      "backdropBlur": 8,
+      "accent": "#AC01E6"
     },
     {
       "id": 2,
-      "heading": "Microsoft Design System",
-      "subheading": "System Design & Implementation",
-      "logo": "/logos/microsoft-logo.svg",
+      "heading": "Microsoft",
+      "subheading": "Copilot-powered B2B sales tools designed for Gen Z buyers.",
+      "logo": "/public/microsoft/icon.png",
       "logoAlt": "Microsoft logo",
-      "description1": "Contributed to Microsoft's design system, creating scalable components used across multiple products and platforms.",
-      "description2": "Focused on accessibility standards and cross-platform consistency, ensuring seamless user experiences across devices.",
+      "description1": "Through Design Consulting at Cornell, I led a team of 6 consultants during a five-month collaboration with Microsoft.",
+      "description2": "We analyzed 50 research papers, conducted 90 interviews, and designed two integrated solutions spanning the B2B buyer journey.",
       "backgroundImage": "/public/microsoft/background-image.png",
-      "link": "/work/microsoft-design",
-      "backdropBlur": 8
+      "link": "",
+      "backdropBlur": 8,
+      "accent": "#0F6CBD"
     },
     {
       "id": 3,
-      "heading": "Cornell DCC Platform",
-      "subheading": "Full-Stack Development",
-      "logo": "/logos/cornell-logo.svg",
-      "logoAlt": "Cornell logo",
-      "description1": "Built and maintained the Digital Communications Center platform, serving thousands of students and faculty.",
-      "description2": "Implemented modern web technologies and responsive design principles to create an engaging digital experience.",
+      "heading": "Replit",
+      "subheading": "Fostering polish, revamping design systems, building marketing pages.",
+      "logo": "/public/replit/icon.png",
+      "logoAlt": "Replit logo",
+      "description1": "I joined Replit at 15 and loved it so much I stayed for three years, working part-time throughout high school!",
+      "description2": "I revamped the RUI design system, polished every surface, designed marketing pages, and helped launch the Following Feed, Bounties, and Blog.",
       "backgroundImage": "/public/replit/background-image.png",
-      "link": "/work/cornell-dcc",
-      "backdropBlur": 0
+      "link": "",
+      "backdropBlur": 0,
+      "accent": "#F5640C"
     },
     {
       "id": 4,
-      "heading": "Cornell DCC Platform",
-      "subheading": "Full-Stack Development",
-      "logo": "/logos/cornell-logo.svg",
-      "logoAlt": "Cornell logo",
-      "description1": "Built and maintained the Digital Communications Center platform, serving thousands of students and faculty.",
-      "description2": "Implemented modern web technologies and responsive design principles to create an engaging digital experience.",
+      "heading": "Studio",
+      "subheading": "Hire me to design your website, platform, or app.",
+      "logo": "/public/studio/icon.png",
+      "logoAlt": "Studio logo",
+      "description1": "I focus on landing pages, UI and accessibility audits, and designing 0-to-1 apps from concept to launch.",
+      "description2": "Recent clients include Monarcha, General Counsel AI, Hyperform, ROZE Clinics, Recoil Studios, Net, and more.",
       "backgroundImage": "/public/studio/background-image.png",
-      "link": "/work/cornell-dcc",
-      "backdropBlur": 0
+      "link": "/studio",
+      "backdropBlur": 0,
+      "accent": "#ffffff",
+      "onAccent": "#000000"
     }
   ]
 }

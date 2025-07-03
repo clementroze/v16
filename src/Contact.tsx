@@ -9,12 +9,12 @@ export default function Contact() {
         <div className="inner">
           <h1>Contact</h1>
 
-          <h2>
-            Let's work together to create something beautiful, thoughtful, and
-            meaningful.
-          </h2>
+          <h2>.</h2>
         </div>
       </Hero>
+
+      <section className="light-section contact">
+      </section>
     </Page>
   );
 }

@@ -15,6 +15,8 @@ export default function About() {
           </h2>
         </div>
       </Hero>
+
+      <section className="light-section about"></section>
     </Page>
   );
 }
