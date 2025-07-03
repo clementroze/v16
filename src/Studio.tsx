@@ -4,7 +4,7 @@ import Page from "./components/Page";
 
 export default function Studio() {
   return (
-    <Page>
+    <Page page="studio">
       <Hero page="studio">
         <div className="inner">
           <h1>Studio</h1>

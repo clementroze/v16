@@ -32,7 +32,7 @@ export default function Home() {
 	}, [activeTab]);
 
 	return (
-		<Page heroText="light">
+		<Page heroText="light" page="home">
 			<Hero page="home" className="home">
 				<div className="inner">
 					<div className="top">
