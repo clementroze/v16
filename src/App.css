@@ -352,6 +352,15 @@ nav .indicator {
 	color: var(--light)
 }
 
+.page-content {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.page-content.fade-in {
+	opacity: 1;
+}
+
 .work-panel {
 	display: flex;
 	flex-direction: column;
