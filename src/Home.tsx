@@ -8,6 +8,7 @@ import CraftPanel from "./components/CraftPanel";
 export default function Home() {
 	const [activeTab, setActiveTab] = useState<"work" | "craft">("work");
 	const tabsRef = useRef<HTMLDivElement>(null);
+	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const [underlineStyle, setUnderlineStyle] = useState<{
 		left: number;
 		width: number;
@@ -28,8 +29,13 @@ export default function Home() {
 				left: tabRect.left - tabsRect.left,
 				width: tabRect.width,
 			});
+
+			// After first calculation, allow transitions for subsequent changes
+			if (isFirstLoad) {
+				setIsFirstLoad(false);
+			}
 		}
-	}, [activeTab]);
+	}, [activeTab, isFirstLoad]);
 
 	return (
 		<Page heroText="light" page="home">
@@ -70,6 +76,9 @@ export default function Home() {
 							style={{
 								left: `${underlineStyle.left}px`,
 								width: `${underlineStyle.width}px`,
+								transition: isFirstLoad
+									? "none"
+									: "left 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9), width 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9)",
 							}}
 						/>
 
