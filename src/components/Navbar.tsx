@@ -12,8 +12,8 @@ export default function Navbar() {
 		rotation: number;
 	}>(() => {
 		// Get persisted position from localStorage
-		const savedLeft = localStorage.getItem('navIndicatorLeft');
-		const savedRotation = localStorage.getItem('navIndicatorRotation');
+		const savedLeft = localStorage.getItem("navIndicatorLeft");
+		const savedRotation = localStorage.getItem("navIndicatorRotation");
 		return {
 			left: savedLeft ? parseFloat(savedLeft) : 0,
 			opacity: savedLeft ? 1 : 0,
@@ -48,8 +48,8 @@ export default function Navbar() {
 		const rotation = rotations[activeIndex] || 0;
 
 		// Save position and rotation to localStorage
-		localStorage.setItem('navIndicatorLeft', leftPosition.toString());
-		localStorage.setItem('navIndicatorRotation', rotation.toString());
+		localStorage.setItem("navIndicatorLeft", leftPosition.toString());
+		localStorage.setItem("navIndicatorRotation", rotation.toString());
 
 		setIndicatorStyle({
 			left: leftPosition,
@@ -72,18 +72,22 @@ export default function Navbar() {
 					<li
 						key={path}
 						className={location.pathname === path ? "selected" : ""}
+						aria-current={location.pathname === path}
 					>
 						<Link to={path}>{label}</Link>
 					</li>
 				))}
 				<span
+					aria-hidden
 					ref={indicatorRef}
 					className="indicator"
 					style={{
 						left: `${indicatorStyle.left}px`,
 						opacity: indicatorStyle.opacity,
 						transform: `rotate(${indicatorStyle.rotation}deg)`,
-						transition: isFirstLoad ? 'none' : 'left 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+						transition: isFirstLoad
+							? "none"
+							: "left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
 					}}
 				>
 					✦

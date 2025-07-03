@@ -1,3 +1,8 @@
+@font-face {
+  font-family: EB Garamond;
+  src: url("/EB-Garamond.ttf") format("truetype")
+}
+
 :root {
 	--content-max-width: 1248px;
 
@@ -125,14 +130,9 @@ nav .indicator {
 	color: var(--dark);
 }
 
-.button.light:hover {
-	background-color: var(--light-50);
-}
-
 .button.light-10 {
 	background-color: var(--light-10);
 	color: var(--light);
-	border: 1px solid var(--light-15);
 }
 
 .button.light-10:hover {
@@ -151,17 +151,10 @@ nav .indicator {
 .button.dark-10 {
 	background-color: var(--dark-10);
 	color: var(--dark);
-	border: 1px solid var(--dark-15);
 }
 
 .button.dark-10:hover {
 	background-color: var(--dark-15);
-}
-
-.button-row {
-	display: flex;
-	gap: 16px;
-	margin-top: 32px;
 }
 
 .tabs-container {
@@ -173,29 +166,41 @@ nav .indicator {
 	display: flex;
 	gap: 32px;
 	position: relative;
-	margin-bottom: 32px;
+	margin-top: 24px;
+	padding-top: 24px;
 }
 
 .tab {
 	background: none;
 	border: none;
-	font-size: 18px;
-	font-weight: 500;
-	padding: 12px 0;
+	font-size: 48px;
 	cursor: pointer;
-	color: var(--light-50);
-	transition: color 0.3s ease;
+	transition: 120ms ease-out;
+	color: var(--light-50) !important
+}
+
+.craft {
+	font-family: 'EB Garamond', serif;
 }
 
 .tab:hover,
 .tab.active {
-	color: var(--light);
+	color: var(--light) !important;
+}
+
+.tabs .sep {
+	width: 100%;
+	height: 1px;
+	background: var(--light-10);
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .tab-underline {
 	position: absolute;
-	bottom: 0;
-	height: 2px;
+	top: 0;
+	height: 1px;
 	background-color: var(--light);
 	transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -218,9 +223,8 @@ nav .indicator {
 
 .panel {
 	padding: 24px;
-	background-color: var(--light-10);
+	background-color: var(--dark-10);
 	border-radius: 12px;
-	color: var(--light);
 }
 
 .panel h3 {
@@ -232,6 +236,7 @@ nav .indicator {
 	font-size: 16px;
 	line-height: 1.5;
 }
+
 
 .hero .inner {
 	display: flex;
@@ -246,17 +251,21 @@ nav .indicator {
 	flex: 1;	
 }
 
-.light-text * {
+.light-text .hero *, .light-text nav * {
 	color: var(--light);
 }
 
-.dark-text * {
+.dark-text .hero *, .dark-text nav * {
 	color: var(--dark);
 }
 
 .button-row {
 	display: flex;
 	gap: 16px;
+}
+
+.home {
+	padding-bottom: 32px;
 }
 
 .home .inner {
@@ -276,6 +285,12 @@ nav .indicator {
 	max-width: 50%;
 	line-height: 130%;
 	font-weight: 400;
+}
+
+.home .top {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
 }
 
 .contact .inner {
@@ -324,4 +339,14 @@ margin: revert;
 
 .button.dark-20 {
 	background: var(--dark-15);
+}
+
+.light-text .hero t::selection {
+	background: var(--light);
+	color: var(--dark)
+}
+
+::selection {
+	background: var(--dark);
+	color: var(--light)
 }
