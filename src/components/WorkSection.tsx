@@ -30,7 +30,7 @@ export default function WorkSection({
 		>
 			<div
 				className="backdrop"
-				style={{ backdropFilter: `blur(${backdropBlur}px)` }}
+				style={{ backdropFilter: `blur(${backdropBlur || 0}px)` }}
 			/>
 			<div className="inner">
 				<div className="top">
