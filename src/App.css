@@ -59,7 +59,6 @@ nav {
  	width: 100%;
  	transform: translateX(-50%);
  	left: 50%;
-	z-index: 5;
 }
 
 nav ul {
@@ -350,15 +349,6 @@ nav .indicator {
 ::selection {
 	background: var(--dark);
 	color: var(--light)
-}
-
-.page-content {
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
-}
-
-.page-content.fade-in {
-	opacity: 1;
 }
 
 .work-panel {
