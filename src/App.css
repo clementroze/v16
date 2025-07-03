@@ -32,7 +32,6 @@
 body {
 	font-family: sans-serif;
 	color: var(--dark);
-	transition: background-color 0.4s ease-in-out;
 }
 
 a {
@@ -117,7 +116,6 @@ nav .indicator {
 	display: flex;
 	align-items: flex-end;
 	padding: 64px 96px;
-	transition: background-color 0.4s ease-in-out;
 }
 
 .button {
@@ -356,7 +354,7 @@ nav .indicator {
 
 .page-content {
 	opacity: 0;
-	transition: opacity 1s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 .page-content.fade-in {
