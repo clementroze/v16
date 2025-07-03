@@ -6,7 +6,11 @@ import WorkPanel from "./components/WorkPanel";
 import CraftPanel from "./components/CraftPanel";
 
 export default function Home() {
-	const [activeTab, setActiveTab] = useState<"work" | "craft">("work");
+	const [activeTab, setActiveTab] = useState<"work" | "craft">(() => {
+		// Get persisted tab from localStorage, default to "work"
+		const savedTab = localStorage.getItem("homeActiveTab");
+		return (savedTab === "work" || savedTab === "craft") ? savedTab : "work";
+	});
 	const tabsRef = useRef<HTMLDivElement>(null);
 	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const [underlineStyle, setUnderlineStyle] = useState<{
@@ -85,7 +89,10 @@ export default function Home() {
 							data-tab="work"
 							role="tab"
 							className={`tab ${activeTab === "work" ? "active" : ""}`}
-							onClick={() => setActiveTab("work")}
+							onClick={() => {
+								setActiveTab("work");
+								localStorage.setItem("homeActiveTab", "work");
+							}}
 							aria-selected={activeTab === "work"}
 						>
 							Work
@@ -95,7 +102,10 @@ export default function Home() {
 							data-tab="craft"
 							role="tab"
 							className={`craft tab ${activeTab === "craft" ? "active" : ""}`}
-							onClick={() => setActiveTab("craft")}
+							onClick={() => {
+								setActiveTab("craft");
+								localStorage.setItem("homeActiveTab", "craft");
+							}}
 							aria-selected={activeTab === "craft"}
 						>
 							Craft
