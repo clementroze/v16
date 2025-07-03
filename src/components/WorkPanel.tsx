@@ -1,6 +1,5 @@
-
-import WorkSection from './WorkSection';
-import workData from '../data/workData.json';
+import WorkSection from "./WorkSection";
+import workData from "../data/data.json";
 
 export default function WorkPanel() {
   return (
@@ -15,7 +14,8 @@ export default function WorkPanel() {
           description1={section.description1}
           description2={section.description2}
           backgroundImage={section.backgroundImage}
-          learnMoreLink={section.learnMoreLink}
+          link={section.link}
+          backdropBlur={section.backdropBlur}
         />
       ))}
     </div>

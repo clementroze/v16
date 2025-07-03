@@ -97,21 +97,19 @@ export default function Home() {
 			</Hero>
 
 			<section>
-				<div className="tabs-container">
-					<div className="panels-container">
-						<div
-							className="panels-wrapper"
-							style={{
-								transform: `translateX(${activeTab === "work" ? "0%" : "-50%"})`,
-							}}
-						>
-							<div className="panel-slide">
-								<WorkPanel />
-							</div>
+				<div className="panels-container">
+					<div
+						className="panels-wrapper"
+						style={{
+							transform: `translateX(${activeTab === "work" ? "0%" : "-50%"})`,
+						}}
+					>
+						<div className="panel-slide">
+							<WorkPanel />
+						</div>
 
-							<div className="panel-slide">
-								<CraftPanel />
-							</div>
+						<div className="panel-slide">
+							<CraftPanel />
 						</div>
 					</div>
 				</div>

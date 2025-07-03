@@ -1,4 +1,3 @@
-
 {
   "workSections": [
     {
@@ -9,8 +8,9 @@
       "logoAlt": "Replit logo",
       "description1": "Led the design and development of Replit's AI-powered coding assistant, helping millions of developers write better code faster.",
       "description2": "Collaborated with cross-functional teams to create an intuitive interface that seamlessly integrates AI capabilities into the coding workflow.",
-      "backgroundImage": "/images/replit-bg.jpg",
-      "learnMoreLink": "/work/replit-ai"
+      "backgroundImage": "/public/frog/background-image.png",
+      "link": "/work/replit-ai",
+      "backdropBlur": 8
     },
     {
       "id": 2,
@@ -20,8 +20,9 @@
       "logoAlt": "Microsoft logo",
       "description1": "Contributed to Microsoft's design system, creating scalable components used across multiple products and platforms.",
       "description2": "Focused on accessibility standards and cross-platform consistency, ensuring seamless user experiences across devices.",
-      "backgroundImage": "/images/microsoft-bg.jpg",
-      "learnMoreLink": "/work/microsoft-design"
+      "backgroundImage": "/public/microsoft/background-image.png",
+      "link": "/work/microsoft-design",
+      "backdropBlur": 8
     },
     {
       "id": 3,
@@ -31,8 +32,21 @@
       "logoAlt": "Cornell logo",
       "description1": "Built and maintained the Digital Communications Center platform, serving thousands of students and faculty.",
       "description2": "Implemented modern web technologies and responsive design principles to create an engaging digital experience.",
-      "backgroundImage": "/images/cornell-bg.jpg",
-      "learnMoreLink": "/work/cornell-dcc"
+      "backgroundImage": "/public/replit/background-image.png",
+      "link": "/work/cornell-dcc",
+      "backdropBlur": 0
+    },
+    {
+      "id": 4,
+      "heading": "Cornell DCC Platform",
+      "subheading": "Full-Stack Development",
+      "logo": "/logos/cornell-logo.svg",
+      "logoAlt": "Cornell logo",
+      "description1": "Built and maintained the Digital Communications Center platform, serving thousands of students and faculty.",
+      "description2": "Implemented modern web technologies and responsive design principles to create an engaging digital experience.",
+      "backgroundImage": "/public/studio/background-image.png",
+      "link": "/work/cornell-dcc",
+      "backdropBlur": 0
     }
   ]
 }
