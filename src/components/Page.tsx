@@ -16,18 +16,21 @@ const colorMap: Record<string, string> = {
 	contact: "var(--yellow)",
 };
 
-const Page: React.FC<PageProps> = ({ children, heroText = "dark", page = "home" }) => {
+const Page: React.FC<PageProps> = ({
+	children,
+	heroText = "dark",
+	page = "home",
+}) => {
 	useEffect(() => {
 		const backgroundColor = colorMap[page];
 		document.body.style.backgroundColor = backgroundColor;
-		
+
 		return () => {
 			document.body.style.backgroundColor = "";
 		};
 	}, [page]);
 
 	useEffect(() => {
-		// Scroll to top when page changes
 		window.scrollTo(0, 0);
 	}, [page]);
 
@@ -36,12 +39,10 @@ const Page: React.FC<PageProps> = ({ children, heroText = "dark", page = "home" 
 			<TextColorContext.Provider value={heroText}>
 				<Navbar />
 				<main>{children}</main>
-				<Footer/>
+				<Footer />
 			</TextColorContext.Provider>
 		</div>
 	);
 };
 
 export default Page;
-
-

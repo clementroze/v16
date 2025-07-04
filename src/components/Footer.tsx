@@ -66,7 +66,9 @@ export default function Footer() {
 						<div className="row">
 							<p className="light">15.2</p>
 
-							<p className="light">✦</p>
+							<p className="light" aria-hidden>
+								✦
+							</p>
 
 							<Link to="">View archive</Link>
 						</div>

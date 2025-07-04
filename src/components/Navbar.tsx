@@ -11,7 +11,6 @@ export default function Navbar() {
 		opacity: number;
 		rotation: number;
 	}>(() => {
-		// Get persisted position from localStorage
 		const savedLeft = localStorage.getItem("navIndicatorLeft");
 		const savedRotation = localStorage.getItem("navIndicatorRotation");
 		return {
@@ -41,13 +40,11 @@ export default function Navbar() {
 		const linkRect = activeLink.getBoundingClientRect();
 
 		const leftPosition =
-			linkRect.left - navRect.left + linkRect.width / 2 - 8; // 8px is half the indicator width
+			linkRect.left - navRect.left + linkRect.width / 2 - 8;
 
-		// Calculate rotation based on position: progressive rotation to the right
 		const rotations = [0, 90, 180, 270];
 		const rotation = rotations[activeIndex] || 0;
 
-		// Save position and rotation to localStorage
 		localStorage.setItem("navIndicatorLeft", leftPosition.toString());
 		localStorage.setItem("navIndicatorRotation", rotation.toString());
 
@@ -57,7 +54,6 @@ export default function Navbar() {
 			rotation: rotation,
 		});
 
-		// After first calculation, allow transitions for subsequent changes
 		if (isFirstLoad) {
 			setIsFirstLoad(false);
 		}

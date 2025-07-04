@@ -36,6 +36,12 @@
 	box-sizing: border-box;
 }
 
+*:focus-visible {
+	outline: 2px dotted var(--light);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
 body {
 	font-family: Helvetica Neue Roman, sans-serif;
 	color: var(--dark);
@@ -206,7 +212,7 @@ nav ul li {
 nav a {
 	font-size: 16px;
 	padding: 8px 4px;
-	transition: color 120ms ease-out;
+	transition: 120ms ease-out;
 }
 
 .dark-text nav ul li a {
@@ -312,6 +318,10 @@ nav .indicator {
 	cursor: pointer;
 	transition: 120ms ease-out;
 	color: var(--light-50) !important
+}
+
+.tab:focus-visible {
+	outline-offset: 6px;
 }
 
 .craft {
@@ -664,10 +674,16 @@ footer .inner .button-row {
 footer a, footer p {
 	font-size: 16px;
 	line-height: 130%;
+	transition: 120ms ease-out;
 }
 
-footer a, footer p.light{
+footer a, footer p.light {
 	color: var(--light);
+}
+
+footer a:focus-visible {
+	outline-offset: 4px;
+	border-radius: 2px;
 }
 
 footer p {
@@ -680,9 +696,12 @@ footer ul {
 	gap: 8px;
 }
 
+footer ul li {
+	list-style: none;
+}
+
 footer .row {
 	display: flex;
 	align-items: center;
 	gap: 8px;
 }
-

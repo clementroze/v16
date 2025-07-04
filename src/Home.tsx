@@ -7,7 +7,6 @@ import CraftPanel from "./components/CraftPanel";
 
 export default function Home() {
 	const [activeTab, setActiveTab] = useState<"work" | "craft">(() => {
-		// Get persisted tab from localStorage, default to "work"
 		const savedTab = localStorage.getItem("homeActiveTab");
 		return savedTab === "work" || savedTab === "craft" ? savedTab : "work";
 	});
@@ -121,7 +120,7 @@ export default function Home() {
 						transform: `translateX(${activeTab === "work" ? "0%" : "-50%"})`,
 					}}
 				>
-					<div className="panel-slide">
+					<div className="panel-slide" aria-hidden={activeTab === "craft"}>
 						<div
 							style={{
 								opacity: `${activeTab === "work" ? "1" : "0.2"}`,
@@ -132,7 +131,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className="panel-slide">
+					<div className="panel-slide" aria-hidden={activeTab === "work"}>
 						<div
 							style={{
 								opacity: `${activeTab === "craft" ? "1" : "0.2"}`,
