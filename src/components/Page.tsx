@@ -37,8 +37,11 @@ const Page: React.FC<PageProps> = ({
 	return (
 		<div className={`${heroText}-text`}>
 			<TextColorContext.Provider value={heroText}>
+				<a href="#main-content" className="skip-to-main">
+					Skip to main content
+				</a>
 				<Navbar />
-				<main>{children}</main>
+				<main id="main-content" tabIndex={-1}>{children}</main>
 				<Footer />
 			</TextColorContext.Provider>
 		</div>

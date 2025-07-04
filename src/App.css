@@ -157,6 +157,25 @@ nav {
   );
 }
 
+.skip-to-main {
+	position: absolute;
+	top: -40px;
+	left: 6px;
+	background: var(--dark);
+	color: var(--light);
+	padding: 8px 16px;
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	z-index: 1000;
+	transition: top 0.3s ease;
+}
+
+.skip-to-main:focus {
+	top: 6px;
+}
+
 .gradient-blur > div:nth-of-type(5) {
   z-index: 6;
   backdrop-filter: blur(8px);
@@ -164,7 +183,7 @@ nav {
 	 to bottom,
 	 rgba(0, 0, 0, 0) 62.5%,
 	 rgba(0, 0, 0, 1) 75%,
-	 rgba(0, 0, 0, 1) 87.5%,
+	 rgba(0, 0, 1, 1) 87.5%,
 	 rgba(0, 0, 0, 0) 100%
   );
 }
