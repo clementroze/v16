@@ -343,20 +343,7 @@ nav .indicator {
 }
 
 .panels-container {
-	overflow: hidden;
 	width: 100%;
-}
-
-.panels-wrapper {
-	display: flex;
-	width: 200%;
-	/* transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); */
-	transition:
-	 transform 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9);
-}
-
-.panel-slide {
-	width: 50%;
 	min-height: 200px;
 }
 

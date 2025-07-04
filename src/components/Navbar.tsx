@@ -43,6 +43,60 @@ export default function Navbar() {
 		const leftPosition =
 			linkRect.left - navRect.left + linkRect.width / 2 - 8; // 8px is half the indicator width
 
+		const rotation = Math.random() * 4 - 2; // Random rotation between -2 and 2 degrees
+
+		setIndicatorStyle({
+			left: leftPosition,
+			opacity: 1,
+			rotation,
+		});
+
+		// Persist position and rotation to localStorage
+		localStorage.setItem("navIndicatorLeft", leftPosition.toString());
+		localStorage.setItem("navIndicatorRotation", rotation.toString());
+
+		if (isFirstLoad) {
+			setIsFirstLoad(false);
+		}
+	}, [location.pathname, isFirstLoad, navItems]);
+
+	return (
+		<nav>
+			<div className="inner">
+				<Link to="/">
+					<h3>Dylan Yang</h3>
+				</Link>
+
+				<ul ref={navRef}>
+					{navItems.map((item, index) => (
+						<li
+							key={item.path}
+							className={location.pathname === item.path ? "selected" : ""}
+						>
+							<Link to={item.path}>{item.label}</Link>
+						</li>
+					))}
+
+					<span
+						ref={indicatorRef}
+						className="indicator"
+						style={{
+							left: `${indicatorStyle.left}px`,
+							opacity: indicatorStyle.opacity,
+							transform: `rotate(${indicatorStyle.rotation}deg)`,
+							transition: isFirstLoad
+								? "none"
+								: "left var(--nav-selector-transition), opacity var(--nav-selector-transition), transform var(--nav-selector-transition)",
+						}}
+					>
+						★
+					</span>
+				</ul>
+			</div>
+		</nav>
+	);
+}
+
 		// Calculate rotation based on position: progressive rotation to the right
 		const rotations = [0, 90, 180, 270];
 		const rotation = rotations[activeIndex] || 0;
