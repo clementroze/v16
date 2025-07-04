@@ -26,6 +26,11 @@ const Page: React.FC<PageProps> = ({ children, heroText = "dark", page = "home" 
 		};
 	}, [page]);
 
+	useEffect(() => {
+		// Scroll to top when page changes
+		window.scrollTo(0, 0);
+	}, [page]);
+
 	return (
 		<div className={`${heroText}-text`}>
 			<TextColorContext.Provider value={heroText}>
