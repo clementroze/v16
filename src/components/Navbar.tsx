@@ -95,6 +95,15 @@ export default function Navbar() {
 					</span>
 				</ul>
 			</div>
+
+			<div className="gradient-blur">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</nav>
 	);
 }

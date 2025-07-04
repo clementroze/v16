@@ -1,65 +1,43 @@
-
-{
-  "sections": [
-    {
-      "id": "section-1",
-      "title": "Section 1",
-      "images": [
-        {
-          "src": "/craft/img1.jpg",
-          "alt": "Large featured image",
-          "colSpan": 4,
-          "height": 300
-        },
-        {
-          "src": "/craft/img2.jpg",
-          "alt": "Small side image",
-          "colSpan": 2,
-          "height": 145
-        },
-        {
-          "src": "/craft/img3.jpg",
-          "alt": "Medium bottom left image",
-          "colSpan": 4,
-          "height": 400
-        },
-        {
-          "src": "/craft/img4.jpg",
-          "alt": "Small bottom right image",
-          "colSpan": 2,
-          "height": 145
-        }
-      ]
-    },
-    {
-      "id": "section-2",
-      "title": "Section 2",
-      "images": [
-        {
-          "src": "/craft/img5.jpg",
-          "alt": "Square image",
-          "colSpan": 2,
-          "height": 250
-        },
-        {
-          "src": "/craft/img6.jpg",
-          "alt": "Wide horizontal image",
-          "colSpan": 4,
-          "height": 200
-        },
-        {
-          "src": "/craft/img7.jpg",
-          "alt": "Another square image",
-          "colSpan": 2,
-          "height": 250
-        },
-        {
-          "src": "/craft/img8.jpg",
-          "alt": "Wide bottom image",
-          "colSpan": 4,
-          "height": 300
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+	 "section": "Work A",
+	 "columns": [
+		{
+		  "span": 4,
+		  "images": [
+			 { "src": "/dti/hero.png", "alt": "Placeholder A1", "height": 510 },
+			 { "src": "dti/404.png", "alt": "Placeholder A2", "height": 690 }
+		  ]
+		},
+		{
+		  "span": 2,
+		  "images": [
+			 { "src": "dti/cta.png", "alt": "Placeholder A3", "height": 690 },
+			 { "src": "dti/tabs.png", "alt": "Placeholder A4", "height": 510 }
+		  ]
+		}
+	 ]
+  },
+  {
+	 "section": "Work B",
+	 "columns": [
+		{
+		  "span": 2,
+		  "images": [
+			 { "src": "https://picsum.photos/400/180", "alt": "Placeholder B1", "height": 180 },
+			 { "src": "https://picsum.photos/400/220", "alt": "Placeholder B2", "height": 220 },
+			 { "src": "https://picsum.photos/400/200", "alt": "Placeholder B3", "height": 200 }
+		  ]
+		},
+		{
+		  "span": 4,
+		  "images": [
+			 { "src": "https://picsum.photos/600/250", "alt": "Placeholder B4", "height": 250 },
+			 { "src": "https://picsum.photos/600/230", "alt": "Placeholder B5", "height": 230 },
+			 { "src": "https://picsum.photos/600/210", "alt": "Placeholder B6", "height": 210 },
+			 { "src": "https://picsum.photos/600/220", "alt": "Placeholder B7", "height": 220 }
+		  ]
+		}
+	 ]
+  }
+]
