@@ -65,34 +65,36 @@ export default function Navbar() {
 
 	return (
 		<nav>
-			<Link to="/">Clément Rozé</Link>
+			<div className="inner">
+				<Link to="/">Clément Rozé</Link>
 
-			<ul ref={navRef} className="nav-list">
-				{navItems.map(({ path, label }) => (
-					<li
-						key={path}
-						className={location.pathname === path ? "selected" : ""}
-						aria-current={location.pathname === path}
+				<ul ref={navRef} className="nav-list">
+					{navItems.map(({ path, label }) => (
+						<li
+							key={path}
+							className={location.pathname === path ? "selected" : ""}
+							aria-current={location.pathname === path}
+						>
+							<Link to={path}>{label}</Link>
+						</li>
+					))}
+					<span
+						aria-hidden
+						ref={indicatorRef}
+						className="indicator"
+						style={{
+							left: `${indicatorStyle.left}px`,
+							opacity: indicatorStyle.opacity,
+							transform: `rotate(${indicatorStyle.rotation}deg)`,
+							transition: isFirstLoad
+								? "none"
+								: "left var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--nav-selector-transition) ease, transform var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1)",
+						}}
 					>
-						<Link to={path}>{label}</Link>
-					</li>
-				))}
-				<span
-					aria-hidden
-					ref={indicatorRef}
-					className="indicator"
-					style={{
-						left: `${indicatorStyle.left}px`,
-						opacity: indicatorStyle.opacity,
-						transform: `rotate(${indicatorStyle.rotation}deg)`,
-						transition: isFirstLoad
-							? "none"
-							: "left var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--nav-selector-transition) ease, transform var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1)",
-					}}
-				>
-					✦
-				</span>
-			</ul>
+						✦
+					</span>
+				</ul>
+			</div>
 		</nav>
 	);
 }

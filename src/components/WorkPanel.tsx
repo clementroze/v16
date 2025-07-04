@@ -1,5 +1,5 @@
 import WorkSection from "./WorkSection";
-import workData from "../data/data.json";
+import workData from "../data/work.json";
 
 export default function WorkPanel() {
   return (

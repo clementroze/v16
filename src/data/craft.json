@@ -1,0 +1,40 @@
+{
+	"sections": [
+		{
+			"id": "section-1",
+			"images": [
+				{
+					"src": "img1.jpg",
+					"alt": "Image 1",
+					"colSpan": 4,
+					"height": 300
+				},
+				{
+					"src": "img2.jpg",
+					"alt": "Image 2",
+					"colSpan": 2,
+					"height": 300
+				},
+				{
+					"src": "img3.jpg",
+					"alt": "Image 3",
+					"colSpan": 4,
+					"height": 300
+				},
+				{ "src": "img4.jpg", "alt": "Image 4", "colSpan": 2, "height": 150 }
+			]
+		},
+		{
+			"id": "section-2",
+			"images": [
+				{
+					"src": "img5.jpg",
+					"alt": "Image 5",
+					"colSpan": 2,
+					"height": 200
+				},
+				{ "src": "img6.jpg", "alt": "Image 6", "colSpan": 4, "height": 200 }
+			]
+		}
+	]
+}
