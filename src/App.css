@@ -11,6 +11,7 @@
 :root {
 	--content-max-width: 1248px;
 	--nav-selector-transition: 0.5s;
+	--tab-underline-transition: 0.7s;
 
 	--dark: #111111;
 	--dark-50: rgba(0 0 0 / 50%);
@@ -338,8 +339,8 @@ nav .indicator {
 	background-color: var(--light);
 	/* transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
 	transition:
-	 left 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9),
-	 width 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9);
+	 left var(--tab-underline-transition) cubic-bezier(0.75, 0.1, 0.2, 0.9),
+	 width var(--tab-underline-transition) cubic-bezier(0.75, 0.1, 0.2, 0.9);
 }
 
 .panels-container {
@@ -357,7 +358,11 @@ nav .indicator {
 
 .panel-slide {
 	width: 50%;
-	min-height: 200px;
+	background: #000;
+}
+
+.panel-slide > div {
+	transition: var(--tab-underline-transition);
 }
 
 .panel h3 {
@@ -620,7 +625,7 @@ nav .indicator {
 	width: 100%;
 	object-fit: cover;
 	border-radius: 4px;
-	border: 1px solid var(--light-10);
+	border: 1px solid var(--dark-10);
 }
 
 footer {

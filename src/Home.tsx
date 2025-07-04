@@ -9,7 +9,7 @@ export default function Home() {
 	const [activeTab, setActiveTab] = useState<"work" | "craft">(() => {
 		// Get persisted tab from localStorage, default to "work"
 		const savedTab = localStorage.getItem("homeActiveTab");
-		return (savedTab === "work" || savedTab === "craft") ? savedTab : "work";
+		return savedTab === "work" || savedTab === "craft" ? savedTab : "work";
 	});
 	const tabsRef = useRef<HTMLDivElement>(null);
 	const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -122,11 +122,25 @@ export default function Home() {
 					}}
 				>
 					<div className="panel-slide">
-						<WorkPanel />
+						<div
+							style={{
+								opacity: `${activeTab === "work" ? "1" : "0.2"}`,
+								height: `${activeTab === "work" ? "auto" : "0"}`,
+							}}
+						>
+							<WorkPanel />
+						</div>
 					</div>
 
 					<div className="panel-slide">
-						<CraftPanel />
+						<div
+							style={{
+								opacity: `${activeTab === "craft" ? "1" : "0.2"}`,
+								height: `${activeTab === "craft" ? "auto" : "0"}`,
+							}}
+						>
+							<CraftPanel />
+						</div>
 					</div>
 				</div>
 			</div>
