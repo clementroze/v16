@@ -37,7 +37,7 @@
 }
 
 *:focus-visible {
-	outline: 2px dotted var(--light);
+	outline: 3px dotted var(--light);
 	outline-offset: 2px;
 	border-radius: 4px;
 }
@@ -681,9 +681,10 @@ footer a, footer p.light {
 	color: var(--light);
 }
 
-footer a:focus-visible {
-	outline-offset: 4px;
-	border-radius: 2px;
+footer a:not(a.button):focus-visible {
+	outline-offset: 6px;
+	border-radius: 1px;
+	height: 20.8px;
 }
 
 footer p {

@@ -17,22 +17,26 @@ export default function Home() {
 		width: number;
 	}>({ left: 0, width: 0 });
 
-	const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-		if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-			e.preventDefault();
-			const newTab = activeTab === "work" ? "craft" : "work";
-			setActiveTab(newTab);
-			localStorage.setItem("homeActiveTab", newTab);
-			
-			// Focus the newly active tab
-			setTimeout(() => {
-				const newActiveTab = tabsRef.current?.querySelector(`[data-tab="${newTab}"]`) as HTMLButtonElement;
-				if (newActiveTab) {
-					newActiveTab.focus();
-				}
-			}, 0);
-		}
-	}, [activeTab]);
+	const handleKeyDown = useCallback(
+		(e: React.KeyboardEvent) => {
+			if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+				e.preventDefault();
+				const newTab = activeTab === "work" ? "craft" : "work";
+				setActiveTab(newTab);
+				localStorage.setItem("homeActiveTab", newTab);
+
+				setTimeout(() => {
+					const newActiveTab = tabsRef.current?.querySelector(
+						`[data-tab="${newTab}"]`,
+					) as HTMLButtonElement;
+					if (newActiveTab) {
+						newActiveTab.focus();
+					}
+				}, 0);
+			}
+		},
+		[activeTab],
+	);
 
 	useLayoutEffect(() => {
 		if (!tabsRef.current) return;
@@ -87,7 +91,12 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className="tabs" ref={tabsRef} role="tablist" onKeyDown={handleKeyDown}>
+					<div
+						className="tabs"
+						ref={tabsRef}
+						role="tablist"
+						onKeyDown={handleKeyDown}
+					>
 						<div className="sep" />
 
 						<div
