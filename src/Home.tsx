@@ -23,6 +23,14 @@ export default function Home() {
 			const newTab = activeTab === "work" ? "craft" : "work";
 			setActiveTab(newTab);
 			localStorage.setItem("homeActiveTab", newTab);
+			
+			// Focus the newly active tab
+			setTimeout(() => {
+				const newActiveTab = tabsRef.current?.querySelector(`[data-tab="${newTab}"]`) as HTMLButtonElement;
+				if (newActiveTab) {
+					newActiveTab.focus();
+				}
+			}, 0);
 		}
 	}, [activeTab]);
 
