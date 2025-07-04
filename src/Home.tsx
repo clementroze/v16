@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect, useCallback } from "react";
 import Button from "./components/Button";
 import Hero from "./components/Hero";
 import Page from "./components/Page";
@@ -16,6 +16,15 @@ export default function Home() {
 		left: number;
 		width: number;
 	}>({ left: 0, width: 0 });
+
+	const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+		if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+			e.preventDefault();
+			const newTab = activeTab === "work" ? "craft" : "work";
+			setActiveTab(newTab);
+			localStorage.setItem("homeActiveTab", newTab);
+		}
+	}, [activeTab]);
 
 	useLayoutEffect(() => {
 		if (!tabsRef.current) return;
@@ -70,7 +79,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className="tabs" ref={tabsRef} role="tablist">
+					<div className="tabs" ref={tabsRef} role="tablist" onKeyDown={handleKeyDown}>
 						<div className="sep" />
 
 						<div
