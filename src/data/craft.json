@@ -1,40 +1,65 @@
+
 {
-	"sections": [
-		{
-			"id": "section-1",
-			"images": [
-				{
-					"src": "img1.jpg",
-					"alt": "Image 1",
-					"colSpan": 4,
-					"height": 300
-				},
-				{
-					"src": "img2.jpg",
-					"alt": "Image 2",
-					"colSpan": 2,
-					"height": 300
-				},
-				{
-					"src": "img3.jpg",
-					"alt": "Image 3",
-					"colSpan": 4,
-					"height": 300
-				},
-				{ "src": "img4.jpg", "alt": "Image 4", "colSpan": 2, "height": 150 }
-			]
-		},
-		{
-			"id": "section-2",
-			"images": [
-				{
-					"src": "img5.jpg",
-					"alt": "Image 5",
-					"colSpan": 2,
-					"height": 200
-				},
-				{ "src": "img6.jpg", "alt": "Image 6", "colSpan": 4, "height": 200 }
-			]
-		}
-	]
+  "sections": [
+    {
+      "id": "section-1",
+      "title": "Section 1",
+      "images": [
+        {
+          "src": "/craft/img1.jpg",
+          "alt": "Large featured image",
+          "colSpan": 4,
+          "height": 300
+        },
+        {
+          "src": "/craft/img2.jpg",
+          "alt": "Small side image",
+          "colSpan": 2,
+          "height": 145
+        },
+        {
+          "src": "/craft/img3.jpg",
+          "alt": "Medium bottom left image",
+          "colSpan": 4,
+          "height": 400
+        },
+        {
+          "src": "/craft/img4.jpg",
+          "alt": "Small bottom right image",
+          "colSpan": 2,
+          "height": 145
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "title": "Section 2",
+      "images": [
+        {
+          "src": "/craft/img5.jpg",
+          "alt": "Square image",
+          "colSpan": 2,
+          "height": 250
+        },
+        {
+          "src": "/craft/img6.jpg",
+          "alt": "Wide horizontal image",
+          "colSpan": 4,
+          "height": 200
+        },
+        {
+          "src": "/craft/img7.jpg",
+          "alt": "Another square image",
+          "colSpan": 2,
+          "height": 250
+        },
+        {
+          "src": "/craft/img8.jpg",
+          "alt": "Wide bottom image",
+          "colSpan": 4,
+          "height": 300
+        }
+      ]
+    }
+  ]
 }
