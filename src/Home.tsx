@@ -113,7 +113,7 @@ export default function Home() {
 						<button
 							data-tab="work"
 							role="tab"
-							className={`tab ${activeTab === "work" ? "active" : ""}`}
+							className={`tab work-tab ${activeTab === "work" ? "active" : ""}`}
 							onClick={() => {
 								setActiveTab("work");
 								localStorage.setItem("homeActiveTab", "work");

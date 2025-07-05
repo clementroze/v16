@@ -61,7 +61,12 @@ export default function WorkSection({
 
 					<div className="right">
 						<p>{description1}</p>
-						<p style={{ textAlign: comingSoon ? "right" : "left" }}>
+						<p
+							style={{
+								textAlign: comingSoon ? "right" : "left",
+								paddingTop: comingSoon ? 32 : 0,
+							}}
+						>
 							{description2}
 						</p>
 					</div>

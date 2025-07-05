@@ -41,7 +41,9 @@ const Page: React.FC<PageProps> = ({
 					Skip to main content
 				</a>
 				<Navbar />
-				<main id="main-content" tabIndex={-1}>{children}</main>
+				<main id="main-content" tabIndex={-1} className={page}>
+					{children}
+				</main>
 				<Footer />
 			</TextColorContext.Provider>
 		</div>

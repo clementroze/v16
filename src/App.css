@@ -12,11 +12,14 @@
 	--content-max-width: 1248px;
 	--nav-selector-transition: 0.5s;
 	--tab-underline-transition: 0.7s;
+	--default-transition: 120ms ease-out;
 
 	--dark: #111111;
+	--dark-80: rgba(0 0 0 / 80%);
 	--dark-50: rgba(0 0 0 / 50%);
 	--dark-15: rgba(0 0 0 / 15%);
 	--dark-10: rgba(0 0 0 / 10%);
+	--dark-5: rgba(0 0 0 / 5%);
 	
 	--light: #ffffff;
 	--light-80: rgba(255 255 255 / 80%);
@@ -28,6 +31,7 @@
 	--blue: #3052F5;
 	--green: #4BE15D;
 	--yellow: #FFD200;
+	--gray: #acacac;
 }
 
 * {
@@ -40,6 +44,10 @@
 	outline: 3px dotted var(--light);
 	outline-offset: 2px;
 	border-radius: 4px;
+}
+
+.dark-text *:focus-visible {
+	outline-color: var(--dark);
 }
 
 body {
@@ -159,21 +167,28 @@ nav {
 
 .skip-to-main {
 	position: absolute;
-	top: -40px;
-	left: 6px;
-	background: var(--dark);
-	color: var(--light);
-	padding: 8px 16px;
+	top: -48px;
+	left: 8px;
+	padding: 12px 16px;
 	text-decoration: none;
 	border-radius: 4px;
-	font-size: 14px;
-	font-weight: 500;
+	font-size: 16px;
 	z-index: 1000;
-	transition: top 0.3s ease;
+	transition: 0.2s ease-in-out;
 }
 
-.skip-to-main:focus {
-	top: 6px;
+.light-text .skip-to-main {
+	background: var(--light);
+	color: var(--dark);
+}
+
+.dark-text .skip-to-main {
+	background: var(--dark);
+	color: var(--light);
+}
+
+.skip-to-main:focus-visible {
+	top: 8px;
 }
 
 .gradient-blur > div:nth-of-type(5) {
@@ -231,7 +246,7 @@ nav ul li {
 nav a {
 	font-size: 16px;
 	padding: 8px 4px;
-	transition: 120ms ease-out;
+	transition: var(--default-transition);
 }
 
 .dark-text nav ul li a {
@@ -271,7 +286,7 @@ nav .indicator {
 	height: 500px;
 	display: flex;
 	align-items: flex-end;
-	padding: 64px 96px;
+	padding: 64px 32px;
 }
 
 .button {
@@ -305,7 +320,7 @@ nav .indicator {
 }
 
 .button.dark:hover {
-	background-color: var(--dark-50);
+	background-color: var(--dark-80);
 }
 
 .button.dark-10 {
@@ -324,19 +339,25 @@ nav .indicator {
 
 .tabs {
 	display: flex;
-	gap: 32px;
+	gap: 24px;
 	position: relative;
 	margin-top: 24px;
-	padding-top: 24px;
+	padding-top: 16px;
+	width: 100%;
 }
 
 .tab {
 	background: none;
 	border: none;
-	font-size: 48px;
+	font-size: 32px;
 	cursor: pointer;
-	transition: 120ms ease-out;
+	transition: var(--default-transition);
 	color: var(--light-50) !important
+}
+
+.tabs .work-tab {
+	position: relative;
+	 top: 4px;
 }
 
 .tab:focus-visible {
@@ -410,13 +431,19 @@ nav .indicator {
 }
 
 .hero .inner {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
 	gap: 32px;
+   align-items: flex-end;
 }
 
 .hero .inner > * {
-	flex: 1;	
+	grid-column: span 3;
+}
+
+.hero .inner h2 {
+	 position: relative;
+	 bottom: 8px;
 }
 
 .light-text .hero *, .light-text nav * {
@@ -433,10 +460,11 @@ nav .indicator {
 }
 
 .home {
-	padding-bottom: 32px;
+	padding-bottom: 16px;
 }
 
 .home .inner {
+	display: flex;
 	flex-direction: column;
 	gap: 32px;
 	justify-content: flex-end;
@@ -459,6 +487,7 @@ nav .indicator {
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
+	width: 100%;
 }
 
 .button {
@@ -466,15 +495,16 @@ nav .indicator {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	padding: 12px 16px;
+	/* padding: 12px 16px; */
+	padding: 15px 16px 12px 16px;
 	border-radius: 4px;
 	font-size: 16px;
-	transition: 120ms ease-out;
+	transition: var(--default-transition);
 	width: 120px;
 }
 
 .button:not(.light-10):not(.dark-10):hover {
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 .button.light {
@@ -555,7 +585,7 @@ nav .indicator {
 	flex-direction: column;
 	gap: 16px;
 	flex: 1;
- grid-column: span 3;
+ 	grid-column: span 3;
 }
 
 .work-section .inner .left .info {
@@ -592,7 +622,7 @@ nav .indicator {
 	gap: 32px;
 	flex: 1;
 	justify-content: flex-end;
-	padding-top: 40px;
+	padding-top: 64px;
 }
 
 .work-section .inner .right p {
@@ -624,7 +654,6 @@ nav .indicator {
 
 .light-section {
 	background: var(--light);
-	height: 600px;
 }
 
 .craft-panel {
@@ -693,7 +722,7 @@ footer .inner .button-row {
 footer a, footer p {
 	font-size: 16px;
 	line-height: 130%;
-	transition: 120ms ease-out;
+	transition: var(--default-transition);
 }
 
 footer a, footer p.light {
@@ -704,6 +733,10 @@ footer a:not(a.button):focus-visible {
 	outline-offset: 6px;
 	border-radius: 1px;
 	height: 20.8px;
+}
+
+footer a:focus-visible {
+	outline-color: var(--light) !important;
 }
 
 footer p {
@@ -724,4 +757,260 @@ footer .row {
 	display: flex;
 	align-items: center;
 	gap: 8px;
+}
+
+button {
+	font-family: 'Helvetica Neue Roman', sans-serif;
+}
+
+.contact .light-section {
+	padding: 64px 16px;
+}
+
+.contact .light-section .inner {
+	display: flex;
+	flex-direction: column;
+	gap: 96px;
+}
+
+.contact .inner .text-wrapper {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 32px;
+
+}
+
+.contact .inner .text {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	grid-column: span 3;
+}
+
+.contact .inner .text p {
+	font-size: 24px;
+}
+
+.contact-cards {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 48px 32px;
+}
+
+.contact-card {
+	padding: 24px;
+	background: var(--dark-5);
+	border-radius: 4px;
+	position: relative;
+	height: 128px;
+	display: flex;
+	align-items: flex-end;
+	grid-column: span 3;
+	transition: var(--default-transition);
+}
+
+.contact-card:hover {
+	background: var(--dark-10);
+}
+
+.contact-card:hover svg {
+	transform: translate(4px, -4px);
+}
+
+.contact-card:hover svg path {
+	stroke: var(--dark);
+}
+
+.contact-card .top-line {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 3px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.contact-card h3 {
+	font-size: 24px;
+	color: var(--dark);
+}
+
+.contact-card svg {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	transition: var(--default-transition);
+	width: 32px;
+	height: 32px;
+}
+
+.contact-card svg path {
+	stroke: var(--gray);
+}
+
+.contact-card img {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	left: 24px;
+	top: -32px;
+	border-radius: 4px;
+	transition: var(--default-transition);
+}
+
+.contact-card .resume-img {
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0 0 0 / 32%);
+}
+
+.contact-card:hover img {
+	transform: rotate(4deg) scale(1.06) translate(4px, -4px);
+	box-shadow: 0 2px 4px rgba(0 0 0 / 32%);
+}
+
+.contact-card a:focus-visible {
+	outline: none;
+}
+
+.contact-card a::after {
+	position: absolute;
+	inset: 0;
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	transition: var(--default-transition);
+}
+
+.contact-card a:focus-visible::after {
+	outline: 3px dotted var(--dark);
+	outline-offset: 2px;
+}
+
+.contact-card:hover svg path {
+  stroke: var(--card-accent-color);
+}
+
+.contact .letter-wrapper {
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.contact .letter-wrapper:hover .paper, .contact:has(.copy:focus-visible) .paper {
+  transform: translateX(-50%) translate(8px, -24px) rotate(4deg) scale(1.03);
+  box-shadow: 0 -8px 16px rgba(0 0 0 / 8%);
+}
+
+.contact .letter-wrapper:hover .paper .copy, .contact .copy:focus-visible {
+	opacity: 0.7 !important;
+	transform: scale(1) !important;
+}
+
+.contact .letter-bg {
+	position: relative;
+	bottom: -200px;
+}
+
+.contact .letter-fg {
+	position: absolute;
+	bottom: -212px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+	pointer-events: none;
+}
+
+.contact .paper {
+	position: absolute;
+	bottom: -170px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: var(--light);
+	border-radius: 4px;
+	z-index: 1;
+	box-shadow: 0 -4px 8px rgba(0 0 0 / 8%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	padding: 48px 32px;
+	width: 300px;
+	height: 300px;
+	/* transition: var(--default-transition); */
+	transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.5), top 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.5), box-shadow var(--default-transition);
+	border: 1px solid var(--dark-15);
+}
+
+.contact .paper .top {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+
+.contact .paper h2 {
+	font-size: 24px;
+}
+
+.contact .paper .top a {
+	width: 200px;
+	height: 42px;
+}
+
+.contact .paper > * {
+	z-index: 3;
+}
+
+.contact .paper .copy {
+	opacity: 0;
+	transition: var(--default-transition);
+	transform: scale(0.8);
+	color: var(--dark-50);
+	font-size: 16px;
+	background: none;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+	cursor: pointer;
+	padding: 12px;
+	width: 200px;
+	height: 42px;
+}
+
+.contact .paper .copy:hover {
+	opacity: 1 !important;
+}
+
+.contact .paper .copy svg {
+	width: 18px;
+	height: 18px;
+	position: relative;
+	top: -2px;
+}
+
+.contact .paper .copy:hover svg path {
+	transition: var(--default-transition);
+}
+
+.contact .paper .copy:hover svg .first {
+	transform: translate(-0.75px, -0.75px);
+}
+
+.contact .paper .copy:hover svg .second {
+	transform: translate(0.75px, 0.75px);
+}
+
+.contact .paper .copy .checkmark-icon {
+	animation: checkmark-icon-appear 0.4s ease-in-out;
+	transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.5);
+}
+
+@keyframes checkmark-icon-appear {
+	0% { transform: scale(1); }
+	50% { transform: scale(0.5); }
+	100% { transform: scale(1); }
 }
