@@ -5,26 +5,26 @@ import Page from "./components/Page";
 
 const contactCards = [
   {
-    icon: "contact/resume.png",
-    link: "Clement-Roze-Resume.pdf",
+    icon: "/contact/resume.png",
+    link: "/Clement-Roze-Resume.pdf",
     title: "Résumé",
     accentColor: "#A2A2A2",
     resume: true,
   },
   {
-    icon: "contact/linkedin.png",
+    icon: "/contact/linkedin.png",
     link: "https://www.linkedin.com/in/clementroze/",
     title: "LinkedIn",
     accentColor: "#0C64C5",
   },
   {
-    icon: "contact/x.png",
+    icon: "/contact/x.png",
     link: "https://x.com/@thebookie0",
     title: "X (Twitter)",
     accentColor: "#000000",
   },
   {
-    icon: "contact/dribbble.png",
+    icon: "/contact/dribbble.png",
     link: "https://dribbble.com/clementroze",
     title: "Dribbble",
     accentColor: "#E84C88",
