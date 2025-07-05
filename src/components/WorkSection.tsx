@@ -64,7 +64,6 @@ export default function WorkSection({
 						<p
 							style={{
 								textAlign: comingSoon ? "right" : "left",
-								paddingTop: comingSoon ? 32 : 0,
 							}}
 						>
 							{description2}

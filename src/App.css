@@ -777,7 +777,6 @@ button {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 32px;
-
 }
 
 .contact .inner .text {
@@ -789,6 +788,7 @@ button {
 
 .contact .inner .text p {
 	font-size: 24px;
+	line-height: 130%;
 }
 
 .contact-cards {
@@ -896,6 +896,7 @@ button {
 	display: flex;
 	justify-content: center;
 	position: relative;
+	bottom: -200px;
 }
 
 .contact .letter-wrapper:hover .paper, .contact:has(.copy:focus-visible) .paper {
@@ -908,14 +909,9 @@ button {
 	transform: scale(1) !important;
 }
 
-.contact .letter-bg {
-	position: relative;
-	bottom: -200px;
-}
-
 .contact .letter-fg {
 	position: absolute;
-	bottom: -212px;
+	bottom: -12px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 2;
@@ -924,7 +920,7 @@ button {
 
 .contact .paper {
 	position: absolute;
-	bottom: -170px;
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	background: var(--light);
@@ -992,7 +988,7 @@ button {
 	top: -2px;
 }
 
-.contact .paper .copy:hover svg path {
+.contact .paper .copy svg path {
 	transition: var(--default-transition);
 }
 
@@ -1005,12 +1001,11 @@ button {
 }
 
 .contact .paper .copy .checkmark-icon {
-	animation: checkmark-icon-appear 0.4s ease-in-out;
-	transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.5);
+	animation: checkmark-icon-appear 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.5);
 }
 
 @keyframes checkmark-icon-appear {
 	0% { transform: scale(1); }
-	50% { transform: scale(0.5); }
+	50% { transform: scale(0.7); }
 	100% { transform: scale(1); }
 }

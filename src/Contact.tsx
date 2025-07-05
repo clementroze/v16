@@ -118,6 +118,7 @@ export default function Contact() {
               viewBox="0 0 502 351"
               fill="none"
               className="letter-bg"
+              aria-hidden="true"
             >
               <g clip-path="url(#clip0_3529_24679)">
                 <path
@@ -178,7 +179,7 @@ export default function Contact() {
                       />
                     </svg>
 
-                    <span>Copied!</span>
+                    <span aria-label="Email copied!">Copied!</span>
                   </>
                 ) : (
                   <>
