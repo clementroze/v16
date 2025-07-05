@@ -656,6 +656,21 @@ nav .indicator {
 	background: var(--light);
 }
 
+.studio .light-section ::selection {
+	background: var(--green);
+	color: var(--light);
+}
+
+.about .light-section ::selection {
+	background: var(--blue);
+	color: var(--light);
+}
+
+.contact .light-section ::selection {
+	background: var(--yellow);
+	color: var(--dark);
+}
+
 .craft-panel {
 	background: var(--light);
 	padding: 64px 16px;
