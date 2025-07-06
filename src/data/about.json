@@ -29,7 +29,7 @@
 			"clients": [
 				{
 					"logo": "/studio/icon.png",
-					"alt": "Studio logo"
+					"alt": "Studio logo",
 					"width": 32,
 					"height": 32
 				},

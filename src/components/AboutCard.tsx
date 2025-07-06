@@ -38,8 +38,8 @@ export default function AboutCard({
 								src={client.logo}
 								alt={client.alt}
 								style={{
-									width: client.width,
-									height: client.height,
+									width: `${client.width}px`,
+									height: `${client.height}px`,
 								}}
 							/>
 						</div>
