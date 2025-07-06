@@ -687,12 +687,15 @@ nav .indicator {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 32px;
+  grid-auto-rows: max-content;
+  align-items: start;
 }
 
 .craft-panel .inner .craft-item {
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
+	align-self: start;
 }
 
 .craft-panel .inner .craft-item img {
