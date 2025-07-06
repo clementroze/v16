@@ -1,6 +1,6 @@
 [
 	{
-		"section": "Work A",
+		"section": "DTI Website",
 		"columns": [
 			{
 				"span": 4,
@@ -31,7 +31,7 @@
 		]
 	},
 	{
-		"section": "Work B",
+		"section": "iWater",
 		"columns": [
 			{
 				"span": 2,
@@ -70,6 +70,56 @@
 						"src": "/iwater/cup.png",
 						"alt": "Placeholder B6",
 						"height": 460
+					}
+				]
+			}
+		]
+	},
+	{
+		"section": "Souvenir",
+		"columns": [
+			{
+				"span": 4,
+				"images": [
+					{
+						"src": "/souvenir/cover.png",
+						"alt": "Placeholder B1",
+						"height": 411
+					},
+					{
+						"src": "/souvenir/home.png",
+						"alt": "Placeholder B2",
+						"height": 391
+					},
+					{
+						"src": "/souvenir/dark.png",
+						"alt": "Placeholder B2",
+						"height": 391
+					}
+				]
+			},
+			{
+				"span": 2,
+				"images": [
+					{
+						"src": "/souvenir/login.png",
+						"alt": "Placeholder B4",
+						"height": 411
+					},
+					{
+						"src": "/souvenir/light.png",
+						"alt": "Placeholder B5",
+						"height": 391
+					}
+				]
+			},
+			{
+				"span": 2,
+				"images": [
+					{
+						"src": "/souvenir/light.png",
+						"alt": "Placeholder B5",
+						"height": 391
 					}
 				]
 			}

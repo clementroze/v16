@@ -1084,6 +1084,46 @@ button {
 	gap: 4px;
 }
 
+.about .entry-card .meta .top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.about .entry-card .meta .top a {
+	font-size: 20px;
+	color: var(--dark);
+	transition: var(--default-transition);
+	display: flex;
+	align-items: end;
+	gap: 4px;
+}
+
+.about .entry-card a svg path {
+	stroke: var(--dark);
+	transition: var(--default-transition);
+}
+
+.about .entry-card a svg {
+	transition: var(--default-transition);
+}
+
+.about .entry-card a:hover svg {
+	transform: translate(4px, -4px);
+}
+
+.about .entry-card a:hover svg path {
+	stroke: var(--green);
+}
+
+.about .entry-card a span {
+	transition: var(--default-transition);
+}
+
+.about .entry-card a:hover span {
+	color: var(--green);
+}
+
 .about .entry-card img {
 	width: 48px;
 	height: 48px;
@@ -1115,7 +1155,7 @@ button {
 .about .entry-card .clients .client {
 grid-column: span 1;
 	border-radius: var(--img-border-radius);
-	background: var(--dark-10);
+	background: var(--dark-5);
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -2,7 +2,7 @@
 	"work": [
 		{
 			"title": "frog, Visual Design Intern",
-			"date": "May – Current",
+			"date": "May - Current",
 			"description": "Coming soon",
 			"logo": "/frog/icon.png",
 			"logoAlt": "frog logo"
@@ -26,30 +26,55 @@
 			"title": "Freelancing",
 			"date": "2020 - Present",
 			"description": "Design consulting for various startups and established companies, focusing on UI/UX design, branding, and web development.",
+			"link": "/studio",
 			"clients": [
 				{
 					"logo": "/studio/icon.png",
 					"alt": "Studio logo",
-					"width": 32,
-					"height": 32
+					"width": "32px",
+					"height": "32px"
 				},
 				{
 					"logo": "/microsoft/icon.png",
 					"alt": "Microsoft logo",
-					"width": 32,
-					"height": 32
+					"width": "32px",
+					"height": "32px"
 				},
 				{
 					"logo": "/replit/icon.png",
 					"alt": "Replit logo",
-					"width": 100,
-					"height": 16
+					"width": "100px",
+					"height": "16px"
 				},
 				{
 					"logo": "/frog/icon.png",
 					"alt": "Frog logo",
-					"width": 56,
-					"height": 18
+					"width": "56px",
+					"height": "18px"
+				},
+				{
+					"logo": "/studio/icon.png",
+					"alt": "Studio logo",
+					"width": "32px",
+					"height": "32px"
+				},
+				{
+					"logo": "/microsoft/icon.png",
+					"alt": "Microsoft logo",
+					"width": "32px",
+					"height": " 32px"
+				},
+				{
+					"logo": "/replit/icon.png",
+					"alt": "Replit logo",
+					"width": "100px",
+					"height": " 16px"
+				},
+				{
+					"logo": "/frog/icon.png",
+					"alt": "Frog logo",
+					"width": "56px",
+					"height": " 18px"
 				}
 			]
 		}
