@@ -21,6 +21,29 @@
 			"description": "Joined at 15 and instilled a culture of polish by fixing bugs, implementing the design system everywhere, and building marketing pages.",
 			"logo": "/replit/icon.png",
 			"logoAlt": "Replit logo"
+		},
+		{
+			"title": "Freelancing",
+			"date": "2020 - Present",
+			"description": "Design consulting for various startups and established companies, focusing on UI/UX design, branding, and web development.",
+			"clients": [
+				{
+					"logo": "/studio/icon.png",
+					"alt": "Studio logo"
+				},
+				{
+					"logo": "/microsoft/icon.png",
+					"alt": "Microsoft logo"
+				},
+				{
+					"logo": "/replit/icon.png",
+					"alt": "Replit logo"
+				},
+				{
+					"logo": "/frog/icon.png",
+					"alt": "Frog logo"
+				}
+			]
 		}
 	],
 	"education": [
