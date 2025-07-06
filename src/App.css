@@ -1105,3 +1105,19 @@ button {
 	flex-direction: column;
 	gap: 32px;
 }
+
+.about .entry-card .clients {
+	display: grid; 
+	grid-template-columns: repeat(4, 1fr)
+	gap: 16px;
+}
+
+.about .entry-card .clients .client {
+grid-column: span 1;
+	border-radius: var(--img-border-radius);
+	background: var(--dark-10);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+}
