@@ -1,127 +1,167 @@
+
 [
 	{
 		"section": "DTI Website",
-		"columns": [
+		"span": 4,
+		"images": [
 			{
-				"span": 4,
-				"images": [
-					{
-						"src": "/dti/hero.png",
-						"alt": "Placeholder A1",
-						"height": 510
-					},
-					{ "src": "/dti/404.png", "alt": "Placeholder A2", "height": 690 }
-				]
-			},
-			{
-				"span": 2,
-				"images": [
-					{
-						"src": "/dti/cta.png",
-						"alt": "Placeholder A3",
-						"height": 690
-					},
-					{
-						"src": "/dti/tabs.png",
-						"alt": "Placeholder A4",
-						"height": 510
-					}
-				]
+				"src": "/dti/hero.png",
+				"alt": "DTI Hero Section",
+				"height": 510
 			}
 		]
 	},
 	{
-		"section": "iWater",
-		"columns": [
+		"section": "DTI 404",
+		"span": 2,
+		"images": [
 			{
-				"span": 2,
-				"images": [
-					{
-						"src": "/iwater/sizes.png",
-						"alt": "Placeholder B1",
-						"height": 453
-					},
-					{
-						"src": "/iwater/w1.png",
-						"alt": "Placeholder B2",
-						"height": 680
-					},
-					{
-						"src": "/iwater/touch-id.png",
-						"alt": "Placeholder B3",
-						"height": 689
-					}
-				]
-			},
-			{
-				"span": 4,
-				"images": [
-					{
-						"src": "/iwater/banner.png",
-						"alt": "Placeholder B4",
-						"height": 411
-					},
-					{
-						"src": "/iwater/pair.png",
-						"alt": "Placeholder B5",
-						"height": 949
-					},
-					{
-						"src": "/iwater/cup.png",
-						"alt": "Placeholder B6",
-						"height": 460
-					}
-				]
+				"src": "/dti/404.png",
+				"alt": "DTI 404 Page",
+				"height": 510
 			}
 		]
 	},
 	{
-		"section": "Souvenir",
-		"columns": [
+		"section": "DTI CTA",
+		"span": 4,
+		"images": [
 			{
-				"span": 4,
-				"images": [
-					{
-						"src": "/souvenir/cover.png",
-						"alt": "Placeholder B1",
-						"height": 411
-					},
-					{
-						"src": "/souvenir/home.png",
-						"alt": "Placeholder B2",
-						"height": 391
-					},
-					{
-						"src": "/souvenir/dark.png",
-						"alt": "Placeholder B2",
-						"height": 391
-					}
-				]
-			},
+				"src": "/dti/cta.png",
+				"alt": "DTI Call to Action",
+				"height": 690
+			}
+		]
+	},
+	{
+		"section": "DTI Tabs",
+		"span": 2,
+		"images": [
 			{
-				"span": 2,
-				"images": [
-					{
-						"src": "/souvenir/login.png",
-						"alt": "Placeholder B4",
-						"height": 411
-					},
-					{
-						"src": "/souvenir/light.png",
-						"alt": "Placeholder B5",
-						"height": 391
-					}
-				]
-			},
+				"src": "/dti/tabs.png",
+				"alt": "DTI Tabs Component",
+				"height": 690
+			}
+		]
+	},
+	{
+		"section": "iWater Sizes",
+		"span": 2,
+		"images": [
 			{
-				"span": 2,
-				"images": [
-					{
-						"src": "/souvenir/light.png",
-						"alt": "Placeholder B5",
-						"height": 391
-					}
-				]
+				"src": "/iwater/sizes.png",
+				"alt": "iWater Size Options",
+				"height": 453
+			}
+		]
+	},
+	{
+		"section": "iWater Banner",
+		"span": 4,
+		"images": [
+			{
+				"src": "/iwater/banner.png",
+				"alt": "iWater App Banner",
+				"height": 411
+			}
+		]
+	},
+	{
+		"section": "iWater W1",
+		"span": 2,
+		"images": [
+			{
+				"src": "/iwater/w1.png",
+				"alt": "iWater Interface W1",
+				"height": 680
+			}
+		]
+	},
+	{
+		"section": "iWater Pair",
+		"span": 4,
+		"images": [
+			{
+				"src": "/iwater/pair.png",
+				"alt": "iWater Device Pairing",
+				"height": 949
+			}
+		]
+	},
+	{
+		"section": "iWater Touch ID",
+		"span": 2,
+		"images": [
+			{
+				"src": "/iwater/touch-id.png",
+				"alt": "iWater Touch ID",
+				"height": 689
+			}
+		]
+	},
+	{
+		"section": "iWater Cup",
+		"span": 4,
+		"images": [
+			{
+				"src": "/iwater/cup.png",
+				"alt": "iWater Smart Cup",
+				"height": 460
+			}
+		]
+	},
+	{
+		"section": "Souvenir Cover",
+		"span": 4,
+		"images": [
+			{
+				"src": "/souvenir/cover.png",
+				"alt": "Souvenir App Cover",
+				"height": 411
+			}
+		]
+	},
+	{
+		"section": "Souvenir Login",
+		"span": 2,
+		"images": [
+			{
+				"src": "/souvenir/login.png",
+				"alt": "Souvenir Login Screen",
+				"height": 411
+			}
+		]
+	},
+	{
+		"section": "Souvenir Home",
+		"span": 2,
+		"images": [
+			{
+				"src": "/souvenir/home.png",
+				"alt": "Souvenir Home Screen",
+				"height": 391
+			}
+		]
+	},
+	{
+		"section": "Souvenir Dark",
+		"span": 2,
+		"images": [
+			{
+				"src": "/souvenir/dark.png",
+				"alt": "Souvenir Dark Mode",
+				"height": 391
+			}
+		]
+	},
+	{
+		"section": "Souvenir Light",
+		"span": 2,
+		"images": [
+			{
+				"src": "/souvenir/light.png",
+				"alt": "Souvenir Light Mode",
+				"height": 391
 			}
 		]
 	}
