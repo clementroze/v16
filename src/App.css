@@ -297,6 +297,23 @@ nav .indicator {
 	z-index: 10;
 }
 
+.hamburger {
+	display: none;
+	flex-direction: column;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	gap: 4px;
+}
+
+.hamburger span {
+	width: 24px;
+	height: 2px;
+	background-color: currentColor;
+	transition: var(--default-transition);
+}
+
 .hero {
 	height: 500px;
 	display: flex;
@@ -1410,6 +1427,51 @@ grid-column: span 1;
 	nav, .hero {
 		padding-left: 16px;
 		padding-right: 16px;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	.nav-list {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: var(--dark);
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 64px 32px;
+		z-index: 50;
+		gap: 32px;
+	}
+
+	.nav-list.mobile-open {
+		display: flex;
+	}
+
+	.nav-list li {
+		font-size: 32px;
+	}
+
+	.nav-list li a {
+		font-size: 32px;
+		color: var(--light-50);
+	}
+
+	.nav-list li.selected a {
+		color: var(--light);
+	}
+
+	.nav-list .indicator {
+		position: absolute;
+		left: 32px !important;
+		top: auto !important;
+		margin-top: 0;
+		font-size: 24px;
 	}
 
 	.work-section {

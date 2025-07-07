@@ -7,6 +7,7 @@ export default function Navbar() {
 	const indicatorRef = useRef<HTMLSpanElement>(null);
 	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const [scrolledPastHero, setScrolledPastHero] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [indicatorStyle, setIndicatorStyle] = useState<{
 		left: number;
 		opacity: number;
@@ -40,8 +41,19 @@ export default function Navbar() {
 		const navRect = navRef.current.getBoundingClientRect();
 		const linkRect = activeLink.getBoundingClientRect();
 
-		const leftPosition =
-			linkRect.left - navRect.left + linkRect.width / 2 - 8;
+		// Check if we're in mobile view
+		const isMobile = window.innerWidth <= 600;
+		
+		let leftPosition, topPosition;
+		if (isMobile && isMenuOpen) {
+			// For mobile, position indicator to the left of the text
+			leftPosition = 32; // Fixed left position
+			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 8;
+		} else {
+			// Desktop positioning
+			leftPosition = linkRect.left - navRect.left + linkRect.width / 2 - 8;
+			topPosition = undefined;
+		}
 
 		const rotations = [0, 90, 180, 270];
 		const rotation = rotations[activeIndex] || 0;
@@ -51,6 +63,7 @@ export default function Navbar() {
 
 		setIndicatorStyle({
 			left: leftPosition,
+			top: topPosition,
 			opacity: 1,
 			rotation: rotation,
 		});
@@ -58,7 +71,7 @@ export default function Navbar() {
 		if (isFirstLoad) {
 			setIsFirstLoad(false);
 		}
-	}, [location.pathname]);
+	}, [location.pathname, isMenuOpen]);
 
 	useEffect(() => {
 		if (location.pathname !== "/about") {
@@ -79,6 +92,15 @@ export default function Navbar() {
 		};
 	}, [location.pathname]);
 
+	// Close menu when route changes
+	useEffect(() => {
+		setIsMenuOpen(false);
+	}, [location.pathname]);
+
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
 	return (
 		<nav
 			className={
@@ -90,7 +112,17 @@ export default function Navbar() {
 			<div className="inner">
 				<Link to="/" className="name">Clément Rozé</Link>
 
-				<ul ref={navRef} className="nav-list">
+				<button 
+					className="hamburger"
+					onClick={toggleMenu}
+					aria-label="Toggle navigation menu"
+				>
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+
+				<ul ref={navRef} className={`nav-list ${isMenuOpen ? 'mobile-open' : ''}`}>
 					{navItems.map(({ path, label }) => (
 						<li
 							key={path}
@@ -106,11 +138,12 @@ export default function Navbar() {
 						className="indicator"
 						style={{
 							left: `${indicatorStyle.left}px`,
+							top: indicatorStyle.top ? `${indicatorStyle.top}px` : undefined,
 							opacity: indicatorStyle.opacity,
 							transform: `rotate(${indicatorStyle.rotation}deg)`,
 							transition: isFirstLoad
 								? "none"
-								: "left var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--nav-selector-transition) ease, transform var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1)",
+								: "left var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1), top var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--nav-selector-transition) ease, transform var(--nav-selector-transition) cubic-bezier(0.4, 0, 0.2, 1)",
 						}}
 					>
 						✦
