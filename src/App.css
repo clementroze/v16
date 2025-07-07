@@ -1482,6 +1482,11 @@ grid-column: span 1;
 	.nav-list.mobile-open li {
 		opacity: 1;
 		transform: translateY(0);
+		margin-left: 32px;
+	}
+
+	.nav-list.mobile-open li a {
+		font-size: 40px;
 	}
 
 	.nav-list.mobile-open li:nth-child(1) {
@@ -1539,10 +1544,15 @@ grid-column: span 1;
 
 	.nav-list .indicator {
 		position: absolute;
-		left: 32px !important;
-		margin-top: 0;
+		left: 12px !important;
+		margin-top: -36px;
 		font-size: 24px;
 		transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+		font-size: 40px;
+	}
+
+	.dark-text nav .nav-list.mobile-open li a, .dark-text .nav-list.mobile-open *, nav:has(.nav-list.mobile-open) .inner *{
+		color: var(--light) !important;
 	}
 
 	.work-section {
