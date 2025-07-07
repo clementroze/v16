@@ -311,7 +311,21 @@ nav .indicator {
 	width: 24px;
 	height: 2px;
 	background-color: currentColor;
-	transition: var(--default-transition);
+	transition: all 0.3s ease;
+	transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+	opacity: 0;
+	transform: translateX(-20px);
+}
+
+.hamburger.open span:nth-child(3) {
+	transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .hero {
@@ -1445,7 +1459,7 @@ grid-column: span 1;
 		justify-content: center;
 		align-items: flex-start;
 		padding: 64px 32px;
-		z-index: 50;
+		z-index: 40;
 		gap: 32px;
 	}
 

@@ -10,6 +10,7 @@ export default function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [indicatorStyle, setIndicatorStyle] = useState<{
 		left: number;
+		top?: number;
 		opacity: number;
 		rotation: number;
 	}>(() => {
@@ -113,7 +114,7 @@ export default function Navbar() {
 				<Link to="/" className="name">Clément Rozé</Link>
 
 				<button 
-					className="hamburger"
+					className={`hamburger ${isMenuOpen ? 'open' : ''}`}
 					onClick={toggleMenu}
 					aria-label="Toggle navigation menu"
 				>
