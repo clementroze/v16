@@ -51,7 +51,7 @@ export default function Navbar() {
 		if (isMobile && isMenuOpen) {
 			// For mobile, position indicator 16px from left and vertically centered with text
 			leftPosition = 16;
-			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 40; // Adjust for star size (40px font / 2 = 20px)
+			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 50; // Adjust for star size (40px font / 2 = 20px)
 		} else {
 			// Desktop positioning
 			leftPosition = linkRect.left - navRect.left + linkRect.width / 2 - 8;
