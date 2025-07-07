@@ -3,6 +3,7 @@ import Page from "./components/Page";
 import AboutCard from "./components/AboutCard";
 import aboutData from "./data/about.json";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function About() {
   const { work, education, activities } = aboutData;
@@ -92,7 +93,6 @@ export default function About() {
             ))}
           </div>
 
-
           <div className="sep" />
 
           <h3>More</h3>
@@ -100,40 +100,43 @@ export default function About() {
           <div className="more-container">
             <article className="resume">
               <div className="img-wrapper">
-                <img src="/contact/resume.png" alt=""/>
+                <img src="/contact/resume.png" alt="" />
               </div>
-              
 
-                <Link to="/Clement-Roze-Resume.pdf" className="link-animation" target="_blank">
+              <Link
+                to="/Clement-Roze-Resume.pdf"
+                className="link-animation"
+                target="_blank"
+              >
                 <h4>Résumé</h4>
 
                 <svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M7 7H17V17"
-									stroke-width="1.67"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M7 17L17 7"
-									stroke-width="1.67"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-                </Link>
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M7 7H17V17"
+                    stroke-width="1.67"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7 17L17 7"
+                    stroke-width="1.67"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </Link>
             </article>
 
             <article className="mac">
               <div className="img-wrapper">
-                <img src="/about/mac.png" alt="" className="laptop"/>
-                
+                <img src="/about/mac.png" alt="" className="laptop" />
+
                 <img src="/about/DCC.png" className="sticker dcc" />
 
                 <img src="/about/DTI.png" className="sticker dti" />
@@ -144,9 +147,8 @@ export default function About() {
 
                 <img src="/about/WVBR.png" className="sticker wvbr" />
               </div>
-              
 
-                <Link to="" className="link-animation">
+              <Link to="" className="link-animation">
                 <h4>Activities</h4>
 
                 <svg
@@ -174,32 +176,37 @@ export default function About() {
 
             <article className="studio">
               <div className="img-wrapper">
+                <img src="/about/row1.png" alt="" className="row1" />
+
+                <img src="/about/row2.png" alt="" className="row2" />
+
+                <img src="/about/row3.png" alt="" className="row3" />
               </div>
 
-                <Link to="/studio" className="link-animation">
-                <h4>Studio</h4>
+              <Link to="/studio" className="link-animation">
+                <h4>Work with me</h4>
 
                 <svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M7 7H17V17"
-									stroke-width="1.67"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M7 17L17 7"
-									stroke-width="1.67"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-                </Link>
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M7 7H17V17"
+                    stroke-width="1.67"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7 17L17 7"
+                    stroke-width="1.67"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </Link>
             </article>
           </div>
         </div>
