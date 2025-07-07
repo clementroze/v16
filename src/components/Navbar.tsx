@@ -46,12 +46,12 @@ export default function Navbar() {
 
 		// Check if we're in mobile view
 		const isMobile = window.innerWidth <= 600;
-		
+
 		let leftPosition, topPosition;
 		if (isMobile && isMenuOpen) {
 			// For mobile, position indicator 16px from left and vertically centered with text
 			leftPosition = 16;
-			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 20; // Adjust for star size (40px font / 2 = 20px)
+			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 40; // Adjust for star size (40px font / 2 = 20px)
 		} else {
 			// Desktop positioning
 			leftPosition = linkRect.left - navRect.left + linkRect.width / 2 - 8;
@@ -115,10 +115,12 @@ export default function Navbar() {
 			}
 		>
 			<div className="inner">
-				<Link to="/" className="name">Clément Rozé</Link>
+				<Link to="/" className="name">
+					Clément Rozé
+				</Link>
 
-				<button 
-					className={`hamburger ${isMenuOpen ? 'open' : ''}`}
+				<button
+					className={`hamburger ${isMenuOpen ? "open" : ""}`}
 					onClick={toggleMenu}
 					aria-label="Toggle navigation menu"
 				>
@@ -127,39 +129,52 @@ export default function Navbar() {
 					<span></span>
 				</button>
 
-				<ul ref={navRef} className={`nav-list ${isMenuOpen ? 'mobile-open' : ''} ${isExiting ? 'mobile-exiting' : ''}`}>
+				<ul
+					ref={navRef}
+					className={`nav-list ${isMenuOpen ? "mobile-open" : ""} ${isExiting ? "mobile-exiting" : ""}`}
+				>
 					{navItems.map(({ path, label }) => (
 						<li
 							key={path}
 							className={location.pathname === path ? "selected" : ""}
 							aria-current={location.pathname === path}
 						>
-							<Link 
+							<Link
 								to={path}
 								onClick={(e) => {
 									if (isMenuOpen && window.innerWidth <= 600) {
 										e.preventDefault();
-										
-										const clickedIdx = navItems.findIndex(item => item.path === path);
+
+										const clickedIdx = navItems.findIndex(
+											(item) => item.path === path,
+										);
 										setClickedIndex(clickedIdx);
-										
+
 										// Animate star to clicked position first
-										const clickedLink = navRef.current?.children[clickedIdx] as HTMLLIElement;
+										const clickedLink = navRef.current?.children[
+											clickedIdx
+										] as HTMLLIElement;
 										if (clickedLink && navRef.current) {
-											const navRect = navRef.current.getBoundingClientRect();
-											const linkRect = clickedLink.getBoundingClientRect();
-											const newTopPosition = linkRect.top - navRect.top + linkRect.height / 2 - 20; // Adjust for star size (40px font / 2 = 20px)
+											const navRect =
+												navRef.current.getBoundingClientRect();
+											const linkRect =
+												clickedLink.getBoundingClientRect();
+											const newTopPosition =
+												linkRect.top -
+												navRect.top +
+												linkRect.height / 2 -
+												20; // Adjust for star size (40px font / 2 = 20px)
 											const rotations = [0, 45, 90, 135]; // Adjusted for vertical movement
 											const rotation = rotations[clickedIdx] || 0;
-											
-											setIndicatorStyle(prev => ({
+
+											setIndicatorStyle((prev) => ({
 												...prev,
 												left: 16, // Ensure it stays at 16px from left
 												top: newTopPosition,
-												rotation: rotation
+												rotation: rotation,
 											}));
 										}
-										
+
 										// Wait for star animation (400ms), then start exit sequence
 										setTimeout(() => {
 											setIsExiting(true);
@@ -181,7 +196,9 @@ export default function Navbar() {
 						className="indicator"
 						style={{
 							left: `${indicatorStyle.left}px`,
-							top: indicatorStyle.top ? `${indicatorStyle.top}px` : undefined,
+							top: indicatorStyle.top
+								? `${indicatorStyle.top}px`
+								: undefined,
 							opacity: indicatorStyle.opacity,
 							transform: `rotate(${indicatorStyle.rotation}deg)`,
 							transition: isFirstLoad

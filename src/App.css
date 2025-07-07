@@ -1482,7 +1482,7 @@ grid-column: span 1;
 	.nav-list.mobile-open li {
 		opacity: 1;
 		transform: translateY(0);
-		margin-left: 32px;
+		margin-left: 28px;
 	}
 
 	.nav-list.mobile-open li a {
