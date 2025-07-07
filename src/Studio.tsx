@@ -15,7 +15,9 @@ export default function Studio() {
         </div>
       </Hero>
 
-      <section className="light-section studio"></section>
+      <section className="light-section studio-section">
+        <h3>Coming soon ✦</h3>
+      </section>
     </Page>
   );
 }

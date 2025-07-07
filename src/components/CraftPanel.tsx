@@ -1,29 +1,22 @@
-
 import craftData from "../data/craft.json";
 
 export default function CraftPanel() {
-  // Define the layout pattern you specified
-  const layoutPattern = [4, 2, 4, 2, 2, 4, 2, 4, 2, 4, 4, 2, 2, 2, 2, 1];
-  
   return (
     <div className="craft-panel">
       <div className="inner">
-        <div className="craft-grid">
-          {craftData.map((item, i) => {
-            // Use the layout pattern, cycling through if we have more items than pattern entries
-            const span = layoutPattern[i % layoutPattern.length];
-            
-            return (
+        {craftData.map((section, i) => (
+          <section key={i} className="row">
+            {section.columns.map((col, j) => (
               <div
-                key={i}
-                className="craft-item"
+                key={j}
+                className="col"
                 style={{
-                  gridColumn: `span ${span}`,
+                  gridColumn: `span ${col.span}`,
                 }}
               >
-                {item.images.map((img, j) => (
+                {col.images.map((img, k) => (
                   <img
-                    key={j}
+                    key={k}
                     src={img.src}
                     alt={img.alt}
                     style={{
@@ -32,9 +25,9 @@ export default function CraftPanel() {
                   />
                 ))}
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </section>
+        ))}
       </div>
     </div>
   );

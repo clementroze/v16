@@ -22,7 +22,7 @@
 	--dark-10: rgba(0 0 0 / 10%);
 	--dark-5: rgba(0 0 0 / 5%);
 	
-	--light: #ffffff;
+	--light: #fafafa;
 	--light-80: rgba(255 255 255 / 80%);
 	--light-70: rgba(255 255 255 / 70%);
 	--light-50: rgba(255 255 255 / 50%);
@@ -655,6 +655,7 @@ nav .indicator {
 
 .light-section {
 	background: var(--light);
+	padding: 64px 16px;
 }
 
 .studio .light-section ::selection {
@@ -683,19 +684,19 @@ nav .indicator {
 	gap: 32px;
 }
 
-.craft-panel .inner .craft-grid {
+.craft-panel .inner .row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 32px;
 }
 
-.craft-panel .inner .craft-item {
+.craft-panel .inner .col {
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
 }
 
-.craft-panel .inner .craft-item img {
+.craft-panel .inner .col img {
 	width: 100%;
 	object-fit: cover;
 	border-radius: var(--img-border-radius);
@@ -850,6 +851,7 @@ button {
 .contact-card h3 {
 	font-size: 24px;
 	color: var(--dark);
+	font-weight: 500;
 }
 
 .contact-card svg {
@@ -1031,7 +1033,6 @@ button {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 64px 32px;
-	padding: 64px 16px;
 }
 
 .about .text {
@@ -1160,4 +1161,16 @@ grid-column: span 1;
 	justify-content: center;
 	align-items: center;
 	padding: 12px;
+}
+
+.studio-section {
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.studio-section h3 {
+	font-size: 24px;
+	font-weight: 400;
 }
