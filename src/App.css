@@ -1557,24 +1557,7 @@ grid-column: span 1;
 	}
 
 	.nav-list.mobile-exiting .indicator {
-		opacity: 0;
 		transition: opacity 0.15s ease;
-	}
-
-	.nav-list.mobile-exiting li:nth-child(1).selected ~ .indicator {
-		transition-delay: 0.15s;
-	}
-
-	.nav-list.mobile-exiting li:nth-child(2).selected ~ .indicator {
-		transition-delay: 0.1s;
-	}
-
-	.nav-list.mobile-exiting li:nth-child(3).selected ~ .indicator {
-		transition-delay: 0.05s;
-	}
-
-	.nav-list.mobile-exiting li:nth-child(4).selected ~ .indicator {
-		transition-delay: 0s;
 	}
 
 	.dark-text nav .nav-list.mobile-open li a, .dark-text .nav-list.mobile-open *, nav:has(.nav-list.mobile-open) .inner *{
