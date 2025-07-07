@@ -1165,6 +1165,7 @@ grid-column: span 1;
 
 .about .more-container {
 	grid-column: span 6;
+	gap: 32px;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 }
@@ -1184,28 +1185,98 @@ grid-column: span 1;
 	height: 395px;
 	justify-content: center;
 	align-items: center;
-
+	/* overflow: hidden; */
+	clip-path: inset(-100px -100px 0px -100px); 
 }
 
-.about .more-container article img {
+.about .more-container .mac .img-wrapper {
+	position: relative;
+}
+
+.about article img {
 	width: 100%;
 	height: 200px;
 	border-radius: 0;
 	object-fit: cover;
 }
 
-.about .more-container article.resume img {
+.about .resume img {
 	width: 330px;
 	height: 420px;
-	bottom: -32px;
+	bottom: -50px;
 	position: relative;
 	box-shadow: 0 4px 8px rgba(0 0 0 / 16%);
+	transition: 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.5), box-shadow var(--default-transition);
+}
+
+.about .mac img {
+	width: 343px;
+	height: 245px;
+}
+
+.about .mac .sticker {
+	position: absolute;
 	transition: var(--default-transition);
 }
 
+.about .mac .dcc {
+	width: 64px;
+	height: 64px;
+	left: 63px;
+	bottom: 110px;
+}
+
+.about .mac .dti {
+	width: 64px;
+	height: 64px;
+	left: 52px;
+	bottom: 194px;
+}
+
+.about .mac .cornell {
+	width: 85px;
+	height: 91px;
+	top: 103px;
+	right: 53px;
+}
+
+.about .mac .cuxd {
+	width: 107px;
+	height: 64px;
+	top: 102px;
+	left: 112px;
+}
+
+.about .mac .wvbr {
+	width: 88px;
+	height: 86px;
+	right: 53px;
+	bottom: 103px;
+}
+
 .about .more-container article.resume:hover img {
-	transform: rotate(4deg) scale(1.06) translate(4px, -32px);
+	transform: rotate(4deg) scale(1.06) translate(2px, -35px);
 	box-shadow: 0 4px 8px rgba(0 0 0 / 32%);
+}
+
+.about .more-container article.mac:hover .dcc {
+	transform: rotate(-4deg) translate(-4px, -4px);
+}
+
+.about .more-container article.mac:hover .dti {
+	transform: rotate(-6deg) translate(-6px, -4px);
+}
+
+.about .more-container article.mac:hover .cornell {
+	transform: rotate(8deg) translate(8px, -8px);
+}
+
+.about .more-container article.mac:hover .cuxd {
+	transform: rotate(4deg) translate(4px, -4px);
+}
+
+.about .more-container article.mac:hover .wvbr {
+	transform: rotate(12deg) translate(4px, -4px);
 }
 
 .about .more-container article .link-animation {
@@ -1221,6 +1292,7 @@ grid-column: span 1;
 	border-radius: var(--img-border-radius);
 	width: 100%;
 	height: 100%;
+	transition: var(--default-transition);
 }
 
 .about .more-container article h4 {
@@ -1230,7 +1302,12 @@ grid-column: span 1;
 }
 
 .about .more-container article svg path {
-	stroke: var(--dark-50);
+	stroke: var(--dark);
+}
+
+.about .more-container article a:focus-visible::after {
+	outline: 3px dotted var(--dark);
+	outline-offset: 2px;
 }
 
 .studio-section {

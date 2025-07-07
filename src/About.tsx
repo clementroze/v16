@@ -104,8 +104,80 @@ export default function About() {
               </div>
               
 
-                <Link to="" className="link-animation">
+                <Link to="/Clement-Roze-Resume.pdf" className="link-animation" target="_blank">
                 <h4>Résumé</h4>
+
+                <svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<path
+									d="M7 7H17V17"
+									stroke-width="1.67"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M7 17L17 7"
+									stroke-width="1.67"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+                </Link>
+            </article>
+
+            <article className="mac">
+              <div className="img-wrapper">
+                <img src="/about/mac.png" alt="" className="laptop"/>
+                
+                <img src="/about/DCC.png" className="sticker dcc" />
+
+                <img src="/about/DTI.png" className="sticker dti" />
+
+                <img src="/about/Cornell.png" className="sticker cornell" />
+
+                <img src="/about/CUXD.png" className="sticker cuxd" />
+
+                <img src="/about/WVBR.png" className="sticker wvbr" />
+              </div>
+              
+
+                <Link to="" className="link-animation">
+                <h4>Activities</h4>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M7 7H17V17"
+                    stroke-width="1.67"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7 17L17 7"
+                    stroke-width="1.67"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </Link>
+            </article>
+
+            <article className="studio">
+              <div className="img-wrapper">
+              </div>
+
+                <Link to="/studio" className="link-animation">
+                <h4>Studio</h4>
 
                 <svg
 								xmlns="http://www.w3.org/2000/svg"
