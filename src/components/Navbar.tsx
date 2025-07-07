@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { useRef, useLayoutEffect, useState } from "react";
+import { useRef, useLayoutEffect, useState, useEffect } from "react";
 
 export default function Navbar() {
 	const location = useLocation();
 	const navRef = useRef<HTMLUListElement>(null);
 	const indicatorRef = useRef<HTMLSpanElement>(null);
 	const [isFirstLoad, setIsFirstLoad] = useState(true);
+	const [scrolledPastHero, setScrolledPastHero] = useState(false);
 	const [indicatorStyle, setIndicatorStyle] = useState<{
 		left: number;
 		opacity: number;
@@ -59,8 +60,27 @@ export default function Navbar() {
 		}
 	}, [location.pathname]);
 
+	useEffect(() => {
+		if (location.pathname !== "/about") {
+			setScrolledPastHero(false);
+			return;
+		}
+
+		const handleScroll = () => {
+			const heroHeight = 500; // Height of hero section
+			setScrolledPastHero(window.scrollY > heroHeight);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		handleScroll(); // Check initial scroll position
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [location.pathname]);
+
 	return (
-		<nav>
+		<nav className={location.pathname === "/about" && scrolledPastHero ? "text-dark" : ""}>
 			<div className="inner">
 				<Link to="/">Clément Rozé</Link>
 
