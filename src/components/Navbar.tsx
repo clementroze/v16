@@ -138,9 +138,10 @@ export default function Navbar() {
 									if (isMenuOpen && window.innerWidth <= 600) {
 										e.preventDefault();
 										setIsExiting(true);
+										// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
 										setTimeout(() => {
 											window.location.href = path;
-										}, 400);
+										}, 700);
 									}
 								}}
 							>
