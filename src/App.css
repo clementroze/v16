@@ -1544,11 +1544,10 @@ grid-column: span 1;
 
 	.nav-list .indicator {
 		position: absolute;
-		left: 12px !important;
-		margin-top: -36px;
-		font-size: 24px;
-		transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+		left: 16px !important;
+		margin-top: 0px;
 		font-size: 40px;
+		transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 	}
 
 	.dark-text nav .nav-list.mobile-open li a, .dark-text .nav-list.mobile-open *, nav:has(.nav-list.mobile-open) .inner *{

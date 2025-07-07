@@ -49,9 +49,9 @@ export default function Navbar() {
 		
 		let leftPosition, topPosition;
 		if (isMobile && isMenuOpen) {
-			// For mobile, position indicator to the left of the text
-			leftPosition = 32; // Fixed left position
-			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 12;
+			// For mobile, position indicator 16px from left and vertically centered with text
+			leftPosition = 16;
+			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 20; // Adjust for star size (40px font / 2 = 20px)
 		} else {
 			// Desktop positioning
 			leftPosition = linkRect.left - navRect.left + linkRect.width / 2 - 8;
@@ -148,12 +148,13 @@ export default function Navbar() {
 										if (clickedLink && navRef.current) {
 											const navRect = navRef.current.getBoundingClientRect();
 											const linkRect = clickedLink.getBoundingClientRect();
-											const newTopPosition = linkRect.top - navRect.top + linkRect.height / 2 - 12;
+											const newTopPosition = linkRect.top - navRect.top + linkRect.height / 2 - 20; // Adjust for star size (40px font / 2 = 20px)
 											const rotations = [0, 45, 90, 135]; // Adjusted for vertical movement
 											const rotation = rotations[clickedIdx] || 0;
 											
 											setIndicatorStyle(prev => ({
 												...prev,
+												left: 16, // Ensure it stays at 16px from left
 												top: newTopPosition,
 												rotation: rotation
 											}));
