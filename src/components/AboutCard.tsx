@@ -31,7 +31,7 @@ export default function AboutCard({
 				<div className="top">
 					<h4>{title}</h4>
 					{link && (
-						<Link to={link}>
+						<Link to={link} className="link-animation">
 							<span>Learn more</span>
 
 							<svg

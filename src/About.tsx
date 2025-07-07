@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import Page from "./components/Page";
 import AboutCard from "./components/AboutCard";
 import aboutData from "./data/about.json";
+import { Link } from "react-router-dom";
 
 export default function About() {
   const { work, education, activities } = aboutData;
@@ -89,6 +90,45 @@ export default function About() {
                 {index !== activities.length - 1 && <div className="sep" />}
               </div>
             ))}
+          </div>
+
+
+          <div className="sep" />
+
+          <h3>More</h3>
+
+          <div className="more-container">
+            <article className="resume">
+              <div className="img-wrapper">
+                <img src="/contact/resume.png" alt=""/>
+              </div>
+              
+
+                <Link to="" className="link-animation">
+                <h4>Résumé</h4>
+
+                <svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<path
+									d="M7 7H17V17"
+									stroke-width="1.67"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M7 17L17 7"
+									stroke-width="1.67"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+                </Link>
+            </article>
           </div>
         </div>
       </section>
