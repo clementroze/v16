@@ -67,12 +67,12 @@ export default function Navbar() {
 		}
 
 		const handleScroll = () => {
-			const heroHeight = 500; // Height of hero section
+			const heroHeight = 500;
 			setScrolledPastHero(window.scrollY > heroHeight);
 		};
 
 		window.addEventListener("scroll", handleScroll);
-		handleScroll(); // Check initial scroll position
+		handleScroll();
 
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
@@ -80,9 +80,15 @@ export default function Navbar() {
 	}, [location.pathname]);
 
 	return (
-		<nav className={location.pathname === "/about" && scrolledPastHero ? "text-dark" : ""}>
+		<nav
+			className={
+				location.pathname === "/about" && scrolledPastHero
+					? "text-dark"
+					: ""
+			}
+		>
 			<div className="inner">
-				<Link to="/">Clément Rozé</Link>
+				<Link to="/" className="name">Clément Rozé</Link>
 
 				<ul ref={navRef} className="nav-list">
 					{navItems.map(({ path, label }) => (

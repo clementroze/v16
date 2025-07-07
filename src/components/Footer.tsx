@@ -70,7 +70,9 @@ export default function Footer() {
 								✦
 							</p>
 
-							<Link to="">View archive</Link>
+							<Link to="" className="archive">
+								View archive
+							</Link>
 						</div>
 					</div>
 				</div>
