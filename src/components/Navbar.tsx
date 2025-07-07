@@ -8,6 +8,7 @@ export default function Navbar() {
 	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const [scrolledPastHero, setScrolledPastHero] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isExiting, setIsExiting] = useState(false);
 	const [indicatorStyle, setIndicatorStyle] = useState<{
 		left: number;
 		top?: number;
@@ -96,6 +97,7 @@ export default function Navbar() {
 	// Close menu when route changes
 	useEffect(() => {
 		setIsMenuOpen(false);
+		setIsExiting(false);
 	}, [location.pathname]);
 
 	const toggleMenu = () => {
@@ -123,14 +125,27 @@ export default function Navbar() {
 					<span></span>
 				</button>
 
-				<ul ref={navRef} className={`nav-list ${isMenuOpen ? 'mobile-open' : ''}`}>
+				<ul ref={navRef} className={`nav-list ${isMenuOpen ? 'mobile-open' : ''} ${isExiting ? 'mobile-exiting' : ''}`}>
 					{navItems.map(({ path, label }) => (
 						<li
 							key={path}
 							className={location.pathname === path ? "selected" : ""}
 							aria-current={location.pathname === path}
 						>
-							<Link to={path}>{label}</Link>
+							<Link 
+								to={path}
+								onClick={(e) => {
+									if (isMenuOpen && window.innerWidth <= 600) {
+										e.preventDefault();
+										setIsExiting(true);
+										setTimeout(() => {
+											window.location.href = path;
+										}, 400);
+									}
+								}}
+							>
+								{label}
+							</Link>
 						</li>
 					))}
 					<span
