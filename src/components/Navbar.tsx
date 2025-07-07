@@ -9,6 +9,7 @@ export default function Navbar() {
 	const [scrolledPastHero, setScrolledPastHero] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isExiting, setIsExiting] = useState(false);
+	const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 	const [indicatorStyle, setIndicatorStyle] = useState<{
 		left: number;
 		top?: number;
@@ -50,7 +51,7 @@ export default function Navbar() {
 		if (isMobile && isMenuOpen) {
 			// For mobile, position indicator to the left of the text
 			leftPosition = 32; // Fixed left position
-			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 8;
+			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 12;
 		} else {
 			// Desktop positioning
 			leftPosition = linkRect.left - navRect.left + linkRect.width / 2 - 8;
@@ -98,6 +99,7 @@ export default function Navbar() {
 	useEffect(() => {
 		setIsMenuOpen(false);
 		setIsExiting(false);
+		setClickedIndex(null);
 	}, [location.pathname]);
 
 	const toggleMenu = () => {
@@ -137,11 +139,34 @@ export default function Navbar() {
 								onClick={(e) => {
 									if (isMenuOpen && window.innerWidth <= 600) {
 										e.preventDefault();
-										setIsExiting(true);
-										// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
+										
+										const clickedIdx = navItems.findIndex(item => item.path === path);
+										setClickedIndex(clickedIdx);
+										
+										// Animate star to clicked position first
+										const clickedLink = navRef.current?.children[clickedIdx] as HTMLLIElement;
+										if (clickedLink && navRef.current) {
+											const navRect = navRef.current.getBoundingClientRect();
+											const linkRect = clickedLink.getBoundingClientRect();
+											const newTopPosition = linkRect.top - navRect.top + linkRect.height / 2 - 12;
+											const rotations = [0, 45, 90, 135]; // Adjusted for vertical movement
+											const rotation = rotations[clickedIdx] || 0;
+											
+											setIndicatorStyle(prev => ({
+												...prev,
+												top: newTopPosition,
+												rotation: rotation
+											}));
+										}
+										
+										// Wait for star animation (400ms), then start exit sequence
 										setTimeout(() => {
-											window.location.href = path;
-										}, 700);
+											setIsExiting(true);
+											// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
+											setTimeout(() => {
+												window.location.href = path;
+											}, 700);
+										}, 400);
 									}
 								}}
 							>
