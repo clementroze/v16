@@ -51,7 +51,17 @@ export default function Navbar() {
 		if (isMobile && isMenuOpen) {
 			// For mobile, position indicator 16px from left and vertically centered with text
 			leftPosition = 16;
-			topPosition = linkRect.top - navRect.top + linkRect.height / 2 - 50; // Adjust for star size (40px font / 2 = 20px)
+			
+			// Get the actual indicator element to measure its real dimensions
+			const indicator = indicatorRef.current;
+			let starHeight = 40; // fallback
+			if (indicator) {
+				const indicatorRect = indicator.getBoundingClientRect();
+				starHeight = indicatorRect.height;
+			}
+			
+			// Position star so its center aligns with the text center
+			topPosition = linkRect.top - navRect.top + (linkRect.height - starHeight) / 2;
 		} else {
 			// Desktop positioning
 			leftPosition = linkRect.left - navRect.left + linkRect.width / 2 - 8;
@@ -159,11 +169,16 @@ export default function Navbar() {
 												navRef.current.getBoundingClientRect();
 											const linkRect =
 												clickedLink.getBoundingClientRect();
-											const newTopPosition =
-												linkRect.top -
-												navRect.top +
-												linkRect.height / 2 -
-												20; // Adjust for star size (40px font / 2 = 20px)
+											// Get the actual indicator element to measure its real dimensions
+											const indicator = indicatorRef.current;
+											let starHeight = 40; // fallback
+											if (indicator) {
+												const indicatorRect = indicator.getBoundingClientRect();
+												starHeight = indicatorRect.height;
+											}
+											
+											// Position star so its center aligns with the text center
+											const newTopPosition = linkRect.top - navRect.top + (linkRect.height - starHeight) / 2;
 											const rotations = [0, 45, 90, 135]; // Adjusted for vertical movement
 											const rotation = rotations[clickedIdx] || 0;
 
