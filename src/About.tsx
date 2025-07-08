@@ -134,6 +134,7 @@ export default function About() {
 
             <article className="mac">
               <div className="img-wrapper">
+                <div className="mac-wrapper">
                 <img src="/about/mac.png" alt="" className="laptop" />
 
                 <img src="/about/DCC.png" className="sticker dcc" />
@@ -145,6 +146,7 @@ export default function About() {
                 <img src="/about/CUXD.png" className="sticker cuxd" />
 
                 <img src="/about/WVBR.png" className="sticker wvbr" />
+                </div>
               </div>
 
               <Link to="" className="link-animation">

@@ -194,20 +194,13 @@ export default function Navbar() {
 										setTimeout(() => {
 											setIsExiting(true);
 
-											// Calculate the delay for the currently selected page
-											const currentActiveIndex = navItems.findIndex(
-												(item) => item.path === location.pathname,
-											);
-											const exitDelays = [0.15, 0.1, 0.05, 0]; // Delays for each position (0.15s, 0.1s, 0.05s, 0s)
-											const starExitDelay = exitDelays[currentActiveIndex] || 0;
-
-											// Make the star exit at the same time as the currently selected page
+											// Wait for links to animate out (300ms), then fade out the indicator (at 400ms)
 											setTimeout(() => {
-												setIndicatorStyle(prev => ({
-													...prev,
-													opacity: 0
-												}));
-											}, starExitDelay * 1000); // Convert to milliseconds
+                                                setIndicatorStyle(prev => ({
+                                                    ...prev,
+                                                    opacity: 0
+                                                }));
+                                            }, 300);
 
 											// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
 											setTimeout(() => {

@@ -308,18 +308,22 @@ nav .indicator {
 	cursor: pointer;
 	padding: 8px;
 	gap: 4px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
 }
 
 .hamburger span {
 	width: 24px;
-	height: 2px;
-	background-color: currentColor;
-	transition: all 0.3s ease;
+	height: 1.5px;
+	border-radius: 4px;
+	background: currentColor;
+	transition: 0.4s var(--slimy-transition);
 	transform-origin: center;
 }
 
 .hamburger.open span:nth-child(1) {
-	transform: rotate(45deg) translate(5px, 5px);
+	transform: rotate(45deg) translate(4px, 4px);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -328,7 +332,7 @@ nav .indicator {
 }
 
 .hamburger.open span:nth-child(3) {
-	transform: rotate(-45deg) translate(7px, -6px);
+	transform: rotate(-45deg) translate(4px, -4px);
 }
 
 .hero {
@@ -439,8 +443,7 @@ nav .indicator {
 	background-color: var(--light);
 	/* transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
 	transition:
-	 left var(--tab-underline-transition) var(--slimy-transition),
-	 width var(--tab-underline-transition) var(--slimy-transition));
+	 left var(--tab-underline-transition) var(--slimy-transition), width var(--tab-underline-transition) var(--slimy-transition);
 }
 
 .panels-container {
@@ -704,7 +707,7 @@ nav .indicator {
 
 .light-section {
 	background: var(--light);
-	padding: 64px 16px;
+	padding: 64px 32px;
 }
 
 .studio .light-section ::selection {
@@ -724,7 +727,7 @@ nav .indicator {
 
 .craft-panel {
 	background: var(--light);
-	padding: 64px 16px;
+	padding: 64px 32px;
 }
 
 .craft-panel .inner {
@@ -834,7 +837,7 @@ button {
 }
 
 .contact .light-section {
-	padding: 64px 16px;
+	padding: 64px 32px;
 }
 
 .contact .light-section .inner {
@@ -1242,7 +1245,7 @@ grid-column: span 1;
 	clip-path: inset(-100px -100px 0px -100px); 
 }
 
-.about .more-container .mac .img-wrapper {
+.about .more-container .mac .mac-wrapper {
 	position: relative;
 }
 
@@ -1275,36 +1278,36 @@ grid-column: span 1;
 .about .mac .dcc {
 	width: 64px;
 	height: 64px;
-	left: 63px;
-	bottom: 110px;
+	left: 33px;
+	bottom: 44px;
 }
 
 .about .mac .dti {
 	width: 64px;
 	height: 64px;
-	left: 52px;
-	bottom: 194px;
-}
-
-.about .mac .cornell {
-	width: 85px;
-	height: 91px;
-	top: 103px;
-	right: 53px;
+	left: 42px;
+	bottom: 134px;
 }
 
 .about .mac .cuxd {
 	width: 107px;
 	height: 64px;
-	top: 102px;
-	left: 112px;
+	top: 22px;
+	left: 102px;
+}
+
+.about .mac .cornell {
+	width: 85px;
+	height: 91px;
+	top: 23px;
+	right: 43px;
 }
 
 .about .mac .wvbr {
 	width: 88px;
 	height: 86px;
 	right: 53px;
-	bottom: 103px;
+	bottom: 43px;
 }
 
 .about .more-container article.resume:hover img {
@@ -1320,12 +1323,12 @@ grid-column: span 1;
 	transform: rotate(-6deg) translate(-6px, -4px);
 }
 
-.about .more-container article.mac:hover .cornell {
-	transform: rotate(8deg) translate(8px, -8px);
-}
-
 .about .more-container article.mac:hover .cuxd {
 	transform: rotate(4deg) translate(4px, -4px);
+}
+
+.about .more-container article.mac:hover .cornell {
+	transform: rotate(8deg) translate(8px, -8px);
 }
 
 .about .more-container article.mac:hover .wvbr {
@@ -1406,6 +1409,7 @@ grid-column: span 1;
 @media (max-width: 1000px) {
 	.home h1, .home h2 {
 		max-width: 100%;
+		font-size: 24px !important;
 	}
 
 	.work-section .top {
@@ -1438,12 +1442,99 @@ grid-column: span 1;
 	footer .inner .button-row a {
 		width: 100%;
 	}
+
+	.hero:not(.home) {
+		height: 300px;
+	}
+
+	.hero h1 {
+		font-size: 48px;
+	}
+
+	.hero h2 {
+		font-size: 24px;
+	}
+
+	.about .more-container {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.about .more-container article {
+		grid-column: span 1;
+		min-width: 50%;
+	}
+
+	.about .more-container article .img-wrapper {
+		height: calc((100vw - 32px*3)/2)
+	}
+
+	.about .more-container .mac .mac-wrapper {
+		transform: scale(0.8);
+	}
+	
+	.about .resume img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 330 / 420;
+	}
+
+	.hero .inner h2 {
+		line-height: 130%;
+	}
+
+	.contact .inner .text-wrapper {
+		display: revert;
+	} 
+
+	.contact .light-section {
+		padding-top: 320px;
+	}
+
+	.contact .letter-wrapper {
+		transform: translateX(-50%);
+		left: 50%;
+		position: absolute;
+		bottom: 120px;
+	}
+}
+
+@media (max-width: 800px) {
+	.about .more-container .mac .mac-wrapper {
+        transform: scale(0.8);
+    }
+
+	.craft-panel .inner .row, .craft-panel .inner .col {
+		gap: 16px;
+	}
+
+	.craft-panel .inner .col img {
+		height: auto !important;
+		object-fit: revert;;
+	}
+
+	.craft-panel .inner .row, .craft-panel .inner {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
 }
 
 @media (max-width: 600px) {
 	nav, .hero {
 		padding-left: 16px;
 		padding-right: 16px;
+	}
+
+	.hero:not(.home) {
+		padding-bottom: 8px;
+	}
+
+	.craft-panel {
+		padding: 32px 16px;
+	}
+
+	.tabs {
+		gap: 16px;
 	}
 
 	.hamburger {
@@ -1462,7 +1553,7 @@ grid-column: span 1;
 		align-items: flex-start;
 		padding: 64px 32px;
 		z-index: 40;
-		gap: 32px;
+		gap: 16px;
 		transform: translateY(-100%);
 		transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 		display: flex;
@@ -1483,10 +1574,13 @@ grid-column: span 1;
 		opacity: 1;
 		transform: translateY(0);
 		margin-left: 28px;
+		display: flex;
+		width: 100%;
 	}
 
 	.nav-list.mobile-open li a {
 		font-size: 40px;
+		width: 100%;
 	}
 
 	.nav-list.mobile-open li:nth-child(1) {
@@ -1564,6 +1658,11 @@ grid-column: span 1;
 		color: var(--light) !important;
 	}
 
+	.hero .inner {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+
 	.work-section {
 		padding: 32px 16px;
 	}
@@ -1601,7 +1700,87 @@ grid-column: span 1;
 	.button-row a {
 		flex: 1;
 	}
-}	
+	
+	.hero {
+		height: auto;
+		padding-bottom: 32px;
+	}
+
+	.hero.home {
+		padding-top: 128px;
+		padding-bottom: 16px;
+	}
+
+	.hero .inner > * {
+		grid-column: span 2;
+	}
+
+	.light-section {
+		padding: 32px 16px;
+	}
+
+	.about-section .inner {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+	}
+
+	.about .img-wrapper, .about .text, .about .sep{
+		grid-column: span 6;
+	}
+	
+	.about .more-container {
+		grid-template-columns: 1fr;
+	}
+
+	.about .more-container article {
+		grid-column: span 2;
+	}
+
+	.about .more-container article .img-wrapper {
+		height: calc(100vw - 32px);
+	}
+
+	.about .resume img {
+		width: 90%;
+	}
+
+	.about .more-container .mac .mac-wrapper {
+		transform: scale(0.9);
+	}
+
+	.about .text.bio p {
+		font-size: 20px;
+	}
+
+	.contact .light-section {
+		padding: 32px 16px;
+		padding-top: 390px;
+	}
+
+	.contact-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.contact .inner .text {
+		gap: 16px;
+	}
+
+	.contact .letter-wrapper {
+		bottom: 16px;
+		transform: scale(0.8) translateX(-50%);
+		transform-origin: left;
+	}
+}
+
+@media (max-width: 450px) {
+	.contact .letter-wrapper {
+		transform: scale(0.6) translateX(-50%);
+	}
+
+	.contact .light-section {
+		padding-top: 320px;
+	}
+}
 
 @media (max-width: 400px) {
 	.button-row, footer .inner .button-row {
@@ -1611,5 +1790,9 @@ grid-column: span 1;
 
 	.button-row a, .work-section a {
 		width: 100%;
+	}
+
+	.about .entry-card .clients {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
