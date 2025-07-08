@@ -15,8 +15,7 @@ export default function About() {
           <h1>About</h1>
 
           <h2>
-            He approaches design with craft and care, building digital windows
-            that are polished.
+            Lorem ipsum is a dummy or placeholder text commonly used in graphic design.
           </h2>
         </div>
       </Hero>
