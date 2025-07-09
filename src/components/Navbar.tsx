@@ -190,7 +190,7 @@ export default function Navbar() {
 										// Start navigation immediately in background
 										setTimeout(() => {
 											navigate(path);
-										}, 50);
+										}, 400);
 									}
 								}}
 							>
