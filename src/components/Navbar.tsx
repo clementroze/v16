@@ -138,7 +138,27 @@ export default function Navbar() {
 			}
 		>
 			<div className="inner">
-				<Link to="/" className="name">
+				<Link 
+					to="/" 
+					className="name"
+					onClick={(e) => {
+						if (isMenuOpen && window.innerWidth <= 600) {
+							e.preventDefault();
+
+							const clickedIdx = navItems.findIndex(
+								(item) => item.path === "/"
+							);
+							setClickedIndex(clickedIdx);
+
+							setIsExiting(true);
+
+							// Start navigation immediately in background
+							setTimeout(() => {
+								navigate("/");
+							}, 50);
+						}
+					}}
+				>
 					Clément Rozé
 				</Link>
 
