@@ -1,8 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useRef, useLayoutEffect, useState, useEffect } from "react";
 
 export default function Navbar() {
 	const location = useLocation();
+	const navigate = useNavigate();
 	const navRef = useRef<HTMLUListElement>(null);
 	const indicatorRef = useRef<HTMLSpanElement>(null);
 	const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -122,7 +123,7 @@ export default function Navbar() {
 			setTimeout(() => {
 				setIsMenuOpen(false);
 				setIsExiting(false);
-			}, 300); // 300ms for links + 400ms for navbar slide up
+			}, 300); // Match the animation duration
 		} else {
 			setIsMenuOpen(true);
 		}
@@ -163,6 +164,18 @@ export default function Navbar() {
 						>
 							<Link
 								to={path}
+								onMouseEnter={() => {
+									// Preload the route component
+									if (path === "/about") {
+										import("../../About");
+									} else if (path === "/studio") {
+										import("../../Studio");
+									} else if (path === "/contact") {
+										import("../../Contact");
+									} else if (path === "/") {
+										import("../../Home");
+									}
+								}}
 								onClick={(e) => {
 									if (isMenuOpen && window.innerWidth <= 600) {
 										e.preventDefault();
@@ -174,10 +187,10 @@ export default function Navbar() {
 
 										setIsExiting(true);
 
-										// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
+										// Start navigation immediately in background
 										setTimeout(() => {
-											window.location.href = path;
-										}, 300);
+											navigate(path);
+										}, 50);
 									}
 								}}
 							>
