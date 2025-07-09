@@ -114,7 +114,18 @@ export default function Navbar() {
 	}, [location.pathname]);
 
 	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
+		if (isMenuOpen) {
+			// If closing the menu, trigger exit animation
+			setIsExiting(true);
+
+			// Wait for the exit animation to complete before actually closing
+			setTimeout(() => {
+				setIsMenuOpen(false);
+				setIsExiting(false);
+			}, 700); // 300ms for links + 400ms for navbar slide up
+		} else {
+			setIsMenuOpen(true);
+		}
 	};
 
 	return (
