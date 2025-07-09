@@ -167,13 +167,13 @@ export default function Navbar() {
 								onMouseEnter={() => {
 									// Preload the route component
 									if (path === "/about") {
-										import("../../About");
+										import("../About");
 									} else if (path === "/studio") {
-										import("../../Studio");
+										import("../Studio");
 									} else if (path === "/contact") {
-										import("../../Contact");
+										import("../Contact");
 									} else if (path === "/") {
-										import("../../Home");
+										import("../Home");
 									}
 								}}
 								onClick={(e) => {
