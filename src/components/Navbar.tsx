@@ -122,7 +122,7 @@ export default function Navbar() {
 			setTimeout(() => {
 				setIsMenuOpen(false);
 				setIsExiting(false);
-			}, 700); // 300ms for links + 400ms for navbar slide up
+			}, 300); // 300ms for links + 400ms for navbar slide up
 		} else {
 			setIsMenuOpen(true);
 		}
@@ -177,7 +177,7 @@ export default function Navbar() {
 										// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
 										setTimeout(() => {
 											window.location.href = path;
-										}, 700);
+										}, 300);
 									}
 								}}
 							>
