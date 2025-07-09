@@ -51,7 +51,7 @@ export default function Navbar() {
 		if (isMobile && isMenuOpen) {
 			// For mobile, position indicator 16px from left and vertically centered with text
 			leftPosition = 16;
-			
+
 			// Get the actual indicator element to measure its real dimensions
 			const indicator = indicatorRef.current;
 			let starHeight = 40; // fallback
@@ -59,9 +59,10 @@ export default function Navbar() {
 				const indicatorRect = indicator.getBoundingClientRect();
 				starHeight = indicatorRect.height;
 			}
-			
+
 			// Position star so its center aligns with the text center
-			topPosition = linkRect.top - navRect.top + (linkRect.height - starHeight) / 2;
+			topPosition =
+				linkRect.top - navRect.top + (linkRect.height - starHeight) / 2;
 		} else {
 			// Desktop positioning
 			leftPosition = linkRect.left - navRect.left + linkRect.width / 2 - 8;
@@ -160,15 +161,12 @@ export default function Navbar() {
 										);
 										setClickedIndex(clickedIdx);
 
-										// Wait for star animation (400ms), then start exit sequence
-										setTimeout(() => {
-											setIsExiting(true);
+										setIsExiting(true);
 
-											// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
-											setTimeout(() => {
-												window.location.href = path;
-											}, 700);
-										}, 400);
+										// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
+										setTimeout(() => {
+											window.location.href = path;
+										}, 700);
 									}
 								}}
 							>
