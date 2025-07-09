@@ -1541,6 +1541,10 @@ grid-column: span 1;
 		display: flex;
 	}
 
+	nav .indicator {
+		display: none;
+	}
+
 	.nav-list {
 		position: fixed;
 		top: 0;
@@ -1561,6 +1565,8 @@ grid-column: span 1;
 
 	.nav-list.mobile-open {
 		transform: translateY(0);
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 
 	.nav-list li {
@@ -1573,7 +1579,7 @@ grid-column: span 1;
 	.nav-list.mobile-open li {
 		opacity: 1;
 		transform: translateY(0);
-		margin-left: 28px;
+		/* margin-left: 28px; */
 		display: flex;
 		width: 100%;
 	}

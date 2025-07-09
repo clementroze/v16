@@ -160,47 +160,9 @@ export default function Navbar() {
 										);
 										setClickedIndex(clickedIdx);
 
-										// Animate star to clicked position first
-										const clickedLink = navRef.current?.children[
-											clickedIdx
-										] as HTMLLIElement;
-										if (clickedLink && navRef.current) {
-											const navRect =
-												navRef.current.getBoundingClientRect();
-											const linkRect =
-												clickedLink.getBoundingClientRect();
-											// Get the actual indicator element to measure its real dimensions
-											const indicator = indicatorRef.current;
-											let starHeight = 40; // fallback
-											if (indicator) {
-												const indicatorRect = indicator.getBoundingClientRect();
-												starHeight = indicatorRect.height;
-											}
-											
-											// Position star so its center aligns with the text center
-											const newTopPosition = linkRect.top - navRect.top + (linkRect.height - starHeight) / 2;
-											const rotations = [0, 45, 90, 135]; // Adjusted for vertical movement
-											const rotation = rotations[clickedIdx] || 0;
-
-											setIndicatorStyle((prev) => ({
-												...prev,
-												left: 16, // Ensure it stays at 16px from left
-												top: newTopPosition,
-												rotation: rotation,
-											}));
-										}
-
 										// Wait for star animation (400ms), then start exit sequence
 										setTimeout(() => {
 											setIsExiting(true);
-
-											// Wait for links to animate out (300ms), then fade out the indicator (at 400ms)
-											setTimeout(() => {
-                                                setIndicatorStyle(prev => ({
-                                                    ...prev,
-                                                    opacity: 0
-                                                }));
-                                            }, 300);
 
 											// Wait for links to animate out (300ms), then slide navbar up (400ms), then navigate
 											setTimeout(() => {
