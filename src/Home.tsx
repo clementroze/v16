@@ -77,7 +77,7 @@ export default function Home() {
 							</h2>
 						</div>
 
-						<div className="button-row">
+						{/* <div className="button-row">
 							<Button
 								variant="light"
 								label="Get in touch"
@@ -88,7 +88,7 @@ export default function Home() {
 								label="About me"
 								href="/about"
 							/>
-						</div>
+						</div> */}
 					</div>
 
 					<div

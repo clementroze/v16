@@ -138,15 +138,15 @@ export default function Navbar() {
 			}
 		>
 			<div className="inner">
-				<Link 
-					to="/" 
+				<Link
+					to="/"
 					className="name"
 					onClick={(e) => {
 						if (isMenuOpen && window.innerWidth <= 600) {
 							e.preventDefault();
 
 							const clickedIdx = navItems.findIndex(
-								(item) => item.path === "/"
+								(item) => item.path === "/",
 							);
 							setClickedIndex(clickedIdx);
 
@@ -155,7 +155,7 @@ export default function Navbar() {
 							// Start navigation immediately in background
 							setTimeout(() => {
 								navigate("/");
-							}, 50);
+							}, 400);
 						}
 					}}
 				>
