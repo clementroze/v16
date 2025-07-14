@@ -3,7 +3,6 @@ import Page from "./components/Page";
 import AboutCard from "./components/AboutCard";
 import aboutData from "./data/about.json";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 export default function About() {
   const { work, education, activities } = aboutData;
@@ -15,7 +14,8 @@ export default function About() {
           <h1>About</h1>
 
           <h2>
-            Lorem ipsum is a dummy or placeholder text commonly used in graphic design.
+            Lorem ipsum is a dummy or placeholder text commonly used in graphic
+            design.
           </h2>
         </div>
       </Hero>
@@ -135,21 +135,21 @@ export default function About() {
             <article className="mac">
               <div className="img-wrapper">
                 <div className="mac-wrapper">
-                <img src="/about/mac.png" alt="" className="laptop" />
+                  <img src="/about/mac.png" alt="" className="laptop" />
 
-                <img src="/about/DCC.png" className="sticker dcc" />
+                  <img src="/about/DCC.png" className="sticker dcc" />
 
-                <img src="/about/DTI.png" className="sticker dti" />
+                  <img src="/about/DTI.png" className="sticker dti" />
 
-                <img src="/about/Cornell.png" className="sticker cornell" />
+                  <img src="/about/Cornell.png" className="sticker cornell" />
 
-                <img src="/about/CUXD.png" className="sticker cuxd" />
+                  <img src="/about/CUXD.png" className="sticker cuxd" />
 
-                <img src="/about/WVBR.png" className="sticker wvbr" />
+                  <img src="/about/WVBR.png" className="sticker wvbr" />
                 </div>
               </div>
 
-              <Link to="" className="link-animation">
+              <Link to="/activities" className="link-animation">
                 <h4>Activities</h4>
 
                 <svg

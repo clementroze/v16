@@ -6,12 +6,13 @@ import Navbar from "./Navbar";
 type PageProps = {
 	children: React.ReactNode;
 	heroText?: "light" | "dark";
-	page?: "home" | "about" | "studio" | "contact";
+	page?: "home" | "about" | "activities" | "studio" | "contact";
 };
 
 const colorMap: Record<string, string> = {
 	home: "var(--dark)",
 	about: "var(--blue)",
+	activities: "var(--red)",
 	studio: "var(--green)",
 	contact: "var(--yellow)",
 };

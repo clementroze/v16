@@ -29,6 +29,7 @@ export default function Navbar() {
 	const navItems = [
 		{ path: "/", label: "Work" },
 		{ path: "/about", label: "About" },
+		{ path: "/activities", label: "Activities" },
 		{ path: "/studio", label: "Studio" },
 		{ path: "/contact", label: "Contact" },
 	];
@@ -70,7 +71,7 @@ export default function Navbar() {
 			topPosition = undefined;
 		}
 
-		const rotations = [0, 90, 180, 270];
+		const rotations = [0, 90, 180, 270, 360];
 		const rotation = rotations[activeIndex] || 0;
 
 		localStorage.setItem("navIndicatorLeft", leftPosition.toString());
