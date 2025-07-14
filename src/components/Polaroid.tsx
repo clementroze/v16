@@ -8,6 +8,7 @@ type PolaroidProps = {
 	angle: number;
 	offsetX: number;
 	offsetY: number;
+	zIndex?: number;
 };
 
 export default function Polaroid({
@@ -18,6 +19,7 @@ export default function Polaroid({
 	angle,
 	offsetX,
 	offsetY,
+	zIndex,
 }: PolaroidProps) {
 	return (
 		<article
@@ -28,6 +30,7 @@ export default function Polaroid({
 					left: `${offsetX}px`,
 					top: `${offsetY}px`,
 					position: "relative",
+					zIndex: zIndex,
 				} as React.CSSProperties
 			}
 		>

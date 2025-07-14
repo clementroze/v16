@@ -8,6 +8,7 @@ export type PolaroidData = {
 	angle: number;
 	offsetX: number;
 	offsetY: number;
+	zIndex?: number;
 };
 
 export type Activity = {

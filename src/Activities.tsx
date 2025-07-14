@@ -47,6 +47,7 @@ export default function Activities() {
                     angle={p.angle}
                     offsetX={p.offsetX}
                     offsetY={p.offsetY}
+                    zIndex={p.zIndex}
                   />
                 ))}
               </div>
