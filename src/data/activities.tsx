@@ -37,9 +37,9 @@ const activities: Activity[] = [
 				size: "default",
 				image: "/activities/dcc/2.png",
 				alt: "Workshop scene",
-				angle: -2,
-				offsetX: 0,
-				offsetY: 0,
+				angle: 2,
+				offsetX: 170,
+				offsetY: -50,
 				text: (
 					<p>
 						<span className="font-semibold">Project Manager.</span> For
@@ -52,9 +52,9 @@ const activities: Activity[] = [
 				size: "default",
 				image: "/activities/dcc/3.png",
 				alt: "Retreat setting",
-				angle: 2,
-				offsetX: 0,
-				offsetY: 0,
+				angle: -2,
+				offsetX: -40,
+				offsetY: -100,
 				text: (
 					<p>
 						<span className="font-semibold">Design Instructor.</span> I’m

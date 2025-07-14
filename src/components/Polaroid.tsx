@@ -24,7 +24,6 @@ export default function Polaroid({
 			className={`polaroid ${size === "default" ? "default" : "wide"}`}
 			style={
 				{
-					// Pass rotation as a custom CSS variable
 					"--rotate-angle": `rotate(${angle}deg)`,
 					left: `${offsetX}px`,
 					top: `${offsetY}px`,
