@@ -90,7 +90,7 @@ export default function Navbar() {
 	}, [location.pathname, isMenuOpen]);
 
 	useEffect(() => {
-		if (location.pathname !== "/about") {
+		if (location.pathname !== "/about" && location.pathname !== "/activities") {
 			setScrolledPastHero(false);
 			return;
 		}
@@ -133,7 +133,7 @@ export default function Navbar() {
 	return (
 		<nav
 			className={
-				location.pathname === "/about" && scrolledPastHero
+				(location.pathname === "/about" || location.pathname === "/activities") && scrolledPastHero
 					? "text-dark"
 					: ""
 			}
