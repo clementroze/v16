@@ -62,19 +62,19 @@
 					"logo": "/microsoft/icon.png",
 					"alt": "Microsoft logo",
 					"width": "32px",
-					"height": " 32px"
+					"height": "32px"
 				},
 				{
 					"logo": "/replit/icon.png",
 					"alt": "Replit logo",
 					"width": "100px",
-					"height": " 16px"
+					"height": "16px"
 				},
 				{
 					"logo": "/frog/icon.png",
 					"alt": "Frog logo",
 					"width": "56px",
-					"height": " 18px"
+					"height": "18px"
 				}
 			]
 		}
