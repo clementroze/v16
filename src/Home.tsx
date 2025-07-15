@@ -1,5 +1,4 @@
 import { useState, useRef, useLayoutEffect, useCallback } from "react";
-import Button from "./components/Button";
 import Hero from "./components/Hero";
 import Page from "./components/Page";
 import WorkPanel from "./components/WorkPanel";

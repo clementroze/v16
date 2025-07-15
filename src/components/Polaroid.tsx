@@ -9,6 +9,7 @@ type PolaroidProps = {
 	offsetX: number;
 	offsetY: number;
 	zIndex?: number;
+	marginBottom?: number;
 };
 
 export default function Polaroid({
@@ -20,6 +21,7 @@ export default function Polaroid({
 	offsetX,
 	offsetY,
 	zIndex,
+	marginBottom,
 }: PolaroidProps) {
 	return (
 		<article
@@ -31,10 +33,13 @@ export default function Polaroid({
 					top: `${offsetY}px`,
 					position: "relative",
 					zIndex: zIndex,
+					marginBottom: `${marginBottom}px`,
 				} as React.CSSProperties
 			}
 		>
-			<img src={image} alt={alt} />
+			<div className="img-wrapper">
+				<img src={image} alt={alt} />
+			</div>
 
 			{text && <div className="text">{text}</div>}
 		</article>

@@ -48,6 +48,7 @@ export default function Activities() {
                     offsetX={p.offsetX}
                     offsetY={p.offsetY}
                     zIndex={p.zIndex}
+                    marginBottom={p.marginBottom}
                   />
                 ))}
               </div>

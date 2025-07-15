@@ -13,6 +13,9 @@ type WorkSectionProps = {
 	backdropBlur?: number;
 	accent?: string;
 	onAccent?: string;
+	cover?: string;
+	coverAlt?: string;
+	borderColor?: string;
 };
 
 export default function WorkSection({
@@ -28,6 +31,9 @@ export default function WorkSection({
 	backdropBlur,
 	accent,
 	onAccent = "#ffffff",
+	cover,
+	coverAlt,
+	borderColor,
 }: WorkSectionProps) {
 	return (
 		<section
@@ -71,7 +77,14 @@ export default function WorkSection({
 					</div>
 				</div>
 
-				<div className="img" />
+				<div
+					className="img"
+					style={{
+						border: `1px solid ${borderColor || "var(--light-10)"}`,
+					}}
+				>
+					<img src={cover} alt={coverAlt} />
+				</div>
 			</div>
 		</section>
 	);

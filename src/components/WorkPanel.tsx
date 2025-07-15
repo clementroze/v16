@@ -19,6 +19,9 @@ export default function WorkPanel() {
           backdropBlur={section.backdropBlur}
           accent={section.accent}
           onAccent={section.onAccent}
+          cover={section.cover}
+          coverAlt={section.coverAlt}
+          borderColor={section.borderColor}
         />
       ))}
     </div>
