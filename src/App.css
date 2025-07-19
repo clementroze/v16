@@ -93,12 +93,12 @@ nav {
 	overflow: hidden;
 }
 
-.text-dark a {
-	color: var(--dark-50) !important;
+nav a {
+	color: var(--light-50);
 }
 
-.text-dark li.selected a, .text-dark span, .text-dark .name {
-	color: var(--dark) !important;
+li.selected a, nav span, .name {
+	color: var(--light);
 }
 
 .gradient-blur {
@@ -322,6 +322,7 @@ nav .indicator {
 	display: flex;
 	align-items: flex-end;
 	padding: 64px 32px;
+	color: var(--light);
 }
 
 .button {
