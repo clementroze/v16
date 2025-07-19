@@ -10,7 +10,6 @@ export default function About() {
   return (
     <Page heroText="light" page="about">
       <Hero
-        page="about"
         heading="About"
         subheading="Lorem ipsum is a dummy or placeholder text commonly used in graphic design."
       />

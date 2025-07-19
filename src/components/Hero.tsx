@@ -1,5 +1,5 @@
 type HeroProps = {
-	page: "home" | "about" | "activities" | "studio" | "contact";
+	page?: "home" | "about" | "activities" | "studio" | "contact";
 	children?: React.ReactNode;
 	className?: string;
 	heading?: string;
@@ -15,7 +15,7 @@ const backgroundImageMap: Record<HeroProps["page"], string> = {
 };
 
 export default function Hero({
-	page,
+	page = "home",
 	children,
 	className,
 	heading = "",

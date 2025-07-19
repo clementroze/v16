@@ -62,7 +62,6 @@ export default function Home() {
 	return (
 		<Page heroText="light" page="home">
 			<Hero
-				page="home"
 				className="home"
 				heading="Clément Rozé"
 				subheading="Designer and developer at Cornell who cares about making the web accessible, beautiful, and thoughtful."

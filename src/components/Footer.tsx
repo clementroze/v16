@@ -1,28 +1,44 @@
+
 import { Link } from "react-router-dom";
 import Button from "./Button";
 
-export default function Footer() {
+type FooterProps = {
+	page?: "home" | "about" | "activities" | "studio" | "contact";
+};
+
+const backgroundImageMap: Record<string, string> = {
+	home: "/home/footer.png",
+	about: "/about/footer.png",
+	activities: "/activities/footer.png",
+	studio: "/studio/footer.png",
+	contact: "/contact/footer.png",
+};
+
+export default function Footer({ page = "home" }: FooterProps) {
 	return (
-		<footer className="">
+		<footer 
+			className=""
+			style={{ backgroundImage: `url(${backgroundImageMap[page]})` }}
+		>
 			<div className="inner">
 				<div className="col">
 					<p>Pages</p>
 
 					<ul>
 						<li>
-							<Link to="">Work</Link>
+							<Link to="/">Work</Link>
 						</li>
 
 						<li>
-							<Link to="">About</Link>
+							<Link to="/about">About</Link>
 						</li>
 
 						<li>
-							<Link to="">Studio</Link>
+							<Link to="/studio">Studio</Link>
 						</li>
 
 						<li>
-							<Link to="">Contact</Link>
+							<Link to="/contact">Contact</Link>
 						</li>
 					</ul>
 				</div>
@@ -32,23 +48,23 @@ export default function Footer() {
 
 					<ul>
 						<li>
-							<Link to="">Email</Link>
+							<Link to="/contact">Email</Link>
 						</li>
 
 						<li>
-							<Link to="">Résumé</Link>
+							<Link to="/Clement-Roze-Resume.pdf" target="_blank">Résumé</Link>
 						</li>
 
 						<li>
-							<Link to="">LinkedIn</Link>
+							<Link to="https://www.linkedin.com/in/clementroze/" target="_blank">LinkedIn</Link>
 						</li>
 
 						<li>
-							<Link to="">Twitter</Link>
+							<Link to="https://x.com/@thebookie0" target="_blank">Twitter</Link>
 						</li>
 
 						<li>
-							<Link to="">Dribbble</Link>
+							<Link to="https://dribbble.com/clementroze" target="_blank">Dribbble</Link>
 						</li>
 					</ul>
 				</div>
