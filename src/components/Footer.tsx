@@ -1,10 +1,7 @@
 
 import { Link } from "react-router-dom";
 import Button from "./Button";
-
-type FooterProps = {
-	page?: "home" | "about" | "activities" | "studio" | "contact";
-};
+import { usePageContext } from "./Page";
 
 const backgroundImageMap: Record<string, string> = {
 	home: "/home/footer.png",
@@ -14,7 +11,9 @@ const backgroundImageMap: Record<string, string> = {
 	contact: "/contact/footer.png",
 };
 
-export default function Footer({ page = "home" }: FooterProps) {
+export default function Footer() {
+	const page = usePageContext();
+
 	return (
 		<footer 
 			className=""

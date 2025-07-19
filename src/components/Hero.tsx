@@ -1,12 +1,14 @@
+
+import { usePageContext } from "./Page";
+
 type HeroProps = {
-	page?: "home" | "about" | "activities" | "studio" | "contact";
 	children?: React.ReactNode;
 	className?: string;
 	heading?: string;
 	subheading?: string;
 };
 
-const backgroundImageMap: Record<HeroProps["page"], string> = {
+const backgroundImageMap: Record<string, string> = {
 	home: "/home/hero.png",
 	about: "/about/hero.png",
 	activities: "/activities/hero.png",
@@ -15,12 +17,13 @@ const backgroundImageMap: Record<HeroProps["page"], string> = {
 };
 
 export default function Hero({
-	page = "home",
 	children,
 	className,
 	heading = "",
 	subheading = "",
 }: HeroProps) {
+	const page = usePageContext();
+
 	return (
 		<section
 			className={`hero ${className}`}

@@ -7,7 +7,6 @@ export default function Activities() {
   return (
     <Page heroText="light" page="activities">
       <Hero
-        page="activities"
         heading="Activities"
         subheading="From consultancy to leading teams, I enjoy staying active on the Cornell campus."
       />

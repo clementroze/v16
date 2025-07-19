@@ -1,3 +1,4 @@
+
 import Hero from "./components/Hero";
 import Page from "./components/Page";
 import AboutCard from "./components/AboutCard";
@@ -27,20 +28,20 @@ export default function About() {
             </p>
 
             <p>
-              I’m passionate about all things design – I’ll happily debate
+              I'm passionate about all things design – I'll happily debate
               Helvetica vs. Inter, obsess over CSS pseudo-elements, or rave
               about my favorite Figma shortcuts. I believe great design should
               be both accessible and beautiful.
             </p>
 
             <p>
-              So you’ll often find me deep-diving into the latest ARIA specs or
+              So you'll often find me deep-diving into the latest ARIA specs or
               dissecting the visual details that make an interface feel just
               right.
             </p>
 
             <p>
-              When I’m not up at 4 a.m. fine-tuning pixels, I’m probably playing
+              When I'm not up at 4 a.m. fine-tuning pixels, I'm probably playing
               piano or ping pong (though not at the same time). I'm also an avid
               reader. Whether it's news or literature, I love staying curious
               about the world!
