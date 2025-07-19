@@ -3,7 +3,7 @@ import Button from "./Button";
 
 export default function Footer() {
 	return (
-		<footer className="light-text">
+		<footer className="">
 			<div className="inner">
 				<div className="col">
 					<p>Pages</p>

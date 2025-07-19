@@ -5,20 +5,15 @@ import aboutData from "./data/about.json";
 import { Link } from "react-router-dom";
 
 export default function About() {
-  const { work, education, activities } = aboutData;
+  const { work, education } = aboutData;
 
   return (
     <Page heroText="light" page="about">
-      <Hero page="about">
-        <div className="inner">
-          <h1>About</h1>
-
-          <h2>
-            Lorem ipsum is a dummy or placeholder text commonly used in graphic
-            design.
-          </h2>
-        </div>
-      </Hero>
+      <Hero
+        page="about"
+        heading="About"
+        subheading="Lorem ipsum is a dummy or placeholder text commonly used in graphic design."
+      />
 
       <section className="light-section about-section">
         <div className="inner">
@@ -75,19 +70,6 @@ export default function About() {
               <div key={index} className="entry-card-wrapper">
                 <AboutCard {...edu} />
                 {index !== education.length - 1 && <div className="sep" />}
-              </div>
-            ))}
-          </div>
-
-          <div className="sep" />
-
-          <h3>Activities</h3>
-
-          <div className="text">
-            {activities.map((activity, index) => (
-              <div key={index} className="entry-card-wrapper">
-                <AboutCard {...activity} />
-                {index !== activities.length - 1 && <div className="sep" />}
               </div>
             ))}
           </div>

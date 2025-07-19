@@ -106,10 +106,8 @@ export default function Contact() {
 
   return (
     <Page page="contact">
-      <Hero page="contact">
+      <Hero page="contact" heading="Contact">
         <div className="inner">
-          <h1>Contact</h1>
-
           <div className="letter-wrapper">
             <svg
               xmlns="http://www.w3.org/2000/svg"

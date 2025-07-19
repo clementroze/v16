@@ -4,18 +4,13 @@ import Page from "./components/Page";
 export default function Studio() {
   return (
     <Page page="studio">
-      <Hero page="studio">
-        <div className="inner">
-          <h1>Studio</h1>
+      <Hero
+        page="studio"
+        heading="Studio"
+        subheading="Studio lorem ipsum dolor sit amet, consectetur adipiscing elit samfere elum. Let’s collaborate together."
+      />
 
-          <h2>
-            Hire me to design (and sometimes develop) your website, platform, or
-            app.
-          </h2>
-        </div>
-      </Hero>
-
-      <section className="light-section studio-section">
+      <section className="studio-section">
         <h3>Coming soon ✦</h3>
       </section>
     </Page>

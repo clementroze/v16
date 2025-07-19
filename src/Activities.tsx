@@ -6,16 +6,11 @@ import activities from "./data/activities";
 export default function Activities() {
   return (
     <Page heroText="light" page="activities">
-      <Hero page="activities">
-        <div className="inner">
-          <h1>Activities</h1>
-
-          <h2>
-            From consultancy to leading teams, I enjoy staying active on the
-            Cornell campus.
-          </h2>
-        </div>
-      </Hero>
+      <Hero
+        page="activities"
+        heading="Activities"
+        subheading="From consultancy to leading teams, I enjoy staying active on the Cornell campus."
+      />
 
       <section className="light-section activities-section">
         <div className="inner">
