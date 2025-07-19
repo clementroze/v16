@@ -323,6 +323,8 @@ nav .indicator {
 	align-items: flex-end;
 	padding: 64px 32px;
 	color: var(--light);
+	background-size: cover;
+   background-position: center;
 }
 
 .button {
@@ -476,14 +478,15 @@ nav .indicator {
 	width: 100%;
 }
 
-
 .hero .inner h1 {
 	font-size: 128px;
+	font-weight: 600;
+	line-height: 100%;
 }
 
 .hero .inner h2 {
 	font-size: 48px;
-	width: 60%;
+	width: 66%;
 	margin-left: auto;
 }
 
@@ -511,7 +514,6 @@ nav .indicator {
 
 .home h1, .home h2 {
 	font-size: 24px;
-	max-width: 50%;
 	line-height: 130%;
 	font-weight: 400;
 }
@@ -746,13 +748,30 @@ nav .indicator {
 
 footer {
 	padding: 64px 32px;
-	background: var(--dark);
+	background-position: left;
 }
 
 footer .inner {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 32px;
+}
+
+footer .inner .col.left {
+	grid-column: span 3;
+	gap: 16px
+}
+
+footer .inner h2 {
+	width: 55%;
+}
+
+footer .inner h2 span:first-child {
+	color: var(--light);
+}
+
+footer .inner h2 span:last-child {
+	color: var(--light-50);
 }
 
 footer .inner .col {

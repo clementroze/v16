@@ -1,4 +1,3 @@
-
 import { usePageContext } from "./Page";
 
 type HeroProps = {

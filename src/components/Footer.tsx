@@ -1,25 +1,32 @@
-
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import { usePageContext } from "./Page";
 
 const backgroundImageMap: Record<string, string> = {
-	home: "/home/footer.png",
-	about: "/about/footer.png",
-	activities: "/activities/footer.png",
-	studio: "/studio/footer.png",
-	contact: "/contact/footer.png",
+	home: "/home/hero.png",
+	about: "/about/hero.png",
+	activities: "/activities/hero.png",
+	studio: "/studio/hero.png",
+	contact: "/contact/hero.png",
 };
 
 export default function Footer() {
 	const page = usePageContext();
 
 	return (
-		<footer 
+		<footer
 			className=""
 			style={{ backgroundImage: `url(${backgroundImageMap[page]})` }}
 		>
 			<div className="inner">
+				<div className="col left">
+					<h2>
+						<span>Let's talk.</span>
+						<span>I'd love to hear from you.</span>
+					</h2>
+
+					<Button href="/contact" label="Get in touch" variant="light" />
+				</div>
 				<div className="col">
 					<p>Pages</p>
 
@@ -51,19 +58,33 @@ export default function Footer() {
 						</li>
 
 						<li>
-							<Link to="/Clement-Roze-Resume.pdf" target="_blank">Résumé</Link>
+							<Link to="/Clement-Roze-Resume.pdf" target="_blank">
+								Résumé
+							</Link>
 						</li>
 
 						<li>
-							<Link to="https://www.linkedin.com/in/clementroze/" target="_blank">LinkedIn</Link>
+							<Link
+								to="https://www.linkedin.com/in/clementroze/"
+								target="_blank"
+							>
+								LinkedIn
+							</Link>
 						</li>
 
 						<li>
-							<Link to="https://x.com/@thebookie0" target="_blank">Twitter</Link>
+							<Link to="https://x.com/@thebookie0" target="_blank">
+								Twitter
+							</Link>
 						</li>
 
 						<li>
-							<Link to="https://dribbble.com/clementroze" target="_blank">Dribbble</Link>
+							<Link
+								to="https://dribbble.com/clementroze"
+								target="_blank"
+							>
+								Dribbble
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -90,12 +111,6 @@ export default function Footer() {
 							</Link>
 						</div>
 					</div>
-				</div>
-
-				<div className="button-row">
-					<Button href="/contact" label="Get in touch" variant="light" />
-
-					<Button href="/about" label="About me" variant="light-10" />
 				</div>
 			</div>
 		</footer>
