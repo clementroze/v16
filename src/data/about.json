@@ -3,7 +3,7 @@
 		{
 			"title": "frog, Visual Design Intern",
 			"date": "May - Current",
-			"description": "✦ Coming soon.",
+			"description": "Designing the next-generation mobile commodity trading platform.",
 			"logo": "/frog/icon.png",
 			"logoAlt": "frog logo"
 		},
@@ -77,17 +77,6 @@
 					"height": "18px"
 				}
 			]
-		}
-	],
-	"education": [
-		{
-			"title": "Cornell University",
-			"date": "2024 – 2028",
-			"description": "B.A. in Information Science"
-		},
-		{
-			"title": "Lycée Français de New York",
-			"date": "2015 – 2024"
 		}
 	]
 }

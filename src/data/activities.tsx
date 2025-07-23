@@ -165,7 +165,7 @@ const activities: Activity[] = [
 				text: (
 					<p>
 						<span className="font-semibold">New CMG website.</span> As the
-						Web Director for WVBR (a project of the Cornell Media Guild),
+						Web Director for WVBR (a student-run radio station),
 						we recently launched{" "}
 						<a href="https://cornellmediaguild.org/" target="_blank">
 							a new website

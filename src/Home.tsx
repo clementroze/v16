@@ -64,53 +64,57 @@ export default function Home() {
 			<Hero
 				className="home"
 				heading="Clément Rozé"
-				subheading="Designer and developer at Cornell who cares about making the web accessible, beautiful, and thoughtful."
+				subheading="is a designer and developer at Cornell who cares about making the web accessible, beautiful, and thoughtful."
 			/>
 
-			<div
-				className="tabs"
-				ref={tabsRef}
-				role="tablist"
-				onKeyDown={handleKeyDown}
-			>
-				<div className="sep" />
+			<div className="tabs-container">
+				<div className="inner">
+					<div
+						className="tabs"
+						ref={tabsRef}
+						role="tablist"
+						onKeyDown={handleKeyDown}
+					>
+						<div className="sep" />
 
-				<div
-					className="tab-underline"
-					style={{
-						left: `${underlineStyle.left}px`,
-						width: `${underlineStyle.width}px`,
-						transition: isFirstLoad
-							? "none"
-							: "left 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9), width 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9)",
-					}}
-				/>
+						<div
+							className="tab-underline"
+							style={{
+								left: `${underlineStyle.left}px`,
+								width: `${underlineStyle.width}px`,
+								transition: isFirstLoad
+									? "none"
+									: "left 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9), width 0.6s cubic-bezier(0.75, 0.1, 0.2, 0.9)",
+							}}
+						/>
 
-				<button
-					data-tab="work"
-					role="tab"
-					className={`tab work-tab ${activeTab === "work" ? "active" : ""}`}
-					onClick={() => {
-						setActiveTab("work");
-						localStorage.setItem("homeActiveTab", "work");
-					}}
-					aria-selected={activeTab === "work"}
-				>
-					Work
-				</button>
+						<button
+							data-tab="work"
+							role="tab"
+							className={`tab work-tab ${activeTab === "work" ? "active" : ""}`}
+							onClick={() => {
+								setActiveTab("work");
+								localStorage.setItem("homeActiveTab", "work");
+							}}
+							aria-selected={activeTab === "work"}
+						>
+							Work
+						</button>
 
-				<button
-					data-tab="craft"
-					role="tab"
-					className={`craft tab ${activeTab === "craft" ? "active" : ""}`}
-					onClick={() => {
-						setActiveTab("craft");
-						localStorage.setItem("homeActiveTab", "craft");
-					}}
-					aria-selected={activeTab === "craft"}
-				>
-					Craft
-				</button>
+						<button
+							data-tab="craft"
+							role="tab"
+							className={`craft tab ${activeTab === "craft" ? "active" : ""}`}
+							onClick={() => {
+								setActiveTab("craft");
+								localStorage.setItem("homeActiveTab", "craft");
+							}}
+							aria-selected={activeTab === "craft"}
+						>
+							Craft
+						</button>
+					</div>
+				</div>
 			</div>
 
 			<div className="panels-container">

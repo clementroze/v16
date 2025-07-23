@@ -27,40 +27,42 @@ export default function AboutCard({
 	return (
 		<div className="entry-card">
 			{logo && <img src={logo} alt={logoAlt} />}
-			<div className="meta">
-				<div className="top">
-					<h4>{title}</h4>
-					{link && (
-						<Link to={link} className="link-animation">
-							<span>Learn more</span>
+			<div className="text">
+				<div className="meta">
+					<div className="top">
+						<h4>{title}</h4>
+						{link && (
+							<Link to={link} className="link-animation">
+								<span>Learn more</span>
 
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M7 7H17V17"
-									stroke-width="1.67"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M7 17L17 7"
-									stroke-width="1.67"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</Link>
-					)}
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+								>
+									<path
+										d="M7 7H17V17"
+										stroke-width="1.67"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M7 17L17 7"
+										stroke-width="1.67"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</Link>
+						)}
+					</div>
+					<p className="date">{date}</p>
 				</div>
-				<p className="date">{date}</p>
-			</div>
 
-			{description && <p>{description}</p>}
+				{description && <p>{description}</p>}
+			</div>
 
 			{clients && (
 				<div className="clients">

@@ -7,16 +7,16 @@ export default function Activities() {
   return (
     <Page heroText="light" page="activities">
       <Hero
-        heading="Activities"
-        subheading="From consultancy to leading teams, I enjoy staying active on the Cornell campus."
+        heading="Activities."
+        subheading="I love staying hands-on in Cornell’s creative tech spaces by leading teams and teaching design."
       />
 
-      <section className="light-section activities-section">
+      <div className="content">
         <div className="inner">
           <div className="line" />
 
           {activities.map((section, index) => (
-            <div key={index} className="activity">
+            <section key={index} className="activity">
               <div className="meta">
                 <img
                   src={section.logo}
@@ -46,10 +46,10 @@ export default function Activities() {
                   />
                 ))}
               </div>
-            </div>
+            </section>
           ))}
         </div>
-      </section>
+      </div>
     </Page>
   );
 }

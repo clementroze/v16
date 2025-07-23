@@ -1,81 +1,74 @@
-
 import Hero from "./components/Hero";
 import Page from "./components/Page";
 import AboutCard from "./components/AboutCard";
 import aboutData from "./data/about.json";
 import { Link } from "react-router-dom";
+import Button from "./components/Button";
 
 export default function About() {
-  const { work, education } = aboutData;
+  const { work } = aboutData;
 
   return (
     <Page heroText="light" page="about">
       <Hero
-        heading="About"
-        subheading="Lorem ipsum is a dummy or placeholder text commonly used in graphic design."
+        heading="About."
+        subheading="I’ve been designing since I was 15.
+        Obsessed with pixels and polish.
+        Driven by purpose."
       />
 
-      <section className="light-section about-section">
-        <div className="inner">
-          <div className="img-wrapper">
-            <img src="/pfp.png" alt="Headshot of Clément Rozé" />
+      <div className="content">
+        <section className="bio">
+          <img src="/pfp.png" alt="Headshot of Clément Rozé" />
+
+          <h3>
+            Hi, I’m Clément Rozé. I'm a designer and developer with an
+            international upbringing and a love for detail.
+          </h3>
+
+          <p>
+            Born in New York, raised in London, and shaped by French and
+            Singaporean roots, I’ve always lived at the crossroads. That lens of
+            contrast and connection deeply informs how I design: layered,
+            contextual, and grounded in multiple perspectives.
+          </p>
+
+          <p>
+            I believe great design should be both accessible and beautiful.
+            Whether I’m fine-tuning a Figma component, obsessing over a CSS
+            pseudo-element, or diving into ARIA specs, I care about the little
+            things that make interfaces feel <em>just right</em>.
+          </p>
+
+          <p>
+            When I’m not up at 4 a.m. nudging pixels into place, you might find
+            me playing piano or ping pong (though not at the same time). I'm
+            also an avid reader – from daily news to science fiction, I love
+            staying curious about the world!
+          </p>
+
+          <div className="button-row">
+            <Button href="/contact" label="Get in touch" variant="light" />
+
+            <Button href="/resume" label="View my résumé" variant="light-10" />
           </div>
+        </section>
 
-          <div className="text bio">
-            <p>
-              I was born in New York City and grew up in London, and my family
-              is originally from France and Singapore.
-            </p>
+        <div className="sep" />
 
-            <p>
-              I'm passionate about all things design – I'll happily debate
-              Helvetica vs. Inter, obsess over CSS pseudo-elements, or rave
-              about my favorite Figma shortcuts. I believe great design should
-              be both accessible and beautiful.
-            </p>
+        <section className="work-experience">
+          <h3>Work Experience</h3>
 
-            <p>
-              So you'll often find me deep-diving into the latest ARIA specs or
-              dissecting the visual details that make an interface feel just
-              right.
-            </p>
+          {work.map((job, index) => (
+            <div key={index} className="entry-card-wrapper">
+              <AboutCard {...job} />
+            </div>
+          ))}
+        </section>
 
-            <p>
-              When I'm not up at 4 a.m. fine-tuning pixels, I'm probably playing
-              piano or ping pong (though not at the same time). I'm also an avid
-              reader. Whether it's news or literature, I love staying curious
-              about the world!
-            </p>
-          </div>
+        <div className="sep" />
 
-          <div className="sep" />
-
-          <h3>Work</h3>
-
-          <div className="text">
-            {work.map((job, index) => (
-              <div key={index} className="entry-card-wrapper">
-                <AboutCard {...job} />
-                {index !== work.length - 1 && <div className="sep" />}
-              </div>
-            ))}
-          </div>
-
-          <div className="sep" />
-
-          <h3>Education</h3>
-
-          <div className="text">
-            {education.map((edu, index) => (
-              <div key={index} className="entry-card-wrapper">
-                <AboutCard {...edu} />
-                {index !== education.length - 1 && <div className="sep" />}
-              </div>
-            ))}
-          </div>
-
-          <div className="sep" />
-
+        <section className="more">
           <h3>More</h3>
 
           <div className="more-container">
@@ -192,8 +185,8 @@ export default function About() {
               </Link>
             </article>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Page>
   );
 }

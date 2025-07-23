@@ -3,25 +3,22 @@ import Button from "./Button";
 import { usePageContext } from "./Page";
 
 const backgroundImageMap: Record<string, string> = {
-	home: "/home/hero.png",
-	about: "/about/hero.png",
-	activities: "/activities/hero.png",
-	studio: "/studio/hero.png",
-	contact: "/contact/hero.png",
+	home: "/home/footer.png",
+	about: "/about/footer.png",
+	activities: "/activities/footer.png",
+	studio: "/studio/footer.png",
+	contact: "/contact/footer.png",
 };
 
 export default function Footer() {
 	const page = usePageContext();
 
 	return (
-		<footer
-			className=""
-			style={{ backgroundImage: `url(${backgroundImageMap[page]})` }}
-		>
+		<footer style={{ backgroundImage: `url(${backgroundImageMap[page]})` }}>
 			<div className="inner">
 				<div className="col left">
 					<h2>
-						<span>Let's talk.</span>
+						<span>Let's talk.</span>{" "}
 						<span>I'd love to hear from you.</span>
 					</h2>
 

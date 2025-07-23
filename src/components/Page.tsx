@@ -21,15 +21,15 @@ const colorMap: Record<string, string> = {
 	contact: "var(--yellow)",
 };
 
-const Page: React.FC<PageProps> = ({ children, page = "home", heroText }) => {
-	useEffect(() => {
-		const backgroundColor = colorMap[page];
-		document.body.style.backgroundColor = backgroundColor;
+const Page: React.FC<PageProps> = ({ children, page = "home" }) => {
+	// useEffect(() => {
+	// 	const backgroundColor = colorMap[page];
+	// 	document.body.style.backgroundColor = backgroundColor;
 
-		return () => {
-			document.body.style.backgroundColor = "";
-		};
-	}, [page]);
+	// 	return () => {
+	// 		document.body.style.backgroundColor = "";
+	// 	};
+	// }, [page]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);

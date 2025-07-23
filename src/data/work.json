@@ -46,20 +46,6 @@
       "accent": "#F5640C",
       "cover": "/replit/cover.png",
       "coverAlt": "TODO"
-    },
-    {
-      "id": 4,
-      "heading": "Studio",
-      "subheading": "Hire me to design your website, platform, or app.",
-      "logo": "/studio/icon.png",
-      "logoAlt": "Studio logo",
-      "description1": "I focus on landing pages, UI and accessibility audits, and designing 0-to-1 apps from concept to launch.",
-      "description2": "Recent clients include Monarcha, General Counsel AI, Hyperform, ROZE Clinics, Recoil Studios, Net, and more.",
-      "backgroundImage": "/studio/background-image.png",
-      "link": "/studio",
-      "backdropBlur": 0,
-      "accent": "#ffffff",
-      "onAccent": "#000000"
     }
   ]
 }
