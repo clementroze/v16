@@ -67,6 +67,59 @@ export default function Home() {
 				subheading="is a designer and developer at Cornell who cares about making the web accessible, beautiful, and thoughtful."
 			/>
 
+<div className="currently-wrapper">
+<div className="inner">
+			<div className="currently">
+				<div className="row">
+				<p>Currently at</p>
+
+<div className="punc">
+
+				<div className="logos">
+					<img src="/home/logos/cornell.png" alt=""/>
+				</div>
+				<p>,</p>
+
+				</div>
+</div>
+
+
+
+<div className="row">
+				<p>previously at</p>
+
+<div className="punc">
+				<div className="logos">
+					<img src="/home/logos/frog.png" alt=""/>
+
+					<img src="/home/logos/microsoft.png" alt=""/>
+
+					<img src="/home/logos/replit.png" alt=""/>
+				</div>
+
+				<p>,</p>
+				</div>
+				</div>
+
+				<div className="row">
+
+				<p>and leading teams at</p>
+
+<div className="punc">
+
+				<div className="logos">
+					<img src="/home/logos/dcc.png" alt=""/>
+
+					<img src="/home/logos/dti.png" alt=""/>
+				</div>
+
+				<p>.</p>
+				</div>
+			</div>
+			</div>
+			</div>
+			</div>
+
 			<div className="tabs-container">
 				<div className="inner">
 					<div
