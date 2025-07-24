@@ -13,6 +13,7 @@
       "link": "",
       "backdropBlur": 8,
       "accent": "#AC01E6",
+      "onAccent": "#ffffff",
       "cover": "/frog/cover.png",
       "coverAlt": "TODO"
     },
@@ -28,6 +29,7 @@
       "link": "",
       "backdropBlur": 8,
       "accent": "#0F6CBD",
+      "onAccent": "#ffffff",
       "cover": "/microsoft/cover.png",
       "coverAlt": "TODO"
     },
