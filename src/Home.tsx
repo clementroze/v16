@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Page from "./components/Page";
 import WorkPanel from "./components/WorkPanel";
 import CraftPanel from "./components/CraftPanel";
+import LogoTooltip from "./components/LogoTooltip";
 
 export default function Home() {
 	const [activeTab, setActiveTab] = useState<"work" | "craft">(() => {
@@ -74,9 +75,15 @@ export default function Home() {
 							<p>Currently at</p>
 
 							<div className="punc">
-								<div className="logos">
-									<img src="/home/logos/cornell.png" alt="" />
-								</div>
+								<LogoTooltip
+									logos={[
+										{
+											src: "/home/logos/cornell.png",
+											alt: "Cornell University",
+											tooltip: "Cornell University"
+										}
+									]}
+								/>
 								<p>,</p>
 							</div>
 						</div>
@@ -85,13 +92,25 @@ export default function Home() {
 							<p>previously at</p>
 
 							<div className="punc">
-								<div className="logos">
-									<img src="/home/logos/frog.png" alt="" />
-
-									<img src="/home/logos/microsoft.png" alt="" />
-
-									<img src="/home/logos/replit.png" alt="" />
-								</div>
+								<LogoTooltip
+									logos={[
+										{
+											src: "/home/logos/frog.png",
+											alt: "Frog Design",
+											tooltip: "Frog Design"
+										},
+										{
+											src: "/home/logos/microsoft.png",
+											alt: "Microsoft",
+											tooltip: "Microsoft"
+										},
+										{
+											src: "/home/logos/replit.png",
+											alt: "Replit",
+											tooltip: "Replit"
+										}
+									]}
+								/>
 
 								<p>,</p>
 							</div>
@@ -101,11 +120,20 @@ export default function Home() {
 							<p>and leading teams at</p>
 
 							<div className="punc">
-								<div className="logos">
-									<img src="/home/logos/dcc.png" alt="" />
-
-									<img src="/home/logos/dti.png" alt="" />
-								</div>
+								<LogoTooltip
+									logos={[
+										{
+											src: "/home/logos/dcc.png",
+											alt: "Design & Tech Collective",
+											tooltip: "Design & Tech Collective"
+										},
+										{
+											src: "/home/logos/dti.png",
+											alt: "Digital Technology & Innovation",
+											tooltip: "Digital Technology & Innovation"
+										}
+									]}
+								/>
 
 								<p>.</p>
 							</div>
