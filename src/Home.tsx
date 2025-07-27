@@ -175,12 +175,13 @@ export default function Home() {
 											imageUrl={logo.imageUrl}
 											tooltipText={logo.tooltipText}
 											accent={logo.accent || "var(--dark)"}
-											onAccent={logo.onAccent}
+											onAccent={logo.onAccent || "var(--light)"}
 										/>
 									))}
 								</div>
 								<p>{group.punctuation}</p>
 							</div>
+			</div>
 						))}
 					</div>
 				</div>
