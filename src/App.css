@@ -381,12 +381,15 @@ nav .indicator {
 	padding-bottom: 6px;
 }
 
+.currently .logos .logo-tooltip {
+	margin-left: -6px;
+}
+
 .currently .logos img {
 	border-radius: 50%;
 	width: 32px;
 	height: 32px;
 	outline: 2px solid var(--dark);
-	margin-left: -6px;
 	transition: 300ms var(--bouncy-transition);
 }
 
@@ -1589,6 +1592,30 @@ grid-column: span 1;
 	font-size: 20px;
 	color: var(--dark-50);
 	line-height: 130%;
+}
+
+.logo-tooltip {
+	position: relative;
+}
+
+.logo-tooltip:hover span {
+	top: -48px;
+	opacity: 1;
+}
+
+.logo-tooltip span {
+	padding: 8px 12px;
+	/* background: var(--light); */
+	/* color: var(--dark); */
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -40px;
+	transition: 300ms var(--bouncy-transition);
+	opacity: 0;
+	border-radius: 4px;
+	text-wrap: nowrap;
+	font-size: 18px;
 }
 
 @media (max-width: 1000px) {

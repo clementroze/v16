@@ -3,6 +3,58 @@ import Hero from "./components/Hero";
 import Page from "./components/Page";
 import WorkPanel from "./components/WorkPanel";
 import CraftPanel from "./components/CraftPanel";
+import LogoTooltip from "./components/LogoTooltip";
+
+const groupedLogos = [
+	{
+		label: "Currently at",
+		punctuation: ",",
+		logos: [
+			{
+				imageUrl: "/home/logos/cornell.png",
+				tooltipText: "Cornell University",
+				accent: "#B31B1B",
+			},
+		],
+	},
+	{
+		label: "previously at",
+		punctuation: ",",
+		logos: [
+			{
+				imageUrl: "/home/logos/frog.png",
+				tooltipText: "frog",
+				accent: "#AC01E6",
+			},
+			{
+				imageUrl: "/home/logos/microsoft.png",
+				tooltipText: "Microsoft",
+				accent: "#0F6CBD",
+			},
+			{
+				imageUrl: "/home/logos/replit.png",
+				tooltipText: "Replit",
+				accent: "#F5640C",
+			},
+		],
+	},
+	{
+		label: "and leading teams at",
+		punctuation: ".",
+		logos: [
+			{
+				imageUrl: "/home/logos/dcc.png",
+				tooltipText: "Design Consulting at Cornell",
+				accent: "#221F2D",
+			},
+			{
+				imageUrl: "/home/logos/dti.png",
+				tooltipText: "Digital Tech & Innovation",
+				accent: "#4A4A4A",
+			},
+		],
+	},
+];
 
 export default function Home() {
 	const [activeTab, setActiveTab] = useState<"work" | "craft">(() => {
@@ -67,57 +119,71 @@ export default function Home() {
 				subheading="is a designer and developer at Cornell who cares about making the web accessible, beautiful, and thoughtful."
 			/>
 
-<div className="currently-wrapper">
-<div className="inner">
-			<div className="currently">
-				<div className="row">
-				<p>Currently at</p>
+			<div className="currently-wrapper">
+				<div className="inner">
+					{/* <div className="currently">
+						<div className="row">
+							<p>Currently at</p>
 
-<div className="punc">
+							<div className="punc">
+								<div className="logos">
+									<img src="/home/logos/cornell.png" alt="" />
+								</div>
+								<p>,</p>
+							</div>
+						</div>
 
-				<div className="logos">
-					<img src="/home/logos/cornell.png" alt=""/>
+						<div className="row">
+							<p>previously at</p>
+
+							<div className="punc">
+								<div className="logos">
+									<img src="/home/logos/frog.png" alt="" />
+
+									<img src="/home/logos/microsoft.png" alt="" />
+
+									<img src="/home/logos/replit.png" alt="" />
+								</div>
+
+								<p>,</p>
+							</div>
+						</div>
+
+						<div className="row">
+							<p>and leading teams at</p>
+
+							<div className="punc">
+								<div className="logos">
+									<img src="/home/logos/dcc.png" alt="" />
+
+									<img src="/home/logos/dti.png" alt="" />
+								</div>
+
+								<p>.</p>
+							</div>
+						</div>
+					</div> */}
+
+					<div className="currently">
+						{groupedLogos.map((group, index) => (
+							<div className="row" key={index}>
+								<p>{group.label}</p>
+								<div className="logos">
+									{group.logos.map((logo, i) => (
+										<LogoTooltip
+											key={i}
+											imageUrl={logo.imageUrl}
+											tooltipText={logo.tooltipText}
+											accent={logo.accent || "var(--dark)"}
+											onAccent={logo.onAccent}
+										/>
+									))}
+								</div>
+								<p>{group.punctuation}</p>
+							</div>
+						))}
+					</div>
 				</div>
-				<p>,</p>
-
-				</div>
-</div>
-
-
-
-<div className="row">
-				<p>previously at</p>
-
-<div className="punc">
-				<div className="logos">
-					<img src="/home/logos/frog.png" alt=""/>
-
-					<img src="/home/logos/microsoft.png" alt=""/>
-
-					<img src="/home/logos/replit.png" alt=""/>
-				</div>
-
-				<p>,</p>
-				</div>
-				</div>
-
-				<div className="row">
-
-				<p>and leading teams at</p>
-
-<div className="punc">
-
-				<div className="logos">
-					<img src="/home/logos/dcc.png" alt=""/>
-
-					<img src="/home/logos/dti.png" alt=""/>
-				</div>
-
-				<p>.</p>
-				</div>
-			</div>
-			</div>
-			</div>
 			</div>
 
 			<div className="tabs-container">
