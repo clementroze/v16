@@ -10,14 +10,14 @@
 
 :root {
 	--content-max-width: 1248px;
-
+	
 	--nav-selector-transition: 0.5s;
 	--tab-underline-transition: 0.7s;
 	--default-transition: 120ms ease-out;
 	--longer-transition: 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
 	--slimy-transition: cubic-bezier(0.75, 0.1, 0.2, 0.9);
 	--bouncy-transition: cubic-bezier(0.18, 0.89, 0.32, 1.5);
-
+	
 	--img-border-radius: 4px;
 
 	--dark: #000000;
@@ -26,7 +26,7 @@
 	--dark-15: rgba(0 0 0 / 15%);
 	--dark-10: rgba(0 0 0 / 10%);
 	--dark-5: rgba(0 0 0 / 5%);
-
+	
 	--light: #fafafa;
 	--light-80: rgba(255 255 255 / 80%);
 	--light-70: rgba(255 255 255 / 70%);
@@ -35,7 +35,7 @@
 	--light-15: rgba(255 255 255 / 15%);
 	--light-10: rgba(255 255 255 / 10%);
 	--light-5: rgba(255 255 255 / 5%);
-
+	
 	--blue: #3052F5;
 	--red: #B31B1B;
 	--green: #4BE15D;
@@ -352,6 +352,10 @@ nav .indicator {
 	top: 0;
 	height: 800px;
 	bottom: revert;
+}
+
+.hero.home {
+	padding-bottom: 16px;
 }
 
 .currently-wrapper {
@@ -1109,7 +1113,7 @@ button {
 }
 
 .about .content {
-	max-width: 600px,
+	max-width: 600px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -1446,7 +1450,7 @@ grid-column: span 1;
 	/* gap: 128px; */
 	position: relative;
 }
-
+	
 .studio-section {
 	height: 1000px;
 	display: flex;
@@ -1655,7 +1659,7 @@ grid-column: span 1;
 	.about .more-container .mac .mac-wrapper {
 		transform: scale(0.8);
 	}
-
+	
 	.about .resume img {
 		width: 100%;
 		height: auto;
@@ -1690,7 +1694,7 @@ grid-column: span 1;
 	.hero .inner {
 		gap: 16px;
 	}
-
+	
 	.hero .inner h2 {
 		margin-left: 0;
 		font-size: 24px;
@@ -1835,7 +1839,7 @@ grid-column: span 1;
 	.nav-list.mobile-exiting li:nth-child(4) {
 		transition-delay: 0.05s;
 	}
-
+	
 	.nav-list.mobile-exiting li:nth-child(5) {
 		transition-delay: 0s;
 	}
@@ -1934,7 +1938,7 @@ grid-column: span 1;
 	.about .img-wrapper, .about .text, .about .sep{
 		grid-column: span 6;
 	}
-
+	
 	.about .more-container {
 		grid-template-columns: 1fr;
 	}
@@ -2018,36 +2022,4 @@ grid-column: span 1;
 	.about .entry-card .clients {
 		grid-template-columns: repeat(2, 1fr);
 	}
-}
-
-/* Tooltip styles */
-.logo-wrapper {
-	position: relative;
-	display: inline-block;
-}
-
-.tooltip {
-	position: absolute;
-	bottom: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: rgba(0, 0, 0, 0.8);
-	color: white;
-	padding: 8px 12px;
-	border-radius: 4px;
-	font-size: 14px;
-	white-space: nowrap;
-	z-index: 1000;
-	margin-bottom: 8px;
-	pointer-events: none;
-}
-
-.tooltip::after {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	border: 5px solid transparent;
-	border-top-color: rgba(0, 0, 0, 0.8);
 }
