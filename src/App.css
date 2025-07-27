@@ -100,6 +100,10 @@ nav a {
 	color: var(--light-50);
 }
 
+nav a:hover {
+	color: var(--light);
+}
+
 li.selected a, nav span, .name {
 	color: var(--light);
 }
@@ -348,7 +352,7 @@ nav .indicator {
 
 .hero::before {
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 43.85%); 
-	position: fixed;
+	/* position: fixed; */
 	top: 0;
 	height: 800px;
 	bottom: revert;
@@ -395,6 +399,10 @@ nav .indicator {
 
 .currently .logos img:hover {
 	transform: scale(1.1) translateY(-4px);
+}
+
+.currently .logos img:active {
+	transform: scale(1.05) translateY(-2px);
 }
 
 .currently .punc {
@@ -1218,7 +1226,7 @@ button {
 
 .about .entry-card p {
 	font-size: 20px;
-	line-height: 130%;
+	line-height: 150%;
 }
 
 .about .entry-card .text {
@@ -1252,11 +1260,12 @@ button {
 .about .entry-card .clients .client {
 grid-column: span 1;
 	border-radius: var(--img-border-radius);
-	background: var(--light-15);
+	background: var(--light-10);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 12px;
+	height: 74px;
 }
 
 .about .more {
@@ -1286,7 +1295,7 @@ grid-column: span 1;
 
 .about .more-container article .img-wrapper {
 	padding: 24px;
-	background: var(--light-15);
+	background: var(--light-10);
 	display: flex;
 	height: 395px;
 	justify-content: center;
@@ -1596,6 +1605,7 @@ grid-column: span 1;
 
 .logo-tooltip {
 	position: relative;
+	display: flex;
 }
 
 .logo-tooltip:hover span {
@@ -1603,17 +1613,19 @@ grid-column: span 1;
 	opacity: 1;
 }
 
+.logo-tooltip:active span {
+	top: -44px;
+}
+
 .logo-tooltip span {
-	padding: 8px 12px;
-	/* background: var(--light); */
-	/* color: var(--dark); */
+	padding: 10px 12px 6px 12px;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
 	top: -40px;
 	transition: 300ms var(--bouncy-transition);
 	opacity: 0;
-	border-radius: 4px;
+	border-radius: 16px;
 	text-wrap: nowrap;
 	font-size: 18px;
 }

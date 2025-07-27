@@ -30,7 +30,7 @@ export default function Navbar() {
 		{ path: "/", label: "Work" },
 		{ path: "/about", label: "About" },
 		{ path: "/activities", label: "Activities" },
-		{ path: "/studio", label: "Studio" },
+		// { path: "/studio", label: "Studio" },
 		{ path: "/contact", label: "Contact" },
 	];
 
@@ -71,7 +71,7 @@ export default function Navbar() {
 			topPosition = undefined;
 		}
 
-		const rotations = [0, 90, 180, 270, 360];
+		const rotations = [0, 90, 180, 270];
 		const rotation = rotations[activeIndex] || 0;
 
 		localStorage.setItem("navIndicatorLeft", leftPosition.toString());
@@ -90,7 +90,10 @@ export default function Navbar() {
 	}, [location.pathname, isMenuOpen]);
 
 	useEffect(() => {
-		if (location.pathname !== "/about" && location.pathname !== "/activities") {
+		if (
+			location.pathname !== "/about" &&
+			location.pathname !== "/activities"
+		) {
 			setScrolledPastHero(false);
 			return;
 		}
@@ -133,7 +136,9 @@ export default function Navbar() {
 	return (
 		<nav
 			className={
-				(location.pathname === "/about" || location.pathname === "/activities") && scrolledPastHero
+				(location.pathname === "/about" ||
+					location.pathname === "/activities") &&
+				scrolledPastHero
 					? "text-dark"
 					: ""
 			}

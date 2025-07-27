@@ -169,19 +169,20 @@ export default function Home() {
 							<div className="row" key={index}>
 								<p>{group.label}</p>
 								<div className="logos">
-									{group.logos.map((logo, i) => (
-										<LogoTooltip
-											key={i}
-											imageUrl={logo.imageUrl}
-											tooltipText={logo.tooltipText}
-											accent={logo.accent || "var(--dark)"}
-											onAccent={logo.onAccent || "var(--light)"}
-										/>
-									))}
+									<div className="punc">
+										{group.logos.map((logo, i) => (
+											<LogoTooltip
+												key={i}
+												imageUrl={logo.imageUrl}
+												tooltipText={logo.tooltipText}
+												accent={logo.accent || "var(--dark)"}
+												onAccent={logo.onAccent || "var(--light)"}
+											/>
+										))}
+										<p>{group.punctuation}</p>
+									</div>
 								</div>
-								<p>{group.punctuation}</p>
 							</div>
-			</div>
 						))}
 					</div>
 				</div>

@@ -26,55 +26,50 @@
 			"title": "Freelancing",
 			"date": "2020 - Present",
 			"description": "Design consulting for various startups and established companies, focusing on UI/UX design, branding, and web development.",
-			"link": "/studio",
+			"logo": "/studio/icon.png",
+			"logoAlt": "Studio logo",
 			"clients": [
 				{
-					"logo": "/studio/icon.png",
-					"alt": "Studio logo",
-					"width": "32px",
-					"height": "32px"
+					"logo": "/studio/clients/gcai.png",
+					"alt": "TODO",
+					"width": "110px",
+					"height": "33px"
 				},
 				{
-					"logo": "/microsoft/icon.png",
-					"alt": "Microsoft logo",
-					"width": "32px",
-					"height": "32px"
+					"logo": "/studio/clients/ossc.png",
+					"alt": "TODO",
+					"width": "86px",
+					"height": "27px"
 				},
 				{
-					"logo": "/replit/icon.png",
-					"alt": "Replit logo",
-					"width": "100px",
+					"logo": "/studio/clients/net.png",
+					"alt": "TODO",
+					"width": "94px",
+					"height": "45px"
+				},
+				{
+					"logo": "/studio/clients/drroze.png",
+					"alt": "TODO",
+					"width": "62px",
+					"height": "50px"
+				},
+				{
+					"logo": "/studio/clients/deadline.png",
+					"alt": "TODO",
+					"width": "110px",
 					"height": "16px"
 				},
 				{
-					"logo": "/frog/icon.png",
-					"alt": "Frog logo",
-					"width": "56px",
-					"height": "18px"
+					"logo": "/studio/clients/hyperform.png",
+					"alt": "TODO",
+					"width": "102px",
+					"height": "19px"
 				},
 				{
-					"logo": "/studio/icon.png",
-					"alt": "Studio logo",
-					"width": "32px",
-					"height": "32px"
-				},
-				{
-					"logo": "/microsoft/icon.png",
-					"alt": "Microsoft logo",
-					"width": "32px",
-					"height": "32px"
-				},
-				{
-					"logo": "/replit/icon.png",
-					"alt": "Replit logo",
-					"width": "100px",
-					"height": "16px"
-				},
-				{
-					"logo": "/frog/icon.png",
-					"alt": "Frog logo",
-					"width": "56px",
-					"height": "18px"
+					"logo": "/studio/clients/monarcha.png",
+					"alt": "TODO",
+					"width": "113px",
+					"height": "24px"
 				}
 			]
 		}
