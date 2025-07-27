@@ -325,6 +325,7 @@ nav .indicator {
 	display: flex;
 	align-items: flex-end;
 	padding: 64px 32px;
+	padding-bottom: 16px;
 	color: var(--light);
 	background-size: cover;
    background-position: bottom;
@@ -351,10 +352,6 @@ nav .indicator {
 	top: 0;
 	height: 800px;
 	bottom: revert;
-}
-
-.hero.home {
-	padding-bottom: 16px;
 }
 
 .currently-wrapper {
@@ -730,7 +727,7 @@ nav .indicator {
 }
 
 .craft-panel {
-	background: var(--light);
+	background: var(--dark);
 	padding: 64px 32px;
 }
 
