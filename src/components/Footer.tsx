@@ -36,6 +36,10 @@ export default function Footer() {
 							<Link to="/about">About</Link>
 						</li>
 
+						<li>
+							<Link to="/activities">Activities</Link>
+						</li>
+
 						{/* <li>
 							<Link to="/studio">Studio</Link>
 						</li> */}
@@ -97,13 +101,17 @@ export default function Footer() {
 						<p>Version</p>
 
 						<div className="row">
-							<p className="light">15.2</p>
+							<p className="light">v16</p>
 
 							<p className="light" aria-hidden>
 								✦
 							</p>
 
-							<Link to="" className="archive">
+							<Link
+								to="https://archive.clementroze.com/"
+								className="archive"
+								target={"_blank"}
+							>
 								View archive
 							</Link>
 						</div>

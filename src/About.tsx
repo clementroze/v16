@@ -50,7 +50,11 @@ export default function About() {
           <div className="button-row">
             <Button href="/contact" label="Get in touch" variant="light" />
 
-            <Button href="/resume" label="View my résumé" variant="light-10" />
+            <Button
+              href="/Clement-Roze-Resume.pdf"
+              label="View my résumé"
+              variant="light-10"
+            />
           </div>
         </section>
 
@@ -159,7 +163,7 @@ export default function About() {
                 <img src="/about/row3.png" alt="" className="row3" />
               </div>
 
-              <Link to="/studio" className="link-animation">
+              <Link to="/contact" className="link-animation">
                 <h4>Work with me</h4>
 
                 <svg

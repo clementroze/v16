@@ -62,18 +62,25 @@ export default function WorkSection({
 							</h2>
 						</div>
 
-						<Button href={link} label="Learn more" variant="light-10" />
+						{comingSoon ? (
+							<Button
+								href="#"
+								label="Coming Soon"
+								variant="light-10"
+								disabled
+							/>
+						) : (
+							<Button
+								href={link}
+								label="View case study"
+								variant="light-10"
+							/>
+						)}
 					</div>
 
 					<div className="right">
 						<p>{description1}</p>
-						<p
-							style={{
-								textAlign: comingSoon ? "right" : "left",
-							}}
-						>
-							{description2}
-						</p>
+						<p>{description2}</p>
 					</div>
 				</div>
 

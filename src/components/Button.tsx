@@ -5,6 +5,7 @@ type ButtonProps = {
 	label: string;
 	href: string;
 	className?: string;
+	disabled?: boolean;
 };
 
 export default function Button({
@@ -12,9 +13,13 @@ export default function Button({
 	label,
 	href,
 	className = "",
+	disabled = false,
 }: ButtonProps) {
 	return (
-		<Link to={href} className={`button ${variant} ${className}`}>
+		<Link
+			to={disabled ? "#" : href}
+			className={`button ${variant} ${className} ${disabled ? "disabled" : ""}`}
+		>
 			{label}
 		</Link>
 	);

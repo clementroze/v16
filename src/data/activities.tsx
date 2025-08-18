@@ -152,7 +152,7 @@ const activities: Activity[] = [
 		alt: "WVBR logo",
 		title: "WVBR 93.5 FM",
 		subheading:
-			"Cornell’s student-run radio station, operated by the Cornell Media Guild",
+			"Cornell’s student-run radio station, operated by the Cornell Media Guild.",
 		polaroids: [
 			{
 				size: "default",
@@ -165,8 +165,8 @@ const activities: Activity[] = [
 				text: (
 					<p>
 						<span className="font-semibold">New CMG website.</span> As the
-						Web Director for WVBR (a student-run radio station),
-						we recently launched{" "}
+						Web Director for WVBR (a student-run radio station), we
+						recently launched{" "}
 						<a href="https://cornellmediaguild.org/" target="_blank">
 							a new website
 						</a>{" "}
