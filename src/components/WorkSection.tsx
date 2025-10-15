@@ -42,7 +42,6 @@ export default function WorkSection({
 			className="work-section"
 			style={
 				{
-					// use backgroundColor if provided, otherwise use backgroundImage
 					background: backgroundColor
 						? backgroundColor
 						: `url(${backgroundImage}) center/cover no-repeat`,
