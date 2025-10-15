@@ -621,8 +621,8 @@ nav .indicator {
 }
 
 ::selection {
-	background: var(--dark);
-	color: var(--light)
+	background: var(--light);
+	color: var(--dark)
 }
 
 .work-panel {

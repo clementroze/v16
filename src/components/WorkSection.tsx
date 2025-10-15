@@ -8,7 +8,8 @@ type WorkSectionProps = {
 	description1: string;
 	description2: string;
 	comingSoon?: boolean;
-	backgroundImage: string;
+	backgroundImage?: string;
+	backgroundColor?: string;
 	link: string;
 	backdropBlur?: number;
 	accent?: string;
@@ -27,6 +28,7 @@ export default function WorkSection({
 	description2,
 	comingSoon,
 	backgroundImage,
+	backgroundColor,
 	link,
 	backdropBlur,
 	accent,
@@ -40,7 +42,10 @@ export default function WorkSection({
 			className="work-section"
 			style={
 				{
-					backgroundImage: `url(${backgroundImage})`,
+					// use backgroundColor if provided, otherwise use backgroundImage
+					background: backgroundColor
+						? backgroundColor
+						: `url(${backgroundImage}) center/cover no-repeat`,
 					"--accent": `${accent}`,
 					"--onAccent": `${onAccent}`,
 				} as React.CSSProperties

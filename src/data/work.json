@@ -2,6 +2,22 @@
   "workSections": [
     {
       "id": 1,
+      "heading": "Google.",
+      "subheading": "Designing and evaluating user experiences to engage college-age users with Google products.",
+      "logo": "/google/icon.png",
+      "logoAlt": "Google logo",
+      "description1": "Through Design Consulting at Cornell, I'm leading an 8-person team to develop a three stages mixed method research program on engaging users",
+      "description2": "with various Google products. I'm guiding the design, refinement, and testing of conceptual interventions based on findings and stakeholder feedback.",
+      "comingSoon": true,
+      "backgroundColor": "#d1d1d1",
+      "backdropBlur": 0,
+      "accent": "#4B8BF4",
+      "onAccent": "#ffffff",
+      "cover": "/google/cover.png",
+      "coverAlt": "An iPhone showing the Google Search homepage, alongside decorative iOS apps and their Google counterpart"
+    },
+    {
+      "id": 2,
       "heading": "frog.",
       "subheading": "Design internship.",
       "logo": "/frog/icon.png",
@@ -15,10 +31,10 @@
       "accent": "#AC01E6",
       "onAccent": "#ffffff",
       "cover": "/frog/cover2.png",
-      "coverAlt": "TODO"
+      "coverAlt": "A mid-fidelity UX prototype showing the spatial scrolling mechanism for trading grain."
     },
     {
-      "id": 2,
+      "id": 3,
       "heading": "Microsoft.",
       "subheading": "Copilot-powered B2B sales tools designed for Gen Z buyers.",
       "logo": "/microsoft/icon.png",
@@ -32,10 +48,10 @@
       "accent": "#0F6CBD",
       "onAccent": "#ffffff",
       "cover": "/microsoft/cover.png",
-      "coverAlt": "TODO"
+      "coverAlt": "High-fidelity mockups showing a Copilot-powered match refinement tool for B2B buyers."
     },
     {
-      "id": 3,
+      "id": 4,
       "heading": "Replit.",
       "subheading": "Fostering polish, revamping design systems, building marketing pages.",
       "logo": "/replit/icon.png",
@@ -49,7 +65,7 @@
       "borderColor": "rgba(255 255 255 / 0.01)",
       "accent": "#F5640C",
       "cover": "/replit/cover.png",
-      "coverAlt": "TODO"
+      "coverAlt": "Landing pages mockups for the Replit AI comparison pages."
     }
   ]
 }

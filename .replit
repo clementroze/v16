@@ -18,6 +18,11 @@ publicDir = "dist"
 from = "/*"
 to = "/index.html"
 
+[agent]
+expertMode = true
+
 [[ports]]
 localPort = 5173
 externalPort = 80
+
+

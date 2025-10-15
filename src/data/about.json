@@ -1,13 +1,19 @@
 {
 	"work": [
 		{
+			"title": "Google, Lead Product Designer",
+			"date": "Sep - Current",
+			"description": "Designing and evaluating user experiences to engage college-age users with Google products.",
+			"logo": "/google/icon.png",
+			"logoAlt": "Google logo"
+		},
+		{
 			"title": "frog, Visual Design Intern",
-			"date": "May - Current",
+			"date": "May - July 2025",
 			"description": "Designing the next-generation mobile commodity trading platform.",
 			"logo": "/frog/icon.png",
 			"logoAlt": "frog logo"
 		},
-
 		{
 			"title": "Microsoft, Lead Product Designer",
 			"date": "Jan - May 2025",

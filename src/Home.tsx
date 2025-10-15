@@ -16,6 +16,12 @@ const groupedLogos = [
 				accent: "#B31B1B",
 				onAccent: "#FFFFFF",
 			},
+			{
+				imageUrl: "/home/logos/google.png",
+				tooltipText: "Google",
+				accent: "#2E87FF",
+				onAccent: "#FFFFFF",
+			},
 		],
 	},
 	{
