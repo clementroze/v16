@@ -10,7 +10,7 @@ type WorkSectionProps = {
 	comingSoon?: boolean;
 	backgroundImage?: string;
 	backgroundColor?: string;
-	link: string;
+	link?: string;
 	backdropBlur?: number;
 	accent?: string;
 	onAccent?: string;
@@ -42,9 +42,13 @@ export default function WorkSection({
 			className="work-section"
 			style={
 				{
-					background: backgroundColor
-						? backgroundColor
-						: `url(${backgroundImage}) center/cover no-repeat`,
+					backgroundColor: backgroundColor || "transparent",
+					backgroundImage: backgroundColor
+						? "none"
+						: `url(${backgroundImage})`,
+					backgroundPosition: "center",
+					backgroundSize: "cover",
+					backgroundRepeat: "no-repeat",
 					"--accent": `${accent}`,
 					"--onAccent": `${onAccent}`,
 				} as React.CSSProperties
@@ -75,9 +79,10 @@ export default function WorkSection({
 							/>
 						) : (
 							<Button
-								href={link}
+								href={link || "#"}
 								label="View case study"
 								variant="light-10"
+								disabled={!link}
 							/>
 						)}
 					</div>

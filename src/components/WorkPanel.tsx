@@ -15,6 +15,7 @@ export default function WorkPanel() {
           description2={section.description2}
           comingSoon={section.comingSoon}
           backgroundImage={section.backgroundImage}
+          backgroundColor={section.backgroundColor}
           link={section.link}
           backdropBlur={section.backdropBlur}
           accent={section.accent}
