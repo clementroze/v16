@@ -19,7 +19,7 @@ export default function About() {
 
       <div className="content">
         <section className="bio">
-          <img src="/pfp.png" alt="Headshot of Clément Rozé" />
+          <img src="/pfp.JPG" alt="Headshot of Clément Rozé" />
 
           <h3>
             Hi, I’m Clément Rozé. I'm a designer and developer with an
