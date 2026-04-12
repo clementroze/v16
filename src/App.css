@@ -1,7 +1,3 @@
-@font-face {
-  font-family: Helvetica Neue Roman;
-  src: url("/fonts/HelveticaNeueRoman.otf");
-}
 
 @font-face {
   font-family: EB Garamond;
@@ -60,7 +56,7 @@
 }
 
 body {
-	font-family: Helvetica Neue Roman, sans-serif;
+	font-family: sans-serif;
 	color: var(--light);
 	background: var(--dark);
 }
